@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.last_colossi.SilentHill2Enhancements</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Silent Hill 2: Enhanced Edition Setup</name>
+  <summary>Install and configure the SH2: Enhanced Edition mod on Linux</summary>
+  <developer id="io.github.last_colossi">
+    <name>Linux port; original Setup Tool by nipkownix &amp; the SH2:EE project</name>
+  </developer>
+  <description>
+    <p>
+      A Linux-native port of the Silent Hill 2: Enhanced Edition Setup Tool and
+      Configuration Tool, for the PC release of Silent Hill 2 (2002) running under
+      Wine/Proton. It reads the same component manifest and settings schema as the
+      official Windows tools, so it stays current with the project automatically.
+    </p>
+    <p>Features include:</p>
+    <ul>
+      <li>Download, verify, and install all Enhanced Edition components</li>
+      <li>Maintenance mode: update or uninstall an existing install</li>
+      <li>Offline install from pre-downloaded packages</li>
+      <li>Full configuration editor for every d3d8.ini setting, including Speedrun Mode</li>
+      <li>Automatic Wine/Proton DLL-override setup (the project's d3d8 wrapper)</li>
+      <li>One-click "Add to Steam" as a non-Steam game, with launch options pre-filled</li>
+    </ul>
+    <p>
+      Silent Hill 2 PC is installed offline into an arbitrary folder, so you point the
+      tool at wherever the game lives; it can also auto-detect installs inside common
+      Wine/Proton prefixes (Steam, Lutris, Heroic, Bottles).
+    </p>
+    <p>
+      This project is not affiliated with Konami. The enhancements and the original
+      Setup Tool are by the Silent Hill 2: Enhanced Edition project.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.last_colossi.SilentHill2Enhancements.desktop</launchable>
+  <url type="homepage">https://github.com/Last-Colossi/SilentHill2Enhancements-Linux</url>
+  <url type="bugtracker">https://github.com/Last-Colossi/SilentHill2Enhancements-Linux/issues</url>
+  <url type="help">https://enhanced.townofsilenthill.com/SH2/</url>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Install / Maintenance tab</caption>
+      <image>https://raw.githubusercontent.com/Last-Colossi/SilentHill2Enhancements-Linux/main/flatpak/screenshots/install.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1" />
+  <categories>
+    <category>Game</category>
+    <category>Utility</category>
+  </categories>
+  <releases>
+    <release version="1.1.5" date="2026-06-13">
+      <description><p>Initial Linux release, tracking upstream Setup Tool 1.1.5.</p></description>
+    </release>
+  </releases>
+</component>

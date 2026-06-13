@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=Silent Hill 2: Enhanced Edition Setup
+Comment=Install and configure the SH2: Enhanced Edition mod (Linux/Proton)
+Exec=SH2EESetupLinux
+Icon=io.github.last_colossi.SilentHill2Enhancements
+Categories=Game;Utility;
+StartupWMClass=SH2EESetupLinux

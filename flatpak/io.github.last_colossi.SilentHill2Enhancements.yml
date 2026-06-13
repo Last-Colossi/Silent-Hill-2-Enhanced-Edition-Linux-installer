@@ -1,0 +1,50 @@
+# Flathub manifest. Before submitting:
+#  1. Generate the offline NuGet sources file with flatpak-dotnet-generator:
+#     https://github.com/flatpak/flatpak-builder-tools/tree/master/dotnet
+#     python3 flatpak-dotnet-generator.py nuget-sources.json SH2EESetupLinux.csproj
+#  2. Pin the git tag/commit below to a tagged release of your repo.
+#  NOTE: app-id and repo URL below follow the MirrorsEdgeTweaks convention as a
+#        placeholder — change them to your own org/repo before publishing.
+app-id: io.github.last_colossi.SilentHill2Enhancements
+runtime: org.freedesktop.Platform
+runtime-version: '24.08'
+sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.dotnet8
+build-options:
+  prepend-path: /usr/lib/sdk/dotnet8/bin
+  append-ld-library-path: /usr/lib/sdk/dotnet8/lib
+  env:
+    DOTNET_CLI_TELEMETRY_OPTOUT: 'true'
+command: SH2EESetupLinux
+finish-args:
+  - --share=ipc
+  - --share=network            # downloads enhancement packages from the SH2EE servers
+  - --socket=x11               # Avalonia uses X11/XWayland
+  - --device=dri
+  # SH2 PC is installed offline into an arbitrary folder (Documents, Downloads, a
+  # Wine/Proton prefix, …). Broad home access is required so the user can point the
+  # tool at wherever the game lives, and so we can edit prefix user.reg files.
+  - --filesystem=home
+  # Steam (native + Flatpak) for "Add to Steam" (shortcuts.vdf) and prefix detection:
+  - --filesystem=~/.local/share/Steam
+  - --filesystem=~/.var/app/com.valvesoftware.Steam/.local/share/Steam
+  # Extra game/library locations on SD cards / extra drives:
+  - --filesystem=/run/media
+modules:
+  - name: sh2ee-setup
+    buildsystem: simple
+    build-commands:
+      - dotnet publish SH2EESetupLinux.csproj -c Release -r linux-x64
+        --self-contained true --source ./nuget-sources -o /app/bin
+      - install -Dm644 flatpak/io.github.last_colossi.SilentHill2Enhancements.metainfo.xml
+        -t /app/share/metainfo
+      - install -Dm644 flatpak/io.github.last_colossi.SilentHill2Enhancements.desktop
+        -t /app/share/applications
+      - install -Dm644 flatpak/icons/sh2ee-setup-256.png
+        /app/share/icons/hicolor/256x256/apps/io.github.last_colossi.SilentHill2Enhancements.png
+    sources:
+      - type: git
+        url: https://github.com/Last-Colossi/SilentHill2Enhancements-Linux.git
+        tag: v1.1.5
+      - nuget-sources.json
