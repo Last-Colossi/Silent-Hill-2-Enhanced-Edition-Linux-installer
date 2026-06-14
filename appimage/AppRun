@@ -1,0 +1,10 @@
+#!/bin/sh
+# Entry point for the SH2:EE AppImage. Runs the setup wizard by default; when invoked
+# with --config (the setup wizard re-launches the AppImage this way on finish), runs
+# the standalone configuration app instead.
+HERE="$(dirname "$(readlink -f "$0")")"
+if [ "$1" = "--config" ]; then
+    shift
+    exec "$HERE/usr/bin/SH2EEConfig" "$@"
+fi
+exec "$HERE/usr/bin/SH2EESetup" "$@"

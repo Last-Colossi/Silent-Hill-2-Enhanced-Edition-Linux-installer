@@ -53,5 +53,5 @@ modules:
     sources:
       - type: git
         url: https://github.com/Last-Colossi/SilentHill2Enhancements-Linux.git
-        tag: v1.2.0
+        tag: v1.2.1
       - nuget-sources.json

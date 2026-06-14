@@ -11,6 +11,27 @@ namespace SH2EESetup.Setup
     {
         public static bool Launch(string gameDirectory)
         {
+            // When running from an AppImage, re-launch the same AppImage in "config mode"
+            // (AppRun routes --config to SH2EEConfig). This gives the config app its own
+            // AppImage mount, since the setup process is about to exit and would otherwise
+            // unmount the image out from under a sibling binary launched off the same mount.
+            string? appImage = Environment.GetEnvironmentVariable("APPIMAGE");
+            if (!string.IsNullOrEmpty(appImage) && File.Exists(appImage))
+            {
+                try
+                {
+                    var psi = new ProcessStartInfo(appImage) { UseShellExecute = false };
+                    psi.ArgumentList.Add("--config");
+                    psi.ArgumentList.Add(gameDirectory);
+                    Process.Start(psi);
+                    return true;
+                }
+                catch
+                {
+                    // Fall through to the sibling-binary search below.
+                }
+            }
+
             // Search next to the setup executable. For single-file publishes the binary
             // lives alongside ProcessPath; for framework/normal layouts it's BaseDirectory.
             var dirs = new List<string> { AppContext.BaseDirectory };
