@@ -51,7 +51,10 @@ namespace SH2EESetup.Models
         public const string Xidi = "xidi";
         public const string Credits = "credits";
 
-        /// <summary>Components the upstream installer force-checks on a fresh install.</summary>
-        public static readonly string[] Mandatory = { Sh2eModule, EnhancedExe, Credits };
+        /// <summary>
+        /// Components forced on (checked + locked) for a fresh install. The upstream
+        /// installer also forces Credits, but here it's left optional by choice.
+        /// </summary>
+        public static readonly string[] Mandatory = { Sh2eModule, EnhancedExe };
     }
 }

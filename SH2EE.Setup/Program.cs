@@ -1,6 +1,6 @@
 using Avalonia;
 
-namespace SH2EESetup
+namespace SH2EESetup.Setup
 {
     internal static class Program
     {

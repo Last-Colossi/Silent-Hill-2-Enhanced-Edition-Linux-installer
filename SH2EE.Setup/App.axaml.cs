@@ -1,17 +1,14 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using SH2EESetup.ViewModels;
-using SH2EESetup.Views;
+using SH2EESetup.Setup.ViewModels;
+using SH2EESetup.Setup.Views;
 
-namespace SH2EESetup
+namespace SH2EESetup.Setup
 {
     public class App : Application
     {
-        public override void Initialize()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
+        public override void Initialize() => AvaloniaXamlLoader.Load(this);
 
         public override void OnFrameworkInitializationCompleted()
         {
@@ -19,10 +16,9 @@ namespace SH2EESetup
             {
                 desktop.MainWindow = new MainWindow
                 {
-                    DataContext = new MainViewModel(),
+                    DataContext = new WizardViewModel(),
                 };
             }
-
             base.OnFrameworkInitializationCompleted();
         }
     }

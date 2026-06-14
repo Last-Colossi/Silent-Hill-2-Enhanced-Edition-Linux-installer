@@ -1,0 +1,222 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:SH2EESetup.Setup.ViewModels"
+        x:Class="SH2EESetup.Setup.Views.MainWindow"
+        x:DataType="vm:WizardViewModel"
+        Width="760" Height="600" MinWidth="680" MinHeight="540"
+        WindowStartupLocation="CenterScreen"
+        Icon="/Assets/icon.ico"
+        Background="#1C1D22"
+        Title="Silent Hill 2: Enhanced Edition — Setup">
+
+    <Window.Styles>
+        <!-- Two parallax fog layers. The texture is a horizontally-seamless mirror tile, so
+             two copies sized far wider than any screen (5800px) sit edge-to-edge and slide
+             left in lockstep: when one scrolls fully off the left (off-screen), the other has
+             replaced it and it resets unseen. No seam, no on-screen reset, fills any size. -->
+        <Style Selector="Image.fog">
+            <Setter Property="IsHitTestVisible" Value="False" />
+            <Setter Property="Stretch" Value="Fill" />
+        </Style>
+        <!-- Front layer (~14 px/s) -->
+        <Style Selector="Image.l1a">
+            <Style.Animations><Animation Duration="0:6:54" IterationCount="INFINITE" Easing="LinearEasing">
+                <KeyFrame Cue="0%"><Setter Property="(Canvas.Left)" Value="0" /></KeyFrame>
+                <KeyFrame Cue="100%"><Setter Property="(Canvas.Left)" Value="-5800" /></KeyFrame>
+            </Animation></Style.Animations>
+        </Style>
+        <Style Selector="Image.l1b">
+            <Style.Animations><Animation Duration="0:6:54" IterationCount="INFINITE" Easing="LinearEasing">
+                <KeyFrame Cue="0%"><Setter Property="(Canvas.Left)" Value="5800" /></KeyFrame>
+                <KeyFrame Cue="100%"><Setter Property="(Canvas.Left)" Value="0" /></KeyFrame>
+            </Animation></Style.Animations>
+        </Style>
+        <!-- Back layer (noticeably slower, ~8 px/s) -->
+        <Style Selector="Image.l2a">
+            <Style.Animations><Animation Duration="0:12:05" IterationCount="INFINITE" Easing="LinearEasing">
+                <KeyFrame Cue="0%"><Setter Property="(Canvas.Left)" Value="0" /></KeyFrame>
+                <KeyFrame Cue="100%"><Setter Property="(Canvas.Left)" Value="-5800" /></KeyFrame>
+            </Animation></Style.Animations>
+        </Style>
+        <Style Selector="Image.l2b">
+            <Style.Animations><Animation Duration="0:12:05" IterationCount="INFINITE" Easing="LinearEasing">
+                <KeyFrame Cue="0%"><Setter Property="(Canvas.Left)" Value="5800" /></KeyFrame>
+                <KeyFrame Cue="100%"><Setter Property="(Canvas.Left)" Value="0" /></KeyFrame>
+            </Animation></Style.Animations>
+        </Style>
+    </Window.Styles>
+
+    <Panel ClipToBounds="True">
+
+        <!-- Fog: two seamless-tile copies per layer, scrolling right-to-left, sized past 4K -->
+        <Canvas ClipToBounds="True">
+            <!-- Back layer (flipped vertically + fainter so it doesn't mirror the front) -->
+            <Image Classes="fog l2a" Source="/Assets/fog.jpg" Width="5800" Height="1500"
+                   Canvas.Top="-40" Opacity="0.15" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform><ScaleTransform ScaleY="-1" /></Image.RenderTransform>
+            </Image>
+            <Image Classes="fog l2b" Source="/Assets/fog.jpg" Width="5800" Height="1500"
+                   Canvas.Top="-40" Opacity="0.15" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform><ScaleTransform ScaleY="-1" /></Image.RenderTransform>
+            </Image>
+            <!-- Front layer -->
+            <Image Classes="fog l1a" Source="/Assets/fog.jpg" Width="5800" Height="1500"
+                   Canvas.Top="-40" Opacity="0.28" />
+            <Image Classes="fog l1b" Source="/Assets/fog.jpg" Width="5800" Height="1500"
+                   Canvas.Top="-40" Opacity="0.28" />
+        </Canvas>
+
+        <!-- Wizard content -->
+        <Grid RowDefinitions="Auto,*,Auto">
+
+            <!-- Header -->
+            <Border Grid.Row="0" Background="#40000000" Padding="22,18">
+                <StackPanel Spacing="3">
+                    <TextBlock Text="{Binding StepNumberText}" Opacity="0.55" FontSize="12"
+                               Foreground="White" />
+                    <TextBlock Text="{Binding StepTitle}" FontSize="21" FontWeight="Bold"
+                               Foreground="White" />
+                </StackPanel>
+            </Border>
+
+            <!-- Step content area -->
+            <Panel Grid.Row="1" Margin="22,20">
+
+                <!-- Step 1: Locate -->
+                <StackPanel x:Name="LocatePanel" Spacing="12">
+                    <TextBlock Text="{Binding DetectStatus}" Foreground="{Binding DetectBrush}"
+                               TextWrapping="Wrap" FontSize="14" />
+                    <TextBlock Text="Installation folder" FontWeight="SemiBold" Margin="0,6,0,0" />
+                    <Grid ColumnDefinitions="*,Auto">
+                        <TextBox Grid.Column="0" Text="{Binding GameDirectory}"
+                                 Watermark="The folder that contains sh2pc.exe…" />
+                        <Button Grid.Column="1" x:Name="BrowseButton" Content="Browse…" Margin="6,0,0,0" />
+                    </Grid>
+                    <StackPanel IsVisible="{Binding HasDetected}" Spacing="4">
+                        <TextBlock Text="Detected installations" Opacity="0.7" FontSize="12" />
+                        <ComboBox x:Name="DetectedBox" HorizontalAlignment="Stretch"
+                                  ItemsSource="{Binding DetectedDirectories}"
+                                  PlaceholderText="Pick a detected installation…" />
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Step 2: Source -->
+                <StackPanel x:Name="SourcePanel" Spacing="14" IsVisible="False">
+                    <TextBlock Text="The Enhanced Edition files can be downloaded for you, or installed from a folder you already have."
+                               TextWrapping="Wrap" FontSize="14" Opacity="0.9" />
+                    <RadioButton GroupName="src" IsChecked="{Binding IsDownloadSource}">
+                        <StackPanel>
+                            <TextBlock Text="Download automatically (recommended)" FontWeight="SemiBold" />
+                            <TextBlock Text="Get the latest files directly from the Silent Hill 2: Enhanced Edition servers."
+                                       Opacity="0.7" FontSize="12" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton GroupName="src" IsChecked="{Binding IsLocalSource}">
+                        <StackPanel>
+                            <TextBlock Text="Install from a folder on this PC" FontWeight="SemiBold" />
+                            <TextBlock Text="Use files you've already downloaded (a folder containing local_sh2ee.dat)."
+                                       Opacity="0.7" FontSize="12" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </RadioButton>
+                    <StackPanel IsVisible="{Binding IsLocalSource}" Spacing="6" Margin="26,0,0,0">
+                        <Grid ColumnDefinitions="*,Auto">
+                            <TextBox Grid.Column="0" Text="{Binding LocalSourceDir}"
+                                     Watermark="Folder containing local_sh2ee.dat…" />
+                            <Button Grid.Column="1" x:Name="LocalBrowseButton" Content="Browse…" Margin="6,0,0,0" />
+                        </Grid>
+                        <TextBlock Text="{Binding LocalSourceStatus}" Opacity="0.85" FontSize="12" />
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Step 3: Install type -->
+                <Grid x:Name="InstallTypePanel" IsVisible="False" RowDefinitions="Auto,Auto,*">
+                    <RadioButton Grid.Row="0" GroupName="kind" IsChecked="{Binding IsQuick}">
+                        <StackPanel>
+                            <TextBlock Text="Full install (recommended)" FontWeight="SemiBold" />
+                            <TextBlock Text="Installs everything — the complete Enhanced Edition experience."
+                                       Opacity="0.7" FontSize="12" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton Grid.Row="1" GroupName="kind" IsChecked="{Binding IsCustom}" Margin="0,8,0,0">
+                        <StackPanel>
+                            <TextBlock Text="Choose components" FontWeight="SemiBold" />
+                            <TextBlock Text="Pick exactly which parts of the Enhanced Edition to install."
+                                       Opacity="0.7" FontSize="12" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </RadioButton>
+                    <Border Grid.Row="2" IsVisible="{Binding IsCustom}" Margin="0,12,0,0"
+                            BorderBrush="#33FFFFFF" BorderThickness="1" CornerRadius="6">
+                        <ScrollViewer>
+                            <ItemsControl ItemsSource="{Binding Components}" Margin="8">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Padding="8" Margin="0,0,0,6" CornerRadius="4" Background="#30000000">
+                                            <CheckBox IsChecked="{Binding IsSelected}" IsEnabled="{Binding IsEnabled}">
+                                                <StackPanel>
+                                                    <StackPanel Orientation="Horizontal" Spacing="8">
+                                                        <TextBlock Text="{Binding Name}" FontWeight="Bold" />
+                                                        <TextBlock Text="{Binding StatusLabel}" Opacity="0.6"
+                                                                   FontSize="11" VerticalAlignment="Center" />
+                                                    </StackPanel>
+                                                    <TextBlock Text="{Binding Description}" TextWrapping="Wrap"
+                                                               Opacity="0.65" FontSize="12" MaxWidth="600"
+                                                               HorizontalAlignment="Left" />
+                                                </StackPanel>
+                                            </CheckBox>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
+                    </Border>
+                </Grid>
+
+                <!-- Step 4: Progress -->
+                <Panel x:Name="ProgressPanel" IsVisible="False">
+                    <StackPanel IsVisible="{Binding !InstallComplete}" Spacing="14"
+                                VerticalAlignment="Center">
+                        <TextBlock Text="{Binding ProgressStatus}" TextWrapping="Wrap" FontSize="14"
+                                   HorizontalAlignment="Center" Foreground="White" />
+                        <ProgressBar Minimum="0" Maximum="100" Value="{Binding Progress}" Height="10"
+                                     IsVisible="{Binding IsBusy}" />
+                    </StackPanel>
+                    <StackPanel IsVisible="{Binding InstallComplete}" Spacing="8"
+                                VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Text="✓" FontSize="56" Foreground="MediumSeaGreen"
+                                   HorizontalAlignment="Center" />
+                        <TextBlock Text="Installation complete!" FontSize="22" FontWeight="Bold"
+                                   Foreground="MediumSeaGreen" HorizontalAlignment="Center" />
+                        <TextBlock Text="Click Next to finish setting things up." Opacity="0.7"
+                                   HorizontalAlignment="Center" Foreground="White" />
+                    </StackPanel>
+                </Panel>
+
+                <!-- Step 5: Steam -->
+                <StackPanel x:Name="SteamPanel" IsVisible="False" Spacing="14">
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Foreground="White"
+                               Text="The Enhanced Edition is installed. One last optional step:" />
+                    <TextBlock TextWrapping="Wrap" FontSize="13" Opacity="0.85" Foreground="White"
+                               Text="Silent Hill 2 isn't a Steam game, but adding it to Steam lets you launch it through Proton in one click — and we'll fill in the launch options it needs to run correctly on Linux." />
+                    <CheckBox IsChecked="{Binding AddToSteam}"
+                              Content="Add Silent Hill 2 to Steam (recommended)" />
+                    <Border Background="#33000000" CornerRadius="6" Padding="12" IsVisible="{Binding AddToSteam}">
+                        <TextBlock TextWrapping="Wrap" FontSize="12" Foreground="Goldenrod"
+                                   Text="After you finish: restart Steam, then open the game's Properties → Compatibility and force a Proton version. Proton-GE or Proton Experimental are recommended." />
+                    </Border>
+                    <TextBlock TextWrapping="Wrap" Opacity="0.7" FontSize="12" Foreground="White"
+                               Text="Clicking Finish opens the Configuration app, where you can fine-tune the experience." />
+                </StackPanel>
+            </Panel>
+
+            <!-- Footer -->
+            <Border Grid.Row="2" Background="#40000000" Padding="22,14">
+                <Grid ColumnDefinitions="*,Auto,Auto">
+                    <Button Grid.Column="1" x:Name="BackButton" Content="Back" MinWidth="90"
+                            IsEnabled="{Binding CanGoBack}" Margin="0,0,8,0" />
+                    <Button Grid.Column="2" x:Name="NextButton" Content="{Binding NextLabel}" MinWidth="120"
+                            IsEnabled="{Binding CanGoNext}" Classes="accent" />
+                </Grid>
+            </Border>
+        </Grid>
+    </Panel>
+</Window>

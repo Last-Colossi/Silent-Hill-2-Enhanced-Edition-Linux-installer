@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=Silent Hill 2: Enhanced Edition Configuration
+Comment=Customise the SH2: Enhanced Edition settings (d3d8.ini)
+Exec=SH2EEConfig
+Icon=io.github.last_colossi.SilentHill2Enhancements
+Categories=Game;Utility;
+StartupWMClass=SH2EEConfig

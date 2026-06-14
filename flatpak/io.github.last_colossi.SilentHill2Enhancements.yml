@@ -1,7 +1,8 @@
 # Flathub manifest. Before submitting:
 #  1. Generate the offline NuGet sources file with flatpak-dotnet-generator:
 #     https://github.com/flatpak/flatpak-builder-tools/tree/master/dotnet
-#     python3 flatpak-dotnet-generator.py nuget-sources.json SH2EESetupLinux.csproj
+#     python3 flatpak-dotnet-generator.py nuget-sources.json SH2EE.Setup/SH2EE.Setup.csproj
+#     (and merge with the Config project's sources, or run it for the .sln)
 #  2. Pin the git tag/commit below to a tagged release of your repo.
 #  NOTE: app-id and repo URL below follow the MirrorsEdgeTweaks convention as a
 #        placeholder — change them to your own org/repo before publishing.
@@ -16,7 +17,8 @@ build-options:
   append-ld-library-path: /usr/lib/sdk/dotnet8/lib
   env:
     DOTNET_CLI_TELEMETRY_OPTOUT: 'true'
-command: SH2EESetupLinux
+# The wizard is the primary entry; it auto-launches the bundled config app on finish.
+command: SH2EESetup
 finish-args:
   - --share=ipc
   - --share=network            # downloads enhancement packages from the SH2EE servers
@@ -35,16 +37,21 @@ modules:
   - name: sh2ee-setup
     buildsystem: simple
     build-commands:
-      - dotnet publish SH2EESetupLinux.csproj -c Release -r linux-x64
+      # Both apps publish into the same /app/bin so the wizard can launch the config app.
+      - dotnet publish SH2EE.Setup/SH2EE.Setup.csproj -c Release -r linux-x64
+        --self-contained true --source ./nuget-sources -o /app/bin
+      - dotnet publish SH2EE.Config/SH2EE.Config.csproj -c Release -r linux-x64
         --self-contained true --source ./nuget-sources -o /app/bin
       - install -Dm644 flatpak/io.github.last_colossi.SilentHill2Enhancements.metainfo.xml
         -t /app/share/metainfo
       - install -Dm644 flatpak/io.github.last_colossi.SilentHill2Enhancements.desktop
+        -t /app/share/applications
+      - install -Dm644 flatpak/io.github.last_colossi.SilentHill2Enhancements.Config.desktop
         -t /app/share/applications
       - install -Dm644 flatpak/icons/sh2ee-setup-256.png
         /app/share/icons/hicolor/256x256/apps/io.github.last_colossi.SilentHill2Enhancements.png
     sources:
       - type: git
         url: https://github.com/Last-Colossi/SilentHill2Enhancements-Linux.git
-        tag: v1.1.5
+        tag: v1.2.0
       - nuget-sources.json

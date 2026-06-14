@@ -5,21 +5,18 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<RootNamespace>SH2EESetup</RootNamespace>
-		<AssemblyName>SH2EESetupLinux</AssemblyName>
+		<RootNamespace>SH2EESetup.Setup</RootNamespace>
+		<AssemblyName>SH2EESetup</AssemblyName>
 		<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
 		<AvaloniaUseCompiledBindingsByDefault>false</AvaloniaUseCompiledBindingsByDefault>
 
-		<!-- Version tracks the upstream setup tool this port has parity with -->
-		<Version>1.1.5</Version>
-		<AssemblyVersion>1.1.5.0</AssemblyVersion>
-		<FileVersion>1.1.5.0</FileVersion>
-		<InformationalVersion>1.1.5-linux</InformationalVersion>
+		<Version>1.2.0</Version>
+		<InformationalVersion>1.2.0-linux</InformationalVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<AvaloniaResource Include="Resources\icon.ico" />
-		<EmbeddedResource Include="Resources\config.xml" />
+		<AvaloniaResource Include="..\assets\icon.ico" Link="Assets\icon.ico" />
+		<AvaloniaResource Include="..\assets\fog.jpg" Link="Assets\fog.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -27,6 +24,10 @@
 		<PackageReference Include="Avalonia.Desktop" Version="11.3.17" />
 		<PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.17" />
 		<PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.17" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SH2EE.Core\SH2EE.Core.csproj" />
 	</ItemGroup>
 
 </Project>

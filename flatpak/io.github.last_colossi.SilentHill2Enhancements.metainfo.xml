@@ -50,6 +50,13 @@
     <category>Utility</category>
   </categories>
   <releases>
+    <release version="1.2.0" date="2026-06-14">
+      <description>
+        <p>Step-by-step setup wizard and a separate configuration app, with an animated
+           fog theme. Adds offline install, Speedrun Mode parity, and Add-to-Steam with
+           the WineD3D launch fix pre-filled.</p>
+      </description>
+    </release>
     <release version="1.1.5" date="2026-06-13">
       <description><p>Initial Linux release, tracking upstream Setup Tool 1.1.5.</p></description>
     </release>

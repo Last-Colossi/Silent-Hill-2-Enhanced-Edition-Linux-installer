@@ -28,8 +28,18 @@ namespace SH2EESetup.Platform
         public static string WineDllOverridesValue =>
             string.Join(',', OverriddenDlls) + "=n,b";
 
+        /// <summary>
+        /// Routes Direct3D 9 through WineD3D instead of DXVK. The mod's d3d8to9 conversion
+        /// (needed for its shaders) hits DXVK 2.2+ regressions under Proton — fog renders as
+        /// blocky cubes at the wrong height, and changing resolution / render scale (a D3D9
+        /// device reset) crashes the game. WineD3D implements D3D9 fixed-function fog and
+        /// device-reset far closer to native, fixing both while keeping every shader enabled.
+        /// See upstream issue #557 and DXVK #3943.
+        /// </summary>
+        public const string ProtonForceWineD3D = "PROTON_USE_WINED3D=1";
+
         public static string SteamLaunchOption =>
-            $"WINEDLLOVERRIDES=\"{WineDllOverridesValue}\" %command%";
+            $"WINEDLLOVERRIDES=\"{WineDllOverridesValue}\" {ProtonForceWineD3D} %command%";
 
         /// <summary>
         /// Writes the DLL overrides into the prefix's user.reg under

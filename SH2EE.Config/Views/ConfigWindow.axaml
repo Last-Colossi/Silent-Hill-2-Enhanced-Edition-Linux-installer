@@ -1,0 +1,96 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:SH2EESetup.Config.ViewModels"
+        x:Class="SH2EESetup.Config.Views.ConfigWindow"
+        x:DataType="vm:ConfigViewModel"
+        Width="820" Height="680" MinWidth="700" MinHeight="560"
+        WindowStartupLocation="CenterScreen"
+        Icon="/Assets/icon.ico"
+        Background="#1C1D22"
+        Title="Silent Hill 2: Enhanced Edition — Configuration">
+
+    <Window.Styles>
+        <!-- Seamless mirror-tile fog: two copies per layer sized past 4K, sliding left in
+             lockstep so resets happen off-screen. No seam, no on-screen reset, fills any size. -->
+        <Style Selector="Image.fog">
+            <Setter Property="IsHitTestVisible" Value="False" />
+            <Setter Property="Stretch" Value="Fill" />
+        </Style>
+        <!-- Front layer (~14 px/s) -->
+        <Style Selector="Image.l1a">
+            <Style.Animations><Animation Duration="0:6:54" IterationCount="INFINITE" Easing="LinearEasing">
+                <KeyFrame Cue="0%"><Setter Property="(Canvas.Left)" Value="0" /></KeyFrame>
+                <KeyFrame Cue="100%"><Setter Property="(Canvas.Left)" Value="-5800" /></KeyFrame>
+            </Animation></Style.Animations>
+        </Style>
+        <Style Selector="Image.l1b">
+            <Style.Animations><Animation Duration="0:6:54" IterationCount="INFINITE" Easing="LinearEasing">
+                <KeyFrame Cue="0%"><Setter Property="(Canvas.Left)" Value="5800" /></KeyFrame>
+                <KeyFrame Cue="100%"><Setter Property="(Canvas.Left)" Value="0" /></KeyFrame>
+            </Animation></Style.Animations>
+        </Style>
+        <!-- Back layer (slower, ~8 px/s) -->
+        <Style Selector="Image.l2a">
+            <Style.Animations><Animation Duration="0:12:05" IterationCount="INFINITE" Easing="LinearEasing">
+                <KeyFrame Cue="0%"><Setter Property="(Canvas.Left)" Value="0" /></KeyFrame>
+                <KeyFrame Cue="100%"><Setter Property="(Canvas.Left)" Value="-5800" /></KeyFrame>
+            </Animation></Style.Animations>
+        </Style>
+        <Style Selector="Image.l2b">
+            <Style.Animations><Animation Duration="0:12:05" IterationCount="INFINITE" Easing="LinearEasing">
+                <KeyFrame Cue="0%"><Setter Property="(Canvas.Left)" Value="5800" /></KeyFrame>
+                <KeyFrame Cue="100%"><Setter Property="(Canvas.Left)" Value="0" /></KeyFrame>
+            </Animation></Style.Animations>
+        </Style>
+    </Window.Styles>
+
+    <Panel ClipToBounds="True">
+
+        <!-- Fog: two seamless-tile copies per layer, scrolling right-to-left, sized past 4K -->
+        <Canvas ClipToBounds="True">
+            <Image Classes="fog l2a" Source="/Assets/fog.jpg" Width="5800" Height="1600"
+                   Canvas.Top="-40" Opacity="0.13" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform><ScaleTransform ScaleY="-1" /></Image.RenderTransform>
+            </Image>
+            <Image Classes="fog l2b" Source="/Assets/fog.jpg" Width="5800" Height="1600"
+                   Canvas.Top="-40" Opacity="0.13" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform><ScaleTransform ScaleY="-1" /></Image.RenderTransform>
+            </Image>
+            <Image Classes="fog l1a" Source="/Assets/fog.jpg" Width="5800" Height="1600"
+                   Canvas.Top="-40" Opacity="0.26" />
+            <Image Classes="fog l1b" Source="/Assets/fog.jpg" Width="5800" Height="1600"
+                   Canvas.Top="-40" Opacity="0.26" />
+        </Canvas>
+
+        <DockPanel Margin="14">
+
+            <!-- Header -->
+            <Border DockPanel.Dock="Top" Background="#40000000" CornerRadius="6" Padding="12" Margin="0,0,0,10">
+                <StackPanel Spacing="6">
+                    <TextBlock Text="{Binding Header}" TextWrapping="Wrap" Opacity="0.85" Foreground="White" />
+                    <Grid ColumnDefinitions="*,Auto" IsVisible="{Binding !HasGame}">
+                        <TextBox Grid.Column="0" Text="{Binding GameDirectory}"
+                                 Watermark="The folder that contains sh2pc.exe…" />
+                        <Button Grid.Column="1" x:Name="BrowseButton" Content="Browse…" Margin="6,0,0,0" />
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <!-- Footer / actions -->
+            <Border DockPanel.Dock="Bottom" Background="#40000000" CornerRadius="6" Padding="12" Margin="0,10,0,0">
+                <Grid ColumnDefinitions="*,Auto,Auto,Auto">
+                    <TextBlock Grid.Column="0" Text="{Binding Status}" VerticalAlignment="Center"
+                               TextWrapping="Wrap" Opacity="0.85" Foreground="White" />
+                    <Button Grid.Column="1" x:Name="ResetButton" Content="Reset to defaults" Margin="0,0,8,0" />
+                    <Button Grid.Column="2" x:Name="SaveButton" Content="Save" Margin="0,0,8,0" />
+                    <Button Grid.Column="3" x:Name="SaveLaunchButton" Content="Save &amp; Launch Game"
+                            Classes="accent" />
+                </Grid>
+            </Border>
+
+            <ScrollViewer>
+                <TabControl x:Name="ConfigTabs" />
+            </ScrollViewer>
+        </DockPanel>
+    </Panel>
+</Window>
