@@ -164,6 +164,8 @@ namespace SH2EESetup.Setup.Views
                     case WizardStep.Backup:
                         if (vm.BackupComplete)
                             vm.GoToHome();
+                        else if (vm.RepackageFromInstall)
+                            await vm.RunRepackageAsync();
                         else
                             await vm.RunBackupAsync();
                         break;

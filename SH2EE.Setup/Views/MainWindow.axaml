@@ -320,10 +320,35 @@
                                     Margin="6,0,0,0" />
                         </Grid>
 
-                        <TextBlock Grid.Row="2" Text="Files to download" FontWeight="SemiBold"
-                                   Foreground="White" Margin="0,14,0,6" />
+                        <!-- Rebuilding from disk avoids a ~4 GB download, so it leads when
+                             the installation can account for itself. -->
+                        <StackPanel Grid.Row="2" Spacing="6" Margin="0,14,0,0"
+                                    IsVisible="{Binding CanRepackage}">
+                            <RadioButton GroupName="backupsrc" IsChecked="{Binding RepackageFromInstall}">
+                                <StackPanel>
+                                    <TextBlock Text="Rebuild from this installation (no download)"
+                                               FontWeight="SemiBold" />
+                                    <TextBlock Text="Packages the files already on this PC. Fast, works offline, and every file is checked against the checksum upstream published for it."
+                                               Opacity="0.7" FontSize="12" TextWrapping="Wrap" MaxWidth="620"
+                                               HorizontalAlignment="Left" />
+                                </StackPanel>
+                            </RadioButton>
+                            <RadioButton GroupName="backupsrc" IsChecked="{Binding ShowBackupComponentList}">
+                                <StackPanel>
+                                    <TextBlock Text="Download fresh copies" FontWeight="SemiBold" />
+                                    <TextBlock Text="Fetches the packages from the Enhanced Edition servers. Slower, but gives a pristine set."
+                                               Opacity="0.7" FontSize="12" TextWrapping="Wrap" MaxWidth="620"
+                                               HorizontalAlignment="Left" />
+                                </StackPanel>
+                            </RadioButton>
+                        </StackPanel>
 
-                        <Border Grid.Row="3" BorderBrush="#33FFFFFF" BorderThickness="1" CornerRadius="6">
+                        <TextBlock Grid.Row="2" Text="Files to download" FontWeight="SemiBold"
+                                   Foreground="White" Margin="0,14,0,6"
+                                   IsVisible="{Binding !CanRepackage}" />
+
+                        <Border Grid.Row="3" BorderBrush="#33FFFFFF" BorderThickness="1" CornerRadius="6"
+                                IsVisible="{Binding ShowBackupComponentList}">
                             <ScrollViewer>
                                 <ItemsControl ItemsSource="{Binding Components}" Margin="8">
                                     <ItemsControl.ItemTemplate>

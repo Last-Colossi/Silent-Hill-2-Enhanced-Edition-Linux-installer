@@ -1,0 +1,985 @@
+componentId,componentName,componentVersion,archiveFileName,path,crc32,size
+sh2emodule,SH2 Enhancements Module,3.0.2218.0,SH2EE_Enhancements_Module_3.0.2218.0.zip,alsoft.ini,A7C7F667,237
+sh2emodule,SH2 Enhancements Module,3.0.2218.0,SH2EE_Enhancements_Module_3.0.2218.0.zip,d3d8.dll,4701B1BE,12034560
+sh2emodule,SH2 Enhancements Module,3.0.2218.0,SH2EE_Enhancements_Module_3.0.2218.0.zip,sh2e/etc/resource/r_menu_e.res,0A53C46E,643
+sh2emodule,SH2 Enhancements Module,3.0.2218.0,SH2EE_Enhancements_Module_3.0.2218.0.zip,sh2e/etc/resource/r_menu_f.res,06FE00B2,802
+sh2emodule,SH2 Enhancements Module,3.0.2218.0,SH2EE_Enhancements_Module_3.0.2218.0.zip,sh2e/etc/resource/r_menu_g.res,1B05B001,744
+sh2emodule,SH2 Enhancements Module,3.0.2218.0,SH2EE_Enhancements_Module_3.0.2218.0.zip,sh2e/etc/resource/r_menu_i.res,562C0F02,768
+sh2emodule,SH2 Enhancements Module,3.0.2218.0,SH2EE_Enhancements_Module_3.0.2218.0.zip,sh2e/etc/resource/r_menu_j.res,61CBF262,633
+sh2emodule,SH2 Enhancements Module,3.0.2218.0,SH2EE_Enhancements_Module_3.0.2218.0.zip,sh2e/etc/resource/r_menu_s.res,F1EAEFD6,747
+sh2emodule,SH2 Enhancements Module,3.0.2218.0,SH2EE_Enhancements_Module_3.0.2218.0.zip,SH2EEconfig.exe,AA26B693,1155072
+sh2emodule\wine_stub,SH2 Enhancements Module Wine Stub,1.0.1,SH2EE_Wine_Stub_1.0.1.zip,d3dx.dll,F07A19B2,399872
+sh2emodule\wine_stub,SH2 Enhancements Module Wine Stub,1.0.1,SH2EE_Wine_Stub_1.0.1.zip,sh2pc.exe,F60AB47F,5685248
+ee_exe,Enhanced Executable,1.0.4GB,SH2EE_Enhanced_EXE_NA_v1.0.4GB.zip,sh2pc.exe,F60AB47F,5685248
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,device.fix,985F668A,12332
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,local.fix,E71170B1,37
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2.ico,DB459798,224254
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap.map,A94D4F87,5964928
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap01.cam,73FBB3B1,1664
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap01.map,51BB64C9,2815392
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap06.map,E9FE718D,2474736
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap10.map,B341B2B0,2558832
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap100.map,47DA24E1,2452144
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap104.map,6D6D1214,3098448
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap108.cam,F0ADD956,1024
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap108.map,64D29354,2580672
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap14.map,68122A12,3007920
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap18.map,46F679FA,2739664
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap22.map,EEEBD5B0,2879712
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap26.map,FAD09E2D,3438720
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap30.map,32F8DC3C,2842320
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap34.cam,98C5016C,1024
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap34.map,57C8625B,3631040
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap38.map,A994E591,2943680
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap42.map,6DEAA77A,3016832
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap46.map,5E84A140,2693136
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap50.map,22C92C59,3205040
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap54.map,78C763C9,2699008
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap58.cam,43FA1A0C,1280
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap58.map,D0C82BE9,2960048
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap64.cam,099C7FF9,896
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap64.map,D1B61C31,3689840
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap72.cam,C94CFDDE,896
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap72.map,4ECB03AC,3725728
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap76.map,08D19D45,2963344
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap80.map,51C056C7,3337584
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap84.map,5CDC4B5A,3979248
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap88.map,B858CAC6,2454144
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap92.map,E79A8827,3092064
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ap/ap96.map,C16626B0,3482432
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/bw/bw.map,0A733A56,917968
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/bw/bw01.map,F1F6608B,3319776
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/bw/bw09.map,3D67B182,1794496
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ca/ca.map,EC41265F,1312624
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ca/ca09.map,35C848BB,1535264
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ca/ca11.map,A8FC08BD,2226944
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ca/ca12.map,D1B99958,2306016
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ca/ca13.map,6D99BCD2,2673264
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ca/ca14.map,14AB3CB3,2352304
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ca/ca15.map,76DC009E,2573344
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ca/ca16.map,20543945,1931152
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ca/ca17.map,9D4CC163,2037056
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ca/ca19.map,7FBEEE9F,2058032
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ca/ca20.map,E084D3A8,2031826
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ca/ca21.map,8B4F48E8,2087584
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ca/ca23.map,3F5E62DF,1779552
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ca/ca24.map,B8E66E0F,2030224
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ca/ca25.map,9588FFFF,1960432
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ca/ca26.map,7506A195,2301504
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ca/ca27.map,59C2C30E,1892816
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb.map,BCCCB26F,1377072
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb02.map,074E41D5,1309072
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb03.map,70F66177,1754064
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb04.map,AA42E507,1164000
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb05.map,D4AE3D44,1871568
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb07.kg2,0A221429,9264
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb07.map,A9DD205A,1825984
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb10.map,3A079A8A,1628208
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb11.map,441CE2A3,2390592
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb12.map,696B0CB3,2113856
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb13.kg2,DB9635AE,5104
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb13.map,04FA4FEA,2078368
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb14.map,5A361BD3,1419776
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb18.map,C6F6E712,2048032
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb19.map,09E5548E,1937168
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb20.map,57FCD6CC,2029312
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb21.map,167B12EF,2201712
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb22.map,78CA07F7,1198736
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb25.map,B56C1C9A,969696
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb26.map,51D7594E,1711056
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb27.map,E6E2CF84,1914096
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb28.map,B449DE58,2214656
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb29.map,D2A183FD,2177696
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb30.map,081A709E,1779088
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb31.map,5857C735,1192912
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb34.map,F51770AA,1678144
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb35.map,4A8DC5E2,2381856
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb36.map,B91BF0F3,2049360
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb37.map,2CB3576D,1705664
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb38.kg2,385D5CD1,4720
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb38.map,2C9800ED,1894304
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb39.map,D8335C75,1488912
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb41.cld,CF068653,12224
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb41.kg2,89971B4A,24272
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb41.map,92CFC472,2033104
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb42.map,51B8D028,1722640
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb44.map,CF2BE81D,1744784
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb45.kg2,725BCBF7,9040
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb45.map,FDFFEE6E,1405744
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb46.cld,532B7843,8864
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb46.kg2,9D7675C6,13328
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb46.map,B8562790,2080256
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb47.map,420A7071,1383744
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb49.kg2,CEF7AC82,27984
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb49.map,6E909880,2799296
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb50.map,CAE14375,2098848
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb51.map,1E604F1A,1695104
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb52.map,C5F375EB,2255456
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb53.cld,928486CB,9072
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb53.map,D6E0A3BA,2276640
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb57.map,83B7E425,2157152
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb59.map,E7D77151,2290752
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb66.map,E88A9BC4,1161632
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb67.map,B710F1EA,2060816
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cb/cb68.map,C09D02D7,1882672
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc.map,520C9E2A,1377264
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc03.map,0CCE3149,2005264
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc04.cld,B93749E9,4128
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc04.map,CBC45190,2122096
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc05.kg2,62C9C602,8448
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc05.map,E240D7B2,1809552
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc06.kg2,0A5A5121,4128
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc06.map,8EFF4D61,1050640
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc07.map,B4F39AA4,1743392
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc08.map,BB40E202,2663296
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc10.map,337AE5C9,1736288
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc11.cam,DE52AE81,1280
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc11.kg2,8613C35C,24688
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc11.map,42E50896,2006288
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc12.map,40DDD056,1880624
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc13.kg2,FE18D640,8160
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc13.map,B56E9F41,2022992
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc14.kg2,CAE3463A,5904
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc14.map,9639D09C,2012992
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc15.kg2,DA36C539,14352
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc15.map,4E1B1D3D,2079696
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc16.kg2,B55B0E0D,8608
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc16.map,B2EB6E45,1771648
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc17.map,687B3007,2042480
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc18.map,DD59FE99,4266448
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc19.map,4B6CCF56,2889536
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc20.map,4374A99D,2408592
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc21.map,25F814C7,1870000
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc22.map,1F272A92,1785392
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc23.map,2A3193F9,1822752
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc24.map,7B2C1372,1729296
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc25.cld,DDDAE7E1,2864
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc25.kg2,A863D2B7,16304
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc25.map,BB5010BA,1681088
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc26.kg2,56E0B612,5520
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc26.map,40EC4894,1878112
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc29.map,2B69B9D0,2263536
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc30.map,E28B8430,1861472
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc31.map,767C806B,1640400
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc32.map,C0D550B8,1682096
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc33.kg2,65CA2204,12528
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc33.map,6C1A876C,1799456
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc34.kg2,0B397F39,5424
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc34.map,6C41D58B,2003312
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc35.map,BF9EE6B3,2157424
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc36.map,0105D1DF,1978432
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc37.map,36149A2B,2489840
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc38.map,41A71104,2276240
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc39.kg2,7345801D,6640
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc39.map,D8DF0CCB,1697312
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc40.kg2,202335FB,17040
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc40.map,E7BE1588,2528368
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc41.map,3AE37F98,1938304
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc42.map,BE26053E,1839360
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc43.kg2,0E882907,12112
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc43.map,BE84E99F,2466176
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc44.kg2,AE75DDF5,33840
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc44.map,6FCB8388,3175280
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc45.kg2,B1E40E3B,6256
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc45.map,2F1DBD14,2879232
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc46.kg2,F62BD385,10192
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc46.map,F07F5B52,2489296
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc47.kg2,682D4E39,9808
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc47.map,F8A6E9F4,2161664
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc48.map,8B06E583,1760400
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc49.map,37EDE384,2437088
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc50.map,B8E149C0,1538080
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc51.map,60B31F97,1844240
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc52.kg2,C2C768D7,10000
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc52.map,DAECB59A,1610416
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc53.kg2,3FD20104,20016
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc53.map,4952520C,2394528
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc54.kg2,99E718D3,20048
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc54.map,D18F95D3,1857136
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc55.kg2,A0F5A825,13456
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc55.map,3DBD7BEC,2444096
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc56.map,F238E850,2123216
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc57.map,359C5629,2117296
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc60.map,2B202CC8,2139312
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc62.map,3BB33C14,2040928
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc63.map,A217CEE7,2246368
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc64.map,0CDE31B4,2371024
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc65.map,BF181EFA,2231504
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc66.map,332A1546,2184112
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc67.map,B7D18303,2078032
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc68.kg2,69A0A0D2,5136
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc68.map,ADB7A52F,1036688
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc69.map,8D3D659A,2468128
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc70.map,AD442AC1,2386224
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc71.map,725CB109,1947072
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc72.map,E77567E7,1784400
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc73.map,6F7629A2,1675248
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc74.map,2A150759,837376
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc75.map,E354F51F,815392
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc76.map,10D77166,779232
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cc/cc77.map,2DFFFB39,823616
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cd/cd.map,83BC02D9,1967200
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cd/cd01.map,9A9AB7B5,2128400
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cd/cd02.map,38A53543,2685248
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cd/cd04.map,D7E524A4,2017232
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cd/cd05.map,C00959C6,2694240
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cd/cd06.map,7AA79FE9,2190768
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/cd/cd11.map,6B2FE698,4515440
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/er/er.map,09FB139E,852432
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/er/er01.cam,F90B2E71,640
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/er/er01.map,ECAC5C35,2021216
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/er/er05.map,42858608,1158352
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp.map,9C5FB759,1114736
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp01.map,66D84274,2888016
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp05.map,0201A527,2420128
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp09.map,44D32393,2311584
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp101.map,4BC79C7E,1292336
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp105.map,A87FD944,2170096
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp113.map,8292781F,2344832
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp121.cam,25ED96C5,384
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp121.map,6AAF1BBC,1953936
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp125.map,38C1228F,2252656
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp133.map,EC3E7C89,2593648
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp145.map,53993217,2490608
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp150.map,5D26427F,2526320
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp154.kg2,717BACB3,10992
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp154.map,0B9FF023,3930336
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp162.map,93660ED1,2066640
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp17.map,70F899BE,2628944
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp170.map,A8DC38A8,2604112
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp178.map,7692D4C8,2366784
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp182.map,139BFEE3,1886640
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp190.map,4CAB4DA5,2431330
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp194.map,3DAAA826,2393712
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp198.map,CE474480,2387120
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp202.map,8DACADD9,1767856
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp206.map,0398AA87,1883088
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp210.map,3EF48DFD,1888912
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp214.map,BD25D80C,2360144
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp218.map,9568EFE1,1893632
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp222.map,66BE7781,2027456
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp230.map,DC998381,2711136
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp37.map,85028AE3,2595072
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp41.map,F1653436,2447280
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp45.map,30915F5D,2616624
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp49.map,61EDFB3E,2165616
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp53.cld,1675E9E1,4176
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp53.map,3CF5D91F,1995808
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp61.map,0A9FC917,2553232
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp65.map,F14C7686,2489120
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp69.map,3D496507,2626000
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp73.map,74F4E064,2219200
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp85.map,208A4834,2502496
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp89.map,DBBEBD70,2533232
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/hp/hp97.map,F41AEAAD,896192
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ob/ob.map,95E2040D,1049168
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ob/ob01.cam,DE961224,896
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ob/ob01.map,21F8705A,8547648
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ob/obGB.fcl,CE422469,156
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps.map,06F9F731,4130144
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps01.map,2F8A3836,2772912
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps05.map,E27E74EF,2639488
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps09.map,06EC138F,3498576
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps101.map,62EAFB28,3080208
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps105.map,74689979,2383408
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps121.map,0529FD83,1594928
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps125.map,F00A6D9B,2987552
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps13.map,3D881310,1620176
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps137.map,B5DBD05B,2392496
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps141.map,18839084,2530336
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps149.map,06A7708B,2433488
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps15.map,F5FE80B3,1455296
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps153.map,6D76F434,1747792
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps157.map,361FCE4B,1886496
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps161.map,A7CE88BC,2856080
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps169.map,30B3A407,1942704
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps17.map,2AAB5FB4,1920304
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps189.map,98636D73,2791136
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps19.map,5AE780FD,2024384
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps193.map,31F7C32F,2689936
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps21.map,03AD2B95,3365552
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps25.map,F9C4F44B,2899552
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps29.map,30B5097C,2833360
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps37.cld,E040CA15,2832
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps37.kg2,0CBF2CC3,6064
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps37.map,F4DAAF41,2159808
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps40.map,B7280C1F,2440816
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps43.map,E51581D8,2170624
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps45.map,27F44E34,1925408
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps47.map,DE6ED6B9,1326864
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps49.map,7CBCC1A3,2050192
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps53.map,DF9033CF,1671488
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps56.map,ECEB7962,1166672
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps59.map,9F8F8058,1339952
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps61.map,EEA0F90E,1636240
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps66.cam,BC34BC8D,384
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps66.map,06E8F223,2338480
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps67.map,9B8FF8FF,511808
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps70.map,FD69549E,1704256
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps72.map,1EA6B5DA,2851824
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps85.map,3E089C14,2407168
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps97.cam,22B3B12C,256
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ps/ps97.map,3C034E67,2250864
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/qp/qp.map,7D4BD3EF,786832
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/qp/qp01.map,E5FFC9EF,2682530
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/qp/qp05.map,13AD12F3,1278208
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/qt/qt.map,7D4BD3EF,786832
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/qt/qt01.map,0F9E1916,2682514
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/rr/rr.map,81E6FD6F,1114640
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/rr/rr01.map,FA3D31C4,3743008
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/rr/rr13.map,991A297A,2760432
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/rr/rr21.map,B938B26B,2695200
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/rr/rr25.cam,83BE3A69,1152
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/rr/rr25.map,2E0DC6B3,3040016
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/rr/rr29.map,4322D432,2931104
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/rr/rr33.map,1074DFDF,3214544
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/rr/rr41.map,1A3BE5C4,4212896
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/rr/rr49.cam,DCEC428A,384
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/rr/rr49.cld,C744BF17,5104
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/rr/rr63.map,CE42DA97,2845504
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/rr/rr67.map,A70B9E7E,1493648
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/rr/rr71.map,77974656,3422512
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/rr/rr75.map,A30228FC,1861184
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/rr/rr79.map,EF6C1CA7,2282976
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/rr/rr83.map,08A57A98,2852816
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/rr/rr87.map,A387C29B,2506000
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/rr/rr91.cld,ADB95B21,11696
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/rr/rr91.map,E7FD6A80,3600880
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ru/ru.map,0B97460A,7800384
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ru/ru01.map,F463D209,2558304
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ru/ru09.map,184EBDFB,1441552
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ru/ru13.map,A0170E3C,1588544
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ru/ru17.cld,BDE2410B,6704
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ru/ru17.map,F3FFD046,1447488
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ru/ru21.map,2537B0C5,1918608
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ru/ru33.map,7A77825D,2625568
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ru/ru37.map,6665DBC4,1977664
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ru/ru53.map,4050649D,3425600
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ru/ru61.map,C4F5F448,2318272
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ru/ru73.map,F0C8FE4B,2469024
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/ru/ru74.map,EA5B9037,652384
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/th/th.map,7D4BD3EF,786832
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/th/th01.cld,343795CA,5104
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/th/th01.kg2,6A4CE422,22560
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/th/th01.map,D0664FD8,3817200
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/th/th05.map,F8487D5D,3358736
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg/th/th09.map,0AD7A8C6,2613232
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg2/ma/ma.map,CC5AFC65,1376896
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg2/ma/ma01.map,62401700,3591232
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg2/ma/ma13.map,0704C8FE,2832688
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg2/ma/ma21.map,AF2F80CB,2795808
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg2/ma/ma41.map,301555EC,2657968
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg2/ma/ma49.map,03E82418,4119360
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg2/ma/ma53.map,39BDF6D2,2799600
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg2/ma/ma61.cam,7ABE8631,384
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg2/ma/ma61.map,48F5C40A,1516208
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg2/ma/ma69.cam,A416ACC2,896
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg2/ma/ma69.map,C869FD79,2778912
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/bg2/ma/ma85.map,0E00C991,3627232
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/item/b_d01.mdl,CAB98C50,313760
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/item/b_d03.mdl,5DAF60A0,146400
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/item/b_do4.mdl,030F10C9,282560
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/item/b_dor.mdl,0A00339A,333776
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/item/c1b.mdl,E52B8AAA,310336
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/item/c2b.mdl,29F0DB6C,292592
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/item/c3b.mdl,6860D408,301504
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/item/c4b.mdl,C5CE88AC,259584
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/item/c5b.mdl,F9726D40,257648
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/item/c6b.mdl,2FEB8E93,257872
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/item/c7b.mdl,CE0918A4,240736
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/item/c8b.mdl,F0C3F54A,224352
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/item/c9b.mdl,1249370E,254224
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/item/cab.mdl,4E33D296,252192
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/item/cbb.mdl,A247453A,263376
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/item/ccb.mdl,CAFCEE3C,286000
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/item/i_colt.mdl,C3949349,281744
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/item/mal.mdl,12CD90C3,352864
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/item/tlr.mdl,950A37AB,581904
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/item/x_keycourt.mdl,E02C72E7,95264
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/item/x_keyemerg.mdl,45CC061F,41504
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/mar/lll_mar.mdl,C12A8A7D,1328432
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr/scu/scu.mdl,141C29DC,640096
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/chr2/mar/lxx_mar.mdl,08131372,1370688
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/demo/anahori/anahori.dds,A5F3B09E,8623
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/demo/edi_korosu/edi_korosu_e.dds,A19F6A69,18785
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/demo/saisho/hhh_jms.cls,18FF87E4,7184
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/demo/sankaku1/sankaku.dds,0E4442FA,74335
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/common_msg_e.mes,BB11DD3F,1120
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/common_msg_f.mes,00C5BB64,1238
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/common_msg_g.mes,D13C4CB6,1284
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/common_msg_i.mes,8CF37343,1212
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/common_msg_j.mes,AA9AE033,1124
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/common_msg_s.mes,37407EEF,1218
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/config_pc_msg_j.mes,B7F58316,774
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/config_pc_msg_s.mes,1AB107E8,846
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/item_msg_e.mes,DC681A69,13202
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/item_msg_f.mes,4F612D10,13064
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/item_msg_g.mes,B0C7C052,14836
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/item_msg_i.mes,B1685017,13886
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/item_msg_j.mes,58106CA7,10452
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/item_msg_s.mes,B52A5818,13902
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/item_x_msg_e.mes,EEB9F103,14846
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/item_x_msg_f.mes,C9AE70A8,14828
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/item_x_msg_g.mes,073A34C7,16690
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/item_x_msg_i.mes,9FDBD709,15624
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/item_x_msg_j.mes,E37D6443,11740
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/item_x_msg_s.mes,542A2A85,15656
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/letter_msg_e.mes,45B3FE74,2354
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/letter_msg_j.mes,AD25391A,1960
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/letter_msg_s.mes,12353A19,2312
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/letter_w0_msg_e.mes,7E32273E,2354
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/letter_w0_msg_j.mes,C3176A0D,222
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/letter_w1_msg_e.mes,CF20073D,2308
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/letter_w1_msg_j.mes,83FB3D68,1920
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/letter_w1_msg_s.mes,5427B1D5,2262
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/letter_w2_msg_j.mes,284850FA,40
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/letter_w2_msg_s.mes,070D25A6,50
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/m_card_msg_e.mes,F1120ADC,2862
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/m_card_msg_f.mes,B8641BF7,3248
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/m_card_msg_g.mes,C39B504E,3366
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/m_card_msg_i.mes,15D770D5,3146
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/m_card_msg_j.mes,B59EDEF6,2688
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/m_card_msg_s.mes,E8351DA9,2020
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/m_card_x_msg_e.mes,4AD61E4C,7396
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/m_card_x_msg_f.mes,9811D738,8582
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/m_card_x_msg_g.mes,3CECFE7E,8702
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/m_card_x_msg_i.mes,6FE2E076,8130
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/m_card_x_msg_j.mes,8B3B4CF7,7290
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/m_card_x_msg_s.mes,9175535C,5650
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/memo_msg_e.mes,12D2AB36,22180
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/memo_msg_i.mes,8F5F0C73,22588
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/memo_msg_j.mes,5655398E,18930
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/memo_msg_s.mes,C01D79DF,22302
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/memo_x_msg_e.mes,FBF0AB5D,24162
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/memo_x_msg_i.mes,AFE04939,24628
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/memo_x_msg_j.mes,E133D6FE,20444
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/memo_x_msg_s.mes,04D912AA,24444
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/option_msg_e.mes,DC5FF944,5790
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/option_msg_f.mes,6335A3E6,6378
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/option_msg_g.mes,0A171EE2,6178
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/option_msg_i.mes,D4827FE4,6260
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/option_msg_j.mes,ED497081,6016
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/option_msg_s.mes,D0DCA789,6416
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/result_msg_i.mes,87503215,672
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/result_msg_j.mes,BB9AC56F,774
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/result_msg_s.mes,9B08CD40,786
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_e1f_msg_e.mes,7AE81037,2304
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_e1f_msg_i.mes,00E20682,2344
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_e1f_msg_j.mes,DB3B66F3,1966
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_e1f_msg_s.mes,DDD3231B,2212
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_e2f_msg_e.mes,60341431,4594
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_e2f_msg_i.mes,F28091AA,4536
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_e2f_msg_j.mes,57D77F09,3794
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_e2f_msg_s.mes,200AE1C8,4508
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_e3fe_msg_i.mes,CC582FF6,446
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_e3fe_msg_j.mes,FC7B4719,290
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_e3fe_msg_s.mes,932BF85B,390
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_e3fw_msg_e.mes,A9C5BFEE,486
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_e3fw_msg_i.mes,2FF7F7BA,494
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_e3fw_msg_j.mes,52192333,360
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_e3fw_msg_s.mes,FFEA508A,468
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_out_msg_e.mes,185083B7,2610
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_out_msg_i.mes,012D91A9,2502
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_out_msg_j.mes,0B39C2E3,2242
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_out_msg_s.mes,2C77CA6C,2470
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_stair_msg_e.mes,180BA1C4,236
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_stair_msg_i.mes,8B5BD7E4,244
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_stair_msg_j.mes,653D1858,188
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_stair_msg_s.mes,C472C99A,262
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_w1f_msg_e.mes,B5A04AA0,4722
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_w1f_msg_i.mes,D2CB0589,4650
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_w1f_msg_j.mes,8C6B305F,3828
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_w1f_msg_s.mes,49AAF53E,4830
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_w2f_msg_e.mes,9F94AD26,1286
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_w2f_msg_i.mes,E46A95E4,1266
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_w2f_msg_j.mes,E32FAB91,954
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_apart_w2f_msg_s.mes,E94047C1,1248
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_bowling_msg_e.mes,0C3BE96B,1336
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_bowling_msg_i.mes,3C162DB8,1344
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_bowling_msg_j.mes,165D70E4,1140
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_bowling_msg_s.mes,F9559922,1336
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_delusion_2_msg_e.mes,A989669F,628
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_delusion_2_msg_i.mes,7EFBB684,698
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_delusion_2_msg_j.mes,467107F7,494
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_delusion_2_msg_s.mes,23B93AE2,680
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_delusion_3_msg_e.mes,F9DD2479,600
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_delusion_3_msg_i.mes,BA1B75FB,606
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_delusion_3_msg_j.mes,C29C1294,456
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_delusion_3_msg_s.mes,1AAC7038,562
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_eddie_boss_msg_e.mes,6993BEF3,1980
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_eddie_boss_msg_i.mes,47298751,2048
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_eddie_boss_msg_j.mes,F3392C3E,1680
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_eddie_boss_msg_s.mes,E6DEAB97,1968
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_end_dog_msg_e.mes,3C27EEC1,34
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_end_dog_msg_i.mes,C907FCBC,42
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_end_dog_msg_j.mes,B2D49E16,32
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_end_dog_msg_s.mes,AA8EB9D0,42
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_end_maria_msg_e.mes,008177B3,744
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_end_maria_msg_i.mes,6B88ED3A,778
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_end_maria_msg_j.mes,A68C91C9,574
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_end_maria_msg_s.mes,70F463AE,714
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_end_rebirth_msg_e.mes,0C44D315,494
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_end_rebirth_msg_i.mes,0936205D,500
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_end_rebirth_msg_j.mes,1AFA6250,424
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_end_rebirth_msg_s.mes,76C98231,510
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_end_recovery_msg_e.mes,2AFAEF19,1164
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_end_recovery_msg_i.mes,4B73027A,1256
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_end_recovery_msg_j.mes,52315DE3,1040
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_end_recovery_msg_s.mes,C0537CA2,1176
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_end_suicide_msg_e.mes,191EA8D9,1180
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_end_suicide_msg_i.mes,CD12923F,1256
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_end_suicide_msg_j.mes,6CA98DC7,1034
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_end_suicide_msg_s.mes,DFB0D0D0,1166
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_forest_msg_e.mes,A112EA64,1834
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_forest_msg_i.mes,24F1DF61,1822
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_forest_msg_j.mes,69460EDB,1386
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_forest_msg_s.mes,7F21DEF6,1828
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_heaven_night_msg_e.mes,9D6AB44B,758
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_heaven_night_msg_i.mes,28C8C6EF,704
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_heaven_night_msg_j.mes,34FFFCB7,592
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_heaven_night_msg_s.mes,AACA291C,638
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_1f_f_msg_e.mes,8A89DA21,4226
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_1f_f_msg_i.mes,AA93B45E,4256
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_1f_f_msg_j.mes,C0F02F1A,3394
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_1f_f_msg_s.mes,5F01F04E,4196
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_1fe_b_msg_i.mes,259FEF4F,676
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_1fe_b_msg_j.mes,FBF4E722,480
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_1fe_b_msg_s.mes,43622442,694
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_1fw_b_msg_e.mes,DF548881,790
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_1fw_b_msg_i.mes,CFC53A23,810
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_1fw_b_msg_j.mes,1A586578,620
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_1fw_b_msg_s.mes,082B19B2,814
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_2f_b_msg_e.mes,897E3EBB,1336
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_2f_b_msg_i.mes,2D54E945,1400
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_2f_b_msg_j.mes,D7D230D7,1016
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_2f_b_msg_s.mes,FCE7362F,1258
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_2f_f_msg_e.mes,D472E6E3,2214
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_2f_f_msg_i.mes,9BF6DB59,2198
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_2f_f_msg_j.mes,BF4D11FE,1902
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_2f_f_msg_s.mes,31A8A008,2046
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_3f_b_msg_e.mes,80E278E1,1392
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_3f_b_msg_f.mes,713B8234,1438
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_3f_b_msg_g.mes,63B12FAB,1492
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_3f_b_msg_i.mes,9C615CD2,1390
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_3f_b_msg_j.mes,33158545,1118
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_3f_b_msg_s.mes,7B0E5028,1332
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_3f_f_msg_e.mes,36BA6803,1764
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_3f_f_msg_i.mes,6C3545D7,1778
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_3f_f_msg_j.mes,FB70C080,1470
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_3f_f_msg_s.mes,164603EA,1704
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_bf_b_msg_e.mes,F9C2630D,3992
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_bf_b_msg_i.mes,4033F924,3932
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_bf_b_msg_j.mes,5D1DC932,3120
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_bf_b_msg_s.mes,C54AD3CB,3906
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_pass_msg_j.mes,E3150A3A,70
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_pass_msg_s.mes,6B4827BF,62
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_rf_f_msg_e.mes,0C694CD0,1414
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_rf_f_msg_i.mes,C0B363F8,1410
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_rf_f_msg_j.mes,760D1B47,1196
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hospital_rf_f_msg_s.mes,EF9A830D,1324
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_1f_b_msg_e.mes,7BB473D3,1780
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_1f_b_msg_i.mes,28539D46,1800
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_1f_b_msg_j.mes,19F92E09,1472
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_1f_b_msg_s.mes,9C404287,1838
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_1f_f_msg_e.mes,6D0EFD9B,6296
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_1f_f_msg_i.mes,610C6B89,6336
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_1f_f_msg_j.mes,3612212A,5134
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_1f_f_msg_s.mes,D4E92CAB,6164
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_2f_b_msg_e.mes,EFD085E2,1604
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_2f_b_msg_i.mes,17FFFBB4,1568
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_2f_b_msg_j.mes,D2BA8C5A,1164
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_2f_b_msg_s.mes,43D0B194,1602
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_2f_f_msg_e.mes,3D70CF7E,1892
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_2f_f_msg_i.mes,F6B23DA7,1950
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_2f_f_msg_j.mes,1418B983,1490
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_2f_f_msg_s.mes,F1D37194,1838
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_3f_b_msg_i.mes,2657EF52,266
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_3f_b_msg_j.mes,7E02B425,206
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_3f_b_msg_s.mes,436A3484,274
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_3f_f_msg_e.mes,EE9B9A58,2232
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_3f_f_msg_i.mes,1645690F,2292
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_3f_f_msg_j.mes,CEBBA6DC,1898
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_3f_f_msg_s.mes,4D10F92C,2278
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_bf_b_msg_j.mes,4476AEBE,180
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_bf_b_msg_s.mes,B05BDFF9,194
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_bf_f_msg_e.mes,ABB29C20,1356
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_bf_f_msg_i.mes,788416DE,1400
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_bf_f_msg_j.mes,0801CAAA,1062
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_bf_f_msg_s.mes,CE58F137,1342
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_fire_msg_e.mes,5DCD571F,850
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_fire_msg_i.mes,804F0784,860
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_fire_msg_j.mes,7141A216,706
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_hotel_fire_msg_s.mes,AA4ADFD9,826
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_labyrinth_e_msg_e.mes,C66F99BC,2170
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_labyrinth_e_msg_i.mes,9E489D20,2166
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_labyrinth_e_msg_j.mes,EACEB702,1722
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_labyrinth_e_msg_s.mes,C3D57448,2204
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_labyrinth_n_msg_e.mes,80F69E57,6342
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_labyrinth_n_msg_i.mes,65C7A519,6494
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_labyrinth_n_msg_j.mes,476D6B09,4702
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_labyrinth_n_msg_s.mes,4A91DA8B,6194
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_labyrinth_w_msg_e.mes,CA9E55D6,1528
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_labyrinth_w_msg_i.mes,50467DEC,1528
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_labyrinth_w_msg_j.mes,04809DB6,1350
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_labyrinth_w_msg_s.mes,A766955C,1488
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_lake_msg_e.mes,1D5AF283,586
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_lake_msg_i.mes,CF99D189,630
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_lake_msg_j.mes,1C3183DC,464
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_lake_msg_s.mes,4562815E,610
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_observation_msg_e.mes,E34347CB,1428
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_observation_msg_i.mes,7C2A2EB9,1456
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_observation_msg_j.mes,6ACF2A13,1158
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_observation_msg_s.mes,0FF13047,1436
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_prison_bf_msg_e.mes,58B55109,826
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_prison_bf_msg_i.mes,87080F35,836
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_prison_bf_msg_j.mes,FCA21CAA,614
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_prison_bf_msg_s.mes,56960D51,768
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_prison_n_msg_e.mes,327A7DE0,3328
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_prison_n_msg_i.mes,509F7A4D,3444
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_prison_n_msg_j.mes,82078AA8,2974
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_prison_n_msg_s.mes,03A28D45,3256
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_prison_s_msg_e.mes,386C3BF7,1322
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_prison_s_msg_i.mes,96514903,1302
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_prison_s_msg_j.mes,BD77251C,980
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_prison_s_msg_s.mes,7C781D6F,1274
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_sample_msg_i.mes,D86EF078,1392
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_sample_msg_j.mes,1A9030F9,1158
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_sample_msg_s.mes,84B0608A,1360
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_society_msg_e.mes,9280980C,1606
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_society_msg_i.mes,398FCA06,1686
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_society_msg_j.mes,6CA5278C,1230
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_society_msg_s.mes,B03958D5,1482
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_tgs_trial_msg_j.mes,963C84BE,1282
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_tgs_trial_msg_s.mes,4D0BF984,1534
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_to_heaven_msg_i.mes,401E0725,206
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_to_heaven_msg_j.mes,E94D5768,168
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_to_heaven_msg_s.mes,503E3B2E,162
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_toilet_msg_e.mes,7F4A4536,530
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_toilet_msg_i.mes,2BCA7237,554
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_toilet_msg_j.mes,5F724DAC,488
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_toilet_msg_s.mes,7998C7E7,546
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_town_east_msg_e.mes,A4A0F819,4296
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_town_east_msg_i.mes,95698338,4330
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_town_east_msg_j.mes,9F3F9DB9,3472
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_town_east_msg_s.mes,EDF88018,4294
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_town_west_msg_e.mes,A53F6E3C,5756
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_town_west_msg_i.mes,921B9702,5952
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_town_west_msg_j.mes,067BD029,4808
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_town_west_msg_s.mes,1ECEADD9,5672
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_apart_msg_e.mes,949B653C,768
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_apart_msg_i.mes,0581B580,776
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_apart_msg_j.mes,6B49C241,626
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_apart_msg_s.mes,CC6EB74B,804
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_heaven_msg_e.mes,4498F238,930
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_heaven_msg_f.mes,88B95637,996
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_heaven_msg_g.mes,F7AFE75D,1020
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_heaven_msg_i.mes,5B004C96,982
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_heaven_msg_j.mes,8AE39F72,798
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_heaven_msg_s.mes,A64FDB3B,938
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_mansion_1f_msg_e.mes,19F3DA00,6496
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_mansion_1f_msg_i.mes,06567D53,6528
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_mansion_1f_msg_j.mes,F5BAEE8C,5106
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_mansion_1f_msg_s.mes,9DFD6647,6466
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_mansion_2f_msg_e.mes,8DE191BC,3822
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_mansion_2f_msg_i.mes,4ED70C5C,3858
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_mansion_2f_msg_j.mes,A7DF3248,3062
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_mansion_2f_msg_s.mes,A99BBCA3,3824
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_mansion_bf_msg_e.mes,3FF6131A,190
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_mansion_bf_msg_i.mes,194027AE,198
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_mansion_bf_msg_j.mes,BFF4C39B,190
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_mansion_bf_msg_s.mes,CBE81DA0,184
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_town_msg_e.mes,F1A789F6,168
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_town_msg_i.mes,A409E930,168
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_town_msg_j.mes,2911B6E3,168
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/etc/message/stage_x_town_msg_s.mes,E359FAE8,154
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/font/font000.png,2EA00AB2,8319754
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/ps2/etc/start00.tex,F8F433F9,262240
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/ps2/etc/start01.tex,9FABAB94,262240
+ee_essentials,Enhanced Edition Essential Files,1.3.1,SH2EE_Essential_Files_1.3.1.zip,sh2e/ps2/hsp/carbon.tex,2C18DCD7,262240
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/effect/footmark.tbn2,610AD13D,65632
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/menu/mc/mu_alpha.tbn2,BD2B0687,131168
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/menu/mc/savebg.tbn2,86EA75FD,5595232
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/menu/mc/savebg2.tbn2,71A31798,5595232
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/add/itemmenux.tex,EB3FB687,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/add/mapboldwin.tex,7DC656A5,22380640
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/add/mapmark.tex,C973B040,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/add/p_birthday.tex,2B6CF758,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/add/p_entotsu.tex,AB78DA17,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/add/p_lostbook.tex,9934394A,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/add/p_teien.tex,6397E06D,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/add/p_zukan.tex,6759D36D,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/add/teien2.tex,3D9D0338,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/add/warning.tex,43F877A9,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/add/xblackhouban.tex,4C114E63,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/add/xredhouban.tex,AA4C0DB1,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/add/xwhitehouban.tex,A5168105,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/apt/clock_close.tex,7E826D37,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/apt/clock_hari.tex,768587B2,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/apt/clock_memo.tex,AA956780,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/apt/clock_memo_2.tex,D599CC55,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/apt/clock_name.tex,D299BCED,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/apt/clock_open.tex,13ACB014,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/apt/p_desk_coin.tex,1CABEB08,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/apt/p_desk_coin_coin.tex,78C3BF67,262240
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/apt/p_desk_hint.tex,A4F64D6D,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/apt/p_dust_in.tex,6E27A00E,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/apt/p_dust_out.tex,FDF192C8,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/apt/p_dust_out_coin.tex,314B929E,262240
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/apt/p_endhint.tex,C864863F,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/apt/p_family.tex,78ABF0AE,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/apt/p_safe_close.tex,7C3A9FF2,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/apt/p_safe_close2.tex,411EE822,262240
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/apt/p_tourist.tex,C4CC857B,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/dls/p_436.tex,6CF1EC7E,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/dls/p_fireman.tex,89223B97,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/dls/p_flingwoman.tex,A238B774,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/dls/p_hanging_2.tex,A49E02EF,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/dls/p_hanging_easy.tex,0E70E0F9,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/dls/p_hanging_extra.tex,3C344D09,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/dls/p_hanging_hard.tex,AEAC6F1B,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/dls/p_hanging_normal.tex,59488D96,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/dls/p_magazin.tex,FFF87CA7,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/dls/p_manacles_off.tex,DFE5330D,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/dls/p_manacles_on.tex,1EBE3AB7,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/dls/p_newspaper.tex,90E12D30,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/dls/p_panelrun.tex,8315DFE1,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/dls/p_panelrun_btn.tex,CEEB5943,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/dls/p_pull_off.tex,A8C34684,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/dls/p_pull_on.tex,29FBD483,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/dls/p_sankaku.tex,EC863866,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/dls/p_tablet.tex,8FF6C0D9,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/dls/p_tablet_plate.tex,BF453ADC,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/carsol.tex,D538CA1A,524384
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/controller_buttons_icons.png,09F11CA9,106733
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/gameover1.tex,3C9A042B,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/itemmenu2.tex,B5BD327A,16777312
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/konami2048x2048.tex,81B53861,2097232
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/LowHealthFade.png,2933DC91,1048704
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/MousePointer.png,659B5345,4333
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/p_laura_letter.tex,380880EE,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/p_letterm.tex,14138350,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/p_letterm_w.tex,76B6FDB4,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/p_memo.tex,4496C54C,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/RedCrossIcon.png,5CFDE820,65664
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/splash_logo.tex,309FE1BE,2097232
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/splash_logo_us.tex,53F11D29,2097232
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/start00.tex,2983E1AF,5595248
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/start01.tex,80D9518D,16777296
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/start01e.tex,80D9518D,16777296
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/start01f.tex,CA0B8D26,16777296
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/start01g.tex,BB372988,16777296
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/start01i.tex,8AEF62EC,16777296
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/start01j.tex,53CC85F0,16777296
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/etc/start01s.tex,E9B21D98,16777296
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/carbon.tex,DE147730,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_box.tex,6A23FB2B,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_boxnumber.tex,52E3DF66,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_boxnumber_2.tex,50245545,2097248
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_carbon.tex,CB6E1360,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_diary.tex,55F0A0B5,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_doctormemo.tex,180A4569,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_doctormemo_key.tex,694B1982,262240
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_drainage.tex,D1FE2789,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_drainage_key.tex,CF2F9786,65632
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_female.tex,CB7FEEA2,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_female_ring.tex,1A142694,65632
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_h_elevator.tex,E5E1D5B2,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_h_elevator_2.tex,1853FD86,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_h_elevator_botan.tex,0FB4302C,524384
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_hair.tex,F31702A3,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_hair_hair.tex,6D1592F0,262240
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_museuminfo_key.tex,395152E7,524384
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_musiuminfo.tex,51BC5C0B,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_panel.tex,A88B1457,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_patient.tex,5A8503A4,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_quiz.tex,DA6274F5,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/p_quiz_btn.tex,598D9862,262240
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/pboxkey01.tex,0413B292,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/hsp/whiteboard.tex,D83E1AB3,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/htl/dram.tex,3D38CD7D,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/htl/egg.tex,28EF673D,65632
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/htl/maker.tex,A2DCD587,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/htl/p_bag_close.tex,4E90B5E5,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/htl/p_bag_open.tex,DCDEED65,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/htl/p_bag_open_key.tex,58B29E91,65632
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/htl/p_can_close.tex,EA2F63AD,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/htl/p_can_open.tex,5769CE5A,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/htl/p_can_open2.tex,F2CFC5E6,131168
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/htl/p_egghollow.tex,BD2DE8CF,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/htl/p_htl_elevator.tex,3581FDFB,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/htl/p_htl_elevator_2.tex,9C9815CD,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/htl/p_laura_letter.tex,F5A56DB0,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/htl/p_marker.tex,BA322EE3,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/htl/p_receipt.tex,8AB31E17,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/htl/p_redreling.tex,089C41F6,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/htl/p_trank.tex,C5892566,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/htl/p_video.tex,DC71A15A,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/htl/p_video02.tex,83C18D4C,524384
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/item/x_coinelder.tex,A43769D1,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/item/x_coinelder_ura.tex,8E1A8402,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/item/x_coinprisoner.tex,07904978,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/item/x_coinprisoner_ura.tex,88C48743,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/item/x_coinsnake.tex,B54F7E9D,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/item/x_coinsnake_ura.tex,5BFC80F0,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/item/x_keyclock.tex,FCD03EA1,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/item/x_keygate.tex,DE6C0002,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/item/x_keynorth.tex,D5AFC06B,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/item/x_keyrapis.tex,FBEF014B,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/item/x_keyspiral.tex,B6324D4C,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/item/x_mary_p.tex,C4A5178A,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/item/x_plate_female.tex,B6ED8FC2,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/item/x_plate_kick.tex,59CFF7D8,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/item/x_plate_pig.tex,43710996,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/item/x_ringlead.tex,FF6A8E0C,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/item/x_ringopper.tex,06674A75,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/apartmape1f.tex,D9991867,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/apartmape2f.tex,40F7BAEC,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/apartmape3f.tex,7E32475E,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/apartmapew1f.tex,1C60265B,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/apartmapew2f.tex,6EBA4484,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/apartmapew3f.tex,87AC6F83,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/apartmapmark.tex,E1A76A10,2097248
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/apartmapw.tex,3B4E0C76,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/hospitalmap01.tex,AE602B86,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/hospitalmap02.tex,685CA9AE,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/hospitalmapmk.tex,201C19EF,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/hotelmap1f01.tex,539DCF06,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/hotelmap1f02.tex,CDF9D2AB,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/hotelmap2f01.tex,85A2126E,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/hotelmap2f02.tex,4B996F48,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/hotelmap3f01.tex,6F2C576C,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/hotelmap3f02.tex,9EE64324,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/hotelmapbf01.tex,6DC98812,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/hotelmapbf02.tex,600692D9,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/hotelmapmark.tex,40BD0458,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/outmap.tex,D9DB08A7,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/outmape.tex,E1F1EB42,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/outmapmark.tex,2A574469,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/outmapw.tex,A48B13A4,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/prisonmap.tex,FB83D6CA,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/prisonmap01mark.tex,E42F9956,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/prisonmap02mark.tex,8573F945,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/prisonmap03.tex,2C38A9B7,11190368
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/map/prisonmap03mark.tex,46499078,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/out/p_incar.tex,62561F63,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/out/p_incar_map.tex,BF95A81D,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/out/p_lostmemory.tex,E3375FBE,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/out/p_outmape.tex,2E7928BE,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/out/p_outmapw.tex,306BDDA2,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/out/p_redpaper.tex,A96467F0,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/out/p_spana.tex,05CA8CBA,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/out/p_swamp.tex,84B3C7D8,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/out/p_swamp2.tex,056816E1,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/out/statuebox.tex,4C651A2B,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/out/statuekey.tex,40341B44,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/out/statuekey2.tex,F2421AA5,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/hj01.tex,A6759F78,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/hj02.tex,478B8777,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/hj03.tex,F9F071E8,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/hj032.tex,558BEA14,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/hj04.tex,4F24259C,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/hj05.tex,81D05495,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/hj06.tex,CE9E6ADC,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/hj07.tex,B6E94F6F,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/staff01.tex,6A038838,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/staff02.tex,2768D323,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/staff03.tex,AD6410BD,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/staff04.tex,D5A0B67D,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/staff05.tex,E21E5DE2,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/staff06.tex,98114223,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/staff07.tex,0A5A9DF0,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/ufomado01.tex,F4B7B780,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/ufomado02.tex,07FF94D5,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/ufomado03.tex,14D96AEC,1048672
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/ufomizu01.tex,36AF1168,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/ufomizu02.tex,155B34F8,65632
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/ufomizu03.tex,5DF974DA,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/ufomizu04.tex,576DFA3C,2097248
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/ufoniwa01.tex,0C8F243B,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/ufoniwa02.tex,E1477A99,65632
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/ufoniwa03.tex,20D2235C,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/ufoniwa04.tex,86D1F7EC,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/words01.tex,FA26EAB5,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/words02.tex,6CC688FD,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/words03.tex,122F658B,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/words04.tex,9B84F069,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/words05.tex,AED5511C,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/words06.tex,919558FB,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/words062.tex,7C2612D3,4194400
+img_pack,Image Enhancement Pack,1.2.0,SH2EE_Image_Enhancement_Pack_1.2.0.zip,sh2e/pic/ufo/words07.tex,F690BF61,4194400
+fmv_pack,FMV Enhancement Pack,1.6.0,SH2EE_FMV_Enhancement_Pack_1.6.0.zip,sh2e/movie/deai.bik,4F3AE5CC,49181820
+fmv_pack,FMV Enhancement Pack,1.6.0,SH2EE_FMV_Enhancement_Pack_1.6.0.zip,sh2e/movie/end.bik,C9E9685D,170522972
+fmv_pack,FMV Enhancement Pack,1.6.0,SH2EE_FMV_Enhancement_Pack_1.6.0.zip,sh2e/movie/end_dog.bik,4DE11154,82474008
+fmv_pack,FMV Enhancement Pack,1.6.0,SH2EE_FMV_Enhancement_Pack_1.6.0.zip,sh2e/movie/end_wish.bik,A4EC0443,120901888
+fmv_pack,FMV Enhancement Pack,1.6.0,SH2EE_FMV_Enhancement_Pack_1.6.0.zip,sh2e/movie/flash.bik,C0FBF4D8,6310280
+fmv_pack,FMV Enhancement Pack,1.6.0,SH2EE_FMV_Enhancement_Pack_1.6.0.zip,sh2e/movie/gero.bik,6BEC354D,22950460
+fmv_pack,FMV Enhancement Pack,1.6.0,SH2EE_FMV_Enhancement_Pack_1.6.0.zip,sh2e/movie/hakaba.bik,006CBD06,51424604
+fmv_pack,FMV Enhancement Pack,1.6.0,SH2EE_FMV_Enhancement_Pack_1.6.0.zip,sh2e/movie/hei.bik,E05E0310,41870508
+fmv_pack,FMV Enhancement Pack,1.6.0,SH2EE_FMV_Enhancement_Pack_1.6.0.zip,sh2e/movie/knife.bik,644E0571,15553952
+fmv_pack,FMV Enhancement Pack,1.6.0,SH2EE_FMV_Enhancement_Pack_1.6.0.zip,sh2e/movie/korosu_a.bik,5100A503,23739828
+fmv_pack,FMV Enhancement Pack,1.6.0,SH2EE_FMV_Enhancement_Pack_1.6.0.zip,sh2e/movie/korosu_b.bik,EAA8BC89,38233064
+fmv_pack,FMV Enhancement Pack,1.6.0,SH2EE_FMV_Enhancement_Pack_1.6.0.zip,sh2e/movie/murder.bik,D233FC24,116230676
+fmv_pack,FMV Enhancement Pack,1.6.0,SH2EE_FMV_Enhancement_Pack_1.6.0.zip,sh2e/movie/open.bik,CB7CD269,307727828
+fmv_pack,FMV Enhancement Pack,1.6.0,SH2EE_FMV_Enhancement_Pack_1.6.0.zip,sh2e/movie/rouya.bik,A302DAAB,110375208
+fmv_pack,FMV Enhancement Pack,1.6.0,SH2EE_FMV_Enhancement_Pack_1.6.0.zip,sh2e/movie/saikai.bik,FBA637D8,91605548
+fmv_pack,FMV Enhancement Pack,1.6.0,SH2EE_FMV_Enhancement_Pack_1.6.0.zip,sh2e/movie/sh2e3.bik,8F570AB1,153297912
+fmv_pack,FMV Enhancement Pack,1.6.0,SH2EE_FMV_Enhancement_Pack_1.6.0.zip,sh2e/movie/sh3e3.bik,048CFDDD,89807388
+fmv_pack,FMV Enhancement Pack,1.6.0,SH2EE_FMV_Enhancement_Pack_1.6.0.zip,sh2e/movie/sh3tgs.bik,B8DF63AC,149195676
+fmv_pack,FMV Enhancement Pack,1.6.0,SH2EE_FMV_Enhancement_Pack_1.6.0.zip,sh2e/movie/toilet.bik,858ABD13,28308228
+fmv_pack,FMV Enhancement Pack,1.6.0,SH2EE_FMV_Enhancement_Pack_1.6.0.zip,sh2e/movie/water.bik,0232BE7D,183315764
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/apart/bgm_001.adx,E50633B3,7997440
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/apart/bgm_003.adx,27697CBB,12490752
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/apart/bgm_014.adx,F2575DF4,11087872
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/apart/bgm_101.aix,9AC05B56,15661056
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/apart/bgm_102.aix,301ADD07,30648320
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/apart/bgm_103.aix,5F77E5D1,14428160
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/apart/bgm_118.aix,B4A39356,33517568
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/apart/bgm_125.aix,BE4DAC19,19523584
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/end/bgm_002.adx,7C26492B,20611072
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/end/bgm_012.adx,7048F148,8404992
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/forest/bgm_022.adx,92D6D5DA,14606336
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/forest/bgm_114_a.adx,9D7F39FF,15446016
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/forest/bgm_114_b.aix,0EC963F3,35713024
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/forest/bgm_115.aix,FA5A0D50,29661184
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/hospital/bgm_016.adx,2704252D,12640256
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/hospital/bgm_021.adx,049A9D1B,6658048
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/hospital/bgm_100.aix,0C78721B,17309696
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/hospital/bgm_105.aix,C1290B32,21477376
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/hospital/bgm_106.aix,F89305C8,5797888
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/hospital/bgm_111.aix,627FB144,35895296
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/hospital/bgm_119.aix,47D06AB0,30464000
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/hospital/bgm_123.aix,32898F39,10418176
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/hotel/bgm_007.adx,88F2745B,13393920
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/hotel/bgm_009.adx,4F924092,10627072
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/hotel/bgm_017.adx,A1C6E9D3,12421120
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/hotel/bgm_108.aix,B1DD1803,27213824
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/hotel/bgm_112.aix,0F4DE452,16824320
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/hotel/bgm_112_NG.aix,0F4DE452,16824320
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/hotel/bgm_113.aix,15DDE818,34306048
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/hotel/bgm_121.aix,61305F9E,6457344
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/hotel/bgm_122.aix,86ECF05F,9766912
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/hotel/bgm_124.aix,7161E8FD,31391744
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/hotel/bgm_126.adx,4E52D3AE,4474880
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/mansion/bgm_104.aix,37DD7616,31637504
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/prison/bgm_015.adx,EF3566B9,14172160
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/prison/bgm_020.adx,C69816A9,16269312
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/prison/bgm_107.aix,C89FB917,54669312
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/prison/bgm_109.aix,65D4C159,10889216
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/prison/bgm_110.aix,228FD313,28065792
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/prison/bgm_116.aix,235E42DA,22947840
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/prison/bgm_120.aix,EB874553,19654656
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/prison/bgm_128.aix,E6ACE880,10555392
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/town/bgm_004.adx,264FBD0C,13377536
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/town/bgm_005.adx,804BF5CE,20674560
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/town/bgm_018.adx,999FF37A,9412608
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/town/bgm_117.aix,DDFAA1AA,13185024
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/adx/voice/voice.afs,85D583B9,1538359296
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/extra/flashlight_off.wav,8EBEE11A,96052
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/extra/flashlight_on.wav,DBA4E7E3,96052
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/extra/g_start.wav,D3F6802B,1019948
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/extra/save_sound.wav,AF9ECCCA,337964
+audio_pack,Audio Enhancement Pack,2.1.0,SH2EE_Audio_Enhancement_Pack_2.1.0.zip,sh2e/sound/sddata.bin,C62B2BD2,89265514
+xidi,Xidi,4.2.0,SH2EE_Xidi_4.2.0.zip,dinput8.dll,C7B2B91F,515584
+xidi,Xidi,4.2.0,SH2EE_Xidi_4.2.0.zip,keyconf.dat,EA68D980,504
+xidi,Xidi,4.2.0,SH2EE_Xidi_4.2.0.zip,Xidi.ini,E912C62D,412
+credits,Credits,1.6.1,SH2EE_FMV_Credits_1.6.1.zip,sh2e/movie/credits.bik,23E4C8FF,90452436

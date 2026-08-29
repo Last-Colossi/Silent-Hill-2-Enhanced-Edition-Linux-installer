@@ -701,6 +701,28 @@ namespace SH2EESetup.Setup.ViewModels
             set => SetProperty(ref _backupSummary, value);
         }
 
+        /// <summary>Whether the installed files can be rebuilt into archives without downloading.</summary>
+        public bool CanRepackage => RepackageService.CanRepackage(GameDirectory);
+
+        private bool _repackageFromInstall;
+        /// <summary>
+        /// Build the offline files from what's already on disk instead of downloading them.
+        /// Defaults on whenever it's possible — the whole point is avoiding a ~4 GB download
+        /// from servers the user has just told us are slow.
+        /// </summary>
+        public bool RepackageFromInstall
+        {
+            get => _repackageFromInstall;
+            set
+            {
+                if (SetProperty(ref _repackageFromInstall, value))
+                    OnPropertyChanged(nameof(ShowBackupComponentList));
+            }
+        }
+
+        /// <summary>Repackaging takes whatever is installed; there is nothing to choose.</summary>
+        public bool ShowBackupComponentList => !RepackageFromInstall;
+
         /// <summary>
         /// Enters the standalone backup step. Downloading a set of installation files has
         /// nothing to do with the installed game, so this deliberately doesn't touch
@@ -713,7 +735,71 @@ namespace SH2EESetup.Setup.ViewModels
             Progress = 0;
             ProgressStatus = "";
             Source = InstallSource.Download;   // the component list must come from the web
+            OnPropertyChanged(nameof(CanRepackage));
+            RepackageFromInstall = CanRepackage;
             SetStep(WizardStep.Backup);
+        }
+
+        public async Task RunRepackageAsync()
+        {
+            IsBusy = true;
+            BackupComplete = false;
+            Progress = 0;
+            _installCts = new CancellationTokenSource();
+
+            var progress = new Progress<InstallProgress>(p => Dispatcher.UIThread.Post(() =>
+            {
+                ProgressStatus = $"[{p.ComponentIndex}/{p.ComponentCount}] {p.Phase} {p.ComponentName}…";
+                Progress = p.Percent;
+            }));
+
+            try
+            {
+                string dir = GameDirectory;
+                string target = BackupTargetDir;
+                var report = await RepackageService.RunAsync(
+                    dir, target, progress, _installCts.Token);
+
+                var parts = new List<string>();
+                if (report.Archives.Count > 0)
+                {
+                    parts.Add($"{report.Archives.Count} archive(s) built from your installation " +
+                              $"in\n{target}\n\n" +
+                              string.Join("\n", report.Archives.Select(a => "•  " + a)));
+                    parts.Add(report.ExactMatch
+                        ? $"All {report.FilesPackaged} files matched the checksums upstream " +
+                          "published for them."
+                        : $"{report.FilesPackaged} file(s) packaged.");
+                }
+                if (report.Warnings.Count > 0)
+                    parts.Add(string.Join("\n\n", report.Warnings.Select(w => "⚠  " + w)));
+                if (parts.Count == 0)
+                    parts.Add("Nothing could be repackaged.");
+
+                parts.Add("These were rebuilt from the files on this PC, not re-downloaded, so " +
+                          "they are only as good as this installation.");
+
+                ProgressStatus = "";
+                BackupSummary = string.Join("\n\n", parts);
+            }
+            catch (OperationCanceledException)
+            {
+                BackupSummary =
+                    $"Cancelled. The archives that finished are in\n{BackupTargetDir}\n\n" +
+                    "and can still be used for an offline install — the set is just incomplete.";
+            }
+            catch (Exception ex)
+            {
+                BackupSummary = $"✗ Couldn't repackage the installation: {ex.Message}";
+            }
+            finally
+            {
+                _installCts?.Dispose();
+                _installCts = null;
+                IsBusy = false;
+                BackupComplete = true;
+                OnPropertyChanged(nameof(CanCancelOperation));
+            }
         }
 
         public async Task RunBackupAsync()

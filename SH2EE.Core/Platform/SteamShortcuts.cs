@@ -169,7 +169,7 @@ namespace SH2EESetup.Platform
         {
             // Steam hashes the exe exactly as stored in the shortcut (quoted).
             string input = $"\"{exePath.Trim('"')}\"" + appName;
-            uint crc = Crc32(Encoding.UTF8.GetBytes(input));
+            uint crc = Services.Crc32.OfBytes(Encoding.UTF8.GetBytes(input));
             return crc | 0x80000000u;
         }
 
@@ -178,28 +178,5 @@ namespace SH2EESetup.Platform
 
         public static string RunGameUrl(ulong gameId) => $"steam://rungameid/{gameId}";
 
-        // Standard CRC-32 (IEEE 802.3), matching Steam's shortcut hashing.
-        private static readonly uint[] CrcTable = BuildCrcTable();
-
-        private static uint[] BuildCrcTable()
-        {
-            var table = new uint[256];
-            for (uint i = 0; i < 256; i++)
-            {
-                uint c = i;
-                for (int k = 0; k < 8; k++)
-                    c = (c & 1) != 0 ? 0xEDB88320u ^ (c >> 1) : c >> 1;
-                table[i] = c;
-            }
-            return table;
-        }
-
-        private static uint Crc32(byte[] data)
-        {
-            uint crc = 0xFFFFFFFFu;
-            foreach (byte b in data)
-                crc = CrcTable[(crc ^ b) & 0xFF] ^ (crc >> 8);
-            return crc ^ 0xFFFFFFFFu;
-        }
     }
 }

@@ -10,6 +10,7 @@
 
 	<ItemGroup>
 		<EmbeddedResource Include="Resources\config.xml" />
+		<EmbeddedResource Include="Resources\component-files.csv" />
 	</ItemGroup>
 
 </Project>
