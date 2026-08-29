@@ -135,6 +135,11 @@ namespace SH2EESetup.Setup.ViewModels
                     OnPropertyChanged(nameof(HasExistingInstall));
                     OnPropertyChanged(nameof(HasOriginalExeBackup));
                     OnPropertyChanged(nameof(ShowMissingBackupWarning));
+                    // Remember as soon as we have a real game folder, not only once an
+                    // install finishes. Someone who browses to their game and then closes
+                    // the app must not have to find it again next time — especially since
+                    // needing to browse at all means auto-detect couldn't see it.
+                    AppStateService.RememberGameDirectory(value);
                     UpdateDetectionStatus();
                     RefreshCanGoNext();
                 }
@@ -508,6 +513,26 @@ namespace SH2EESetup.Setup.ViewModels
             _installFlowOrigin = WizardStep.Locate;
             SetStep(WizardStep.Locate);
         }
+
+        /// <summary>
+        /// Applies a directory the user deliberately picked — from Browse or the detected
+        /// list — and shows the menu when the Enhanced Edition turns out to already be
+        /// installed there. Landing on Home is not just for auto-detected installs: someone
+        /// who had to find their game by hand wants the same options.
+        ///
+        /// Typing into the path box deliberately does not do this. Re-navigating on every
+        /// keystroke would rip the view away mid-edit; the banner on the Locate step is how
+        /// a typed path reaches the same menu.
+        /// </summary>
+        public void ConfirmGameDirectory(string directory)
+        {
+            GameDirectory = directory;
+            if (HasExistingInstall)
+                GoToHome();
+        }
+
+        /// <summary>Opens the menu for the currently selected installation.</summary>
+        public void GoToHome() => SetStep(WizardStep.Home);
 
         // ---- Uninstall ---------------------------------------------------------------
 

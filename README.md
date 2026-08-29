@@ -29,6 +29,12 @@ installed there it opens on a launch menu instead of step 1:
 - **Uninstall the Enhanced Edition** — see below.
 - **Use a different folder…** — drops back to step 1 for a second install.
 
+You reach the same menu when you pick an installed folder by hand — Browse or the detected
+list opens it directly; a path typed into the box offers a **Show options…** button instead,
+since re-navigating on every keystroke would fight you mid-edit. The folder is remembered as
+soon as it's chosen, not only once an install finishes, so browsing to your game once is
+enough even if you close the app straight after.
+
 The remembered path is validated on every read, so a deleted folder or unmounted drive falls
 back to detection rather than pointing at nothing. It also sidesteps the auto-detect depth
 limit: once you've told the tool where the game is, an install nested deeper than the scan

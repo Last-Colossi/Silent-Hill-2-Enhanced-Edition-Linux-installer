@@ -43,13 +43,13 @@ namespace SH2EESetup.Setup.Views
             this.FindControl<Button>("BrowseButton")!.Click += async (_, _) =>
             {
                 var path = await PickFolder("Select your Silent Hill 2 (PC) install folder");
-                if (path != null) vm.GameDirectory = path;
+                if (path != null) vm.ConfirmGameDirectory(path);
             };
 
             var detectedBox = this.FindControl<ComboBox>("DetectedBox")!;
             detectedBox.SelectionChanged += (_, _) =>
             {
-                if (detectedBox.SelectedItem is string dir) vm.GameDirectory = dir;
+                if (detectedBox.SelectedItem is string dir) vm.ConfirmGameDirectory(dir);
             };
 
             this.FindControl<Button>("LocalBrowseButton")!.Click += async (_, _) =>
@@ -58,7 +58,7 @@ namespace SH2EESetup.Setup.Views
                 if (path != null) vm.LocalSourceDir = path;
             };
 
-            this.FindControl<Button>("UninstallButton")!.Click += (_, _) => vm.StartUninstall();
+            this.FindControl<Button>("HomeOptionsButton")!.Click += (_, _) => vm.GoToHome();
 
             this.FindControl<Button>("HomeModifyButton")!.Click += (_, _) => vm.GoToInstallFlow();
             this.FindControl<Button>("HomeUninstallButton")!.Click += (_, _) => vm.StartUninstall();
