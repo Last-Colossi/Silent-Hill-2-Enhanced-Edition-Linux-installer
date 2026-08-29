@@ -313,7 +313,11 @@
                         <TextBlock Grid.Row="0" TextWrapping="Wrap" FontSize="14" Foreground="White"
                                    Text="{Binding BackupIntro}" />
 
-                        <Grid Grid.Row="1" ColumnDefinitions="*,Auto" Margin="0,14,0,0">
+                        <!-- Everything that defines the job is locked once it starts. Switching
+                             source mid-run would relabel the UI to describe the operation that
+                             isn't running, and changing the destination would be worse. -->
+                        <Grid Grid.Row="1" ColumnDefinitions="*,Auto" Margin="0,14,0,0"
+                              IsEnabled="{Binding !IsBusy}">
                             <TextBox Grid.Column="0" Text="{Binding BackupTargetDir}"
                                      Watermark="Folder to save the packages in…" />
                             <Button Grid.Column="1" x:Name="BackupTargetBrowseButton" Content="Browse…"
@@ -323,7 +327,8 @@
                         <!-- Rebuilding from disk avoids a ~4 GB download, so it leads when
                              the installation can account for itself. -->
                         <StackPanel Grid.Row="2" Spacing="6" Margin="0,14,0,0"
-                                    IsVisible="{Binding CanRepackage}">
+                                    IsVisible="{Binding CanRepackage}"
+                                    IsEnabled="{Binding !IsBusy}">
                             <RadioButton GroupName="backupsrc" IsChecked="{Binding RepackageFromInstall}">
                                 <StackPanel>
                                     <TextBlock Text="Rebuild from this installation (no download)"
@@ -348,7 +353,8 @@
                                    IsVisible="{Binding ShowBackupComponentList}" />
 
                         <Border Grid.Row="4" BorderBrush="#33FFFFFF" BorderThickness="1" CornerRadius="6"
-                                IsVisible="{Binding ShowBackupComponentList}">
+                                IsVisible="{Binding ShowBackupComponentList}"
+                                IsEnabled="{Binding !IsBusy}">
                             <ScrollViewer>
                                 <ItemsControl ItemsSource="{Binding Components}" Margin="8">
                                     <ItemsControl.ItemTemplate>
@@ -402,7 +408,7 @@
                             <TextBlock TextWrapping="Wrap" FontSize="14" Foreground="White"
                                        Text="This removes the Enhanced Edition and puts Silent Hill 2 back the way it was. Your saved games are not touched." />
 
-                            <CheckBox IsChecked="{Binding UninstallGameFiles}">
+                            <CheckBox IsChecked="{Binding UninstallGameFiles}" IsEnabled="{Binding !IsBusy}">
                                 <StackPanel>
                                     <TextBlock Text="Remove the Enhanced Edition files" FontWeight="SemiBold" />
                                     <TextBlock Text="Deletes the mod's files from the game folder and restores your original sh2pc.exe."
@@ -411,7 +417,7 @@
                                 </StackPanel>
                             </CheckBox>
 
-                            <CheckBox IsChecked="{Binding UninstallDllOverrides}">
+                            <CheckBox IsChecked="{Binding UninstallDllOverrides}" IsEnabled="{Binding !IsBusy}">
                                 <StackPanel>
                                     <TextBlock Text="Clear the Wine DLL overrides" FontWeight="SemiBold" />
                                     <TextBlock Text="Undoes the prefix settings that made the mod load. Other overrides you set yourself are left alone."
@@ -420,7 +426,7 @@
                                 </StackPanel>
                             </CheckBox>
 
-                            <CheckBox IsChecked="{Binding UninstallSteamShortcut}">
+                            <CheckBox IsChecked="{Binding UninstallSteamShortcut}" IsEnabled="{Binding !IsBusy}">
                                 <StackPanel>
                                     <TextBlock Text="Remove the Steam shortcut" FontWeight="SemiBold" />
                                     <TextBlock Text="Takes &quot;Silent Hill 2: Enhanced Edition&quot; back out of your Steam library."
