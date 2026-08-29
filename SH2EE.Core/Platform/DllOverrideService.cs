@@ -76,6 +76,42 @@ namespace SH2EESetup.Platform
         }
 
         /// <summary>
+        /// Removes the overrides this tool added from the prefix's user.reg. Returns true when
+        /// the prefix was left in a clean state — including when there was nothing to remove.
+        /// The one-time user.reg backup is deliberately left in place; it is the user's safety
+        /// net and costs nothing to keep.
+        /// </summary>
+        public static bool TryRemoveFromPrefix(string prefixRoot, out string message)
+        {
+            string userReg = Path.Combine(prefixRoot, "user.reg");
+            if (!File.Exists(userReg))
+            {
+                message = $"No user.reg found in prefix: {prefixRoot}";
+                return false;
+            }
+
+            try
+            {
+                string content = File.ReadAllText(userReg);
+                string updated = RemoveDllOverrides(content);
+                if (updated == content)
+                {
+                    message = "No SH2:EE DLL overrides were set in this prefix.";
+                    return true;
+                }
+
+                File.WriteAllText(userReg, updated);
+                message = $"DLL overrides removed from {userReg}";
+                return true;
+            }
+            catch (Exception ex)
+            {
+                message = $"Failed to update user.reg: {ex.Message}";
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Inserts/updates the [Software\\Wine\\DllOverrides] section in a user.reg body,
         /// setting each required DLL to "native,builtin" without disturbing other keys.
         /// </summary>
@@ -122,6 +158,42 @@ namespace SH2EESetup.Platform
             }
 
             return string.Join('\n', lines);
+        }
+
+        /// <summary>
+        /// Deletes only the keys <see cref="OverriddenDlls"/> names from the
+        /// [Software\\Wine\\DllOverrides] section, leaving overrides the user set for other
+        /// DLLs untouched. An emptied section keeps its header: Wine writes a timestamp on
+        /// that line, and an empty section is valid, so there is nothing to gain by removing it.
+        /// </summary>
+        internal static string RemoveDllOverrides(string regContent)
+        {
+            const string header = "[Software\\\\Wine\\\\DllOverrides]";
+            var lines = regContent.Replace("\r\n", "\n").Split('\n').ToList();
+
+            int sectionStart = lines.FindIndex(l =>
+                l.TrimStart().StartsWith(header, StringComparison.Ordinal));
+            if (sectionStart < 0)
+                return regContent;
+
+            int sectionEnd = lines.FindIndex(sectionStart + 1, l => l.TrimStart().StartsWith('['));
+            if (sectionEnd < 0)
+                sectionEnd = lines.Count;
+
+            // Walk backwards so each removal can't shift an index still to be examined.
+            bool changed = false;
+            for (int i = sectionEnd - 1; i > sectionStart; i--)
+            {
+                string trimmed = lines[i].TrimStart();
+                if (OverriddenDlls.Any(dll =>
+                        trimmed.StartsWith($"\"{dll}\"=", StringComparison.OrdinalIgnoreCase)))
+                {
+                    lines.RemoveAt(i);
+                    changed = true;
+                }
+            }
+
+            return changed ? string.Join('\n', lines) : regContent;
         }
     }
 }

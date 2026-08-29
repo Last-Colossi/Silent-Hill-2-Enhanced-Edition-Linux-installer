@@ -58,6 +58,8 @@ namespace SH2EESetup.Setup.Views
                 if (path != null) vm.LocalSourceDir = path;
             };
 
+            this.FindControl<Button>("UninstallButton")!.Click += (_, _) => vm.StartUninstall();
+
             this.FindControl<Button>("BackButton")!.Click += (_, _) => vm.GoBack();
             this.FindControl<Button>("NextButton")!.Click += OnNext;
         }
@@ -70,6 +72,7 @@ namespace SH2EESetup.Setup.Views
             this.FindControl<Grid>("InstallTypePanel")!.IsVisible = vm.Step == WizardStep.InstallType;
             this.FindControl<Panel>("ProgressPanel")!.IsVisible = vm.Step == WizardStep.Progress;
             this.FindControl<StackPanel>("SteamPanel")!.IsVisible = vm.Step == WizardStep.Steam;
+            this.FindControl<Panel>("UninstallPanel")!.IsVisible = vm.Step == WizardStep.Uninstall;
         }
 
         private bool _navigating;
@@ -113,6 +116,22 @@ namespace SH2EESetup.Setup.Views
                     case WizardStep.Steam:
                         await Finish();
                         break;
+
+                    case WizardStep.Uninstall:
+                        if (vm.UninstallComplete)
+                        {
+                            CloseApp();
+                            break;
+                        }
+                        // Last stop before anything is deleted.
+                        if (await ConfirmAsync(
+                                "Remove the Enhanced Edition?",
+                                vm.UninstallPlan + "\n\nThis can't be undone.",
+                                confirmLabel: "Uninstall"))
+                        {
+                            await vm.RunUninstallAsync();
+                        }
+                        break;
                 }
             }
             finally
@@ -128,7 +147,11 @@ namespace SH2EESetup.Setup.Views
                 await ShowMessage("Add to Steam", msg);
 
             Vm.LaunchConfigApp();
+            CloseApp();
+        }
 
+        private void CloseApp()
+        {
             if (Avalonia.Application.Current?.ApplicationLifetime
                 is IClassicDesktopStyleApplicationLifetime desktop)
             {
@@ -138,6 +161,45 @@ namespace SH2EESetup.Setup.Views
             {
                 Close();
             }
+        }
+
+        /// <summary>
+        /// Yes/no dialog for destructive actions. Defaults to "no": closing the window with
+        /// the title bar leaves <c>confirmed</c> false, so only the explicit button proceeds.
+        /// </summary>
+        private async System.Threading.Tasks.Task<bool> ConfirmAsync(
+            string title, string message, string confirmLabel)
+        {
+            bool confirmed = false;
+            var dialog = new Window
+            {
+                Title = title,
+                Width = 480,
+                SizeToContent = SizeToContent.Height,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            };
+            var cancel = new Button { Content = "Cancel", MinWidth = 90 };
+            var confirm = new Button { Content = confirmLabel, MinWidth = 110 };
+            cancel.Click += (_, _) => dialog.Close();
+            confirm.Click += (_, _) => { confirmed = true; dialog.Close(); };
+            dialog.Content = new StackPanel
+            {
+                Margin = new(16),
+                Spacing = 14,
+                Children =
+                {
+                    new TextBlock { Text = message, TextWrapping = TextWrapping.Wrap },
+                    new StackPanel
+                    {
+                        Orientation = Orientation.Horizontal,
+                        HorizontalAlignment = HorizontalAlignment.Right,
+                        Spacing = 8,
+                        Children = { cancel, confirm },
+                    },
+                },
+            };
+            await dialog.ShowDialog(this);
+            return confirmed;
         }
 
         private async System.Threading.Tasks.Task<string?> PickFolder(string title)

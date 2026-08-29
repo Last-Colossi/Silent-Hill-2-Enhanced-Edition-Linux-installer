@@ -98,6 +98,21 @@
                                   ItemsSource="{Binding DetectedDirectories}"
                                   PlaceholderText="Pick a detected installation…" />
                     </StackPanel>
+
+                    <!-- Only offered once there is actually something installed here. -->
+                    <Border IsVisible="{Binding HasExistingInstall}" Margin="0,14,0,0"
+                            Background="#33000000" CornerRadius="6" Padding="12">
+                        <Grid ColumnDefinitions="*,Auto">
+                            <StackPanel Grid.Column="0" Spacing="2" VerticalAlignment="Center">
+                                <TextBlock Text="The Enhanced Edition is already installed here"
+                                           FontWeight="SemiBold" Foreground="White" />
+                                <TextBlock Text="Continue to reinstall or update it, or remove it completely."
+                                           Opacity="0.7" FontSize="12" TextWrapping="Wrap" Foreground="White" />
+                            </StackPanel>
+                            <Button Grid.Column="1" x:Name="UninstallButton" Content="Uninstall…"
+                                    MinWidth="110" VerticalAlignment="Center" Margin="10,0,0,0" />
+                        </Grid>
+                    </Border>
                 </StackPanel>
 
                 <!-- Step 2: Source -->
@@ -206,6 +221,75 @@
                     <TextBlock TextWrapping="Wrap" Opacity="0.7" FontSize="12" Foreground="White"
                                Text="Clicking Finish opens the Configuration app, where you can fine-tune the experience." />
                 </StackPanel>
+
+                <!-- Uninstall (reached from step 1, outside the numbered flow) -->
+                <Panel x:Name="UninstallPanel" IsVisible="False">
+
+                    <!-- Choices -->
+                    <ScrollViewer IsVisible="{Binding !UninstallComplete}">
+                        <StackPanel Spacing="12">
+                            <TextBlock TextWrapping="Wrap" FontSize="14" Foreground="White"
+                                       Text="This removes the Enhanced Edition and puts Silent Hill 2 back the way it was. Your saved games are not touched." />
+
+                            <CheckBox IsChecked="{Binding UninstallGameFiles}">
+                                <StackPanel>
+                                    <TextBlock Text="Remove the Enhanced Edition files" FontWeight="SemiBold" />
+                                    <TextBlock Text="Deletes the mod's files from the game folder and restores your original sh2pc.exe."
+                                               Opacity="0.7" FontSize="12" TextWrapping="Wrap" MaxWidth="600"
+                                               HorizontalAlignment="Left" />
+                                </StackPanel>
+                            </CheckBox>
+
+                            <CheckBox IsChecked="{Binding UninstallDllOverrides}">
+                                <StackPanel>
+                                    <TextBlock Text="Clear the Wine DLL overrides" FontWeight="SemiBold" />
+                                    <TextBlock Text="Undoes the prefix settings that made the mod load. Other overrides you set yourself are left alone."
+                                               Opacity="0.7" FontSize="12" TextWrapping="Wrap" MaxWidth="600"
+                                               HorizontalAlignment="Left" />
+                                </StackPanel>
+                            </CheckBox>
+
+                            <CheckBox IsChecked="{Binding UninstallSteamShortcut}">
+                                <StackPanel>
+                                    <TextBlock Text="Remove the Steam shortcut" FontWeight="SemiBold" />
+                                    <TextBlock Text="Takes &quot;Silent Hill 2: Enhanced Edition&quot; back out of your Steam library."
+                                               Opacity="0.7" FontSize="12" TextWrapping="Wrap" MaxWidth="600"
+                                               HorizontalAlignment="Left" />
+                                </StackPanel>
+                            </CheckBox>
+
+                            <Border Background="#33000000" CornerRadius="6" Padding="12"
+                                    IsVisible="{Binding ShowMissingBackupWarning}">
+                                <TextBlock TextWrapping="Wrap" FontSize="12" Foreground="Goldenrod"
+                                           Text="We can't find a backup of your original sh2pc.exe, so the Enhanced Edition executable will stay behind. The game will still run — but for a completely stock install you'd need to restore sh2pc.exe from your disc or GOG copy." />
+                            </Border>
+
+                            <TextBlock Text="{Binding UninstallPlan}" TextWrapping="Wrap" FontSize="12"
+                                       Opacity="0.75" Foreground="White" Margin="0,4,0,0" />
+
+                            <StackPanel IsVisible="{Binding IsBusy}" Spacing="8" Margin="0,6,0,0">
+                                <TextBlock Text="{Binding UninstallStatus}" Foreground="White" FontSize="13" />
+                                <ProgressBar IsIndeterminate="True" Height="6" />
+                            </StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
+
+                    <!-- Result -->
+                    <ScrollViewer IsVisible="{Binding UninstallComplete}">
+                        <StackPanel Spacing="10">
+                            <TextBlock Text="{Binding UninstallStatus}" FontSize="20" FontWeight="Bold"
+                                       TextWrapping="Wrap" HorizontalAlignment="Center"
+                                       Margin="0,10,0,0" Foreground="MediumSeaGreen" />
+                            <Border Background="#33000000" CornerRadius="6" Padding="14">
+                                <TextBlock Text="{Binding UninstallSummary}" TextWrapping="Wrap"
+                                           FontSize="13" Foreground="White" LineHeight="19" />
+                            </Border>
+                            <TextBlock IsVisible="{Binding UninstallHadWarnings}" TextWrapping="Wrap"
+                                       FontSize="12" Foreground="Goldenrod"
+                                       Text="Some steps need your attention — see the notes above." />
+                        </StackPanel>
+                    </ScrollViewer>
+                </Panel>
             </Panel>
 
             <!-- Footer -->

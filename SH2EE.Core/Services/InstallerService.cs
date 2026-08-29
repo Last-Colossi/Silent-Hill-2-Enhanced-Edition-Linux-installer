@@ -36,6 +36,10 @@ namespace SH2EESetup.Services
             _setupToolVersion = setupToolVersion;
         }
 
+        /// <summary>Where component archives are staged while downloading.</summary>
+        public static string TempDownloadDir =>
+            Path.Combine(Path.GetTempPath(), "sh2ee-setup-linux");
+
         /// <summary>
         /// Installs the given components into <paramref name="gameDir"/>. Existing d3d8.ini
         /// settings are preserved across a module reinstall/update, matching upstream.
@@ -47,7 +51,7 @@ namespace SH2EESetup.Services
             ChecksumMismatchHandler? onChecksumMismatch = null,
             CancellationToken ct = default)
         {
-            string tempDir = Path.Combine(Path.GetTempPath(), "sh2ee-setup-linux");
+            string tempDir = TempDownloadDir;
             Directory.CreateDirectory(tempDir);
 
             var savedValues = CaptureIniSettings(gameDir, selected.Select(c => c.Id));

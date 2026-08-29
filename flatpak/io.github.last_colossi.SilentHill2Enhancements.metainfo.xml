@@ -50,6 +50,16 @@
     <category>Utility</category>
   </categories>
   <releases>
+    <release version="1.3.0" date="2026-08-29">
+      <description>
+        <p>Adds an uninstaller: when the wizard finds an existing installation it offers to
+           remove the Enhanced Edition files, restore your original sh2pc.exe, clear the Wine
+           DLL overrides, and take the Steam shortcut back out of your library.</p>
+        <p>Also fixes a crash on startup while scanning for the game. A Wine prefix's
+           dosdevices folder maps the whole filesystem into the prefix, and unreadable
+           directories under it took the wizard down before it could open.</p>
+      </description>
+    </release>
     <release version="1.2.1" date="2026-06-14">
       <description><p>Adds an AppImage download (double-click to run; manageable with Gear Lever).</p></description>
     </release>

@@ -33,6 +33,18 @@ so it stays current with the project automatically and produces byte-compatible
    a Proton version (Proton-GE / Proton Experimental recommended). **Finish** opens the
    config app.
 
+**Uninstall** — when step 1 finds an existing installation, an **Uninstall…** button appears.
+Install writes to three places, and all three are undone (each an opt-out checkbox):
+
+| | What is removed |
+|---|---|
+| Game folder | The mod's files, per upstream's `CustomUninstall.iss` list, restoring your backed-up `sh2pc.exe`. Saves, game data and your own files are untouched. |
+| Wine prefix | Only the `DllOverrides` keys this tool wrote; overrides you set for other DLLs stay. |
+| Steam | The `Silent Hill 2: Enhanced Edition` shortcut, matched on name **and** exe so your own shortcuts are never touched. |
+
+Uninstall refuses to run on a folder that doesn't contain `sh2pc.exe`, warns when no `.exe`
+backup exists (the enhanced executable then stays in place), and is safe to run twice.
+
 ## The Config app (`SH2EEConfig`)
 
 - Full parity with `SH2EEconfig.exe`: all **141 features** across 9 tabs, rendered as

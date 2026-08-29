@@ -8,7 +8,11 @@ using SH2EESetup.ViewModels;
 
 namespace SH2EESetup.Setup.ViewModels
 {
-    public enum WizardStep { Locate, Source, InstallType, Progress, Steam }
+    /// <summary>
+    /// Uninstall sits outside the numbered install flow: it is reached from Locate when an
+    /// existing installation is found there, and returns to Locate or closes.
+    /// </summary>
+    public enum WizardStep { Locate, Source, InstallType, Progress, Steam, Uninstall }
     public enum InstallSource { Download, Local }
     public enum InstallKind { Quick, Custom }
 
@@ -65,12 +69,17 @@ namespace SH2EESetup.Setup.ViewModels
             WizardStep.InstallType => "Choose what to install",
             WizardStep.Progress => "Installing the Enhanced Edition",
             WizardStep.Steam => "Almost done",
+            WizardStep.Uninstall => "Remove the Enhanced Edition",
             _ => "",
         };
 
-        public string StepNumberText => $"Step {(int)Step + 1} of 5";
+        public string StepNumberText => Step == WizardStep.Uninstall
+            ? "Uninstall"
+            : $"Step {(int)Step + 1} of 5";
 
-        public bool CanGoBack => Step is WizardStep.Source or WizardStep.InstallType;
+        public bool CanGoBack =>
+            Step is WizardStep.Source or WizardStep.InstallType ||
+            (Step == WizardStep.Uninstall && !IsBusy && !UninstallComplete);
 
         public bool IsFinishStep => Step == WizardStep.Steam;
 
@@ -78,6 +87,7 @@ namespace SH2EESetup.Setup.ViewModels
         {
             WizardStep.InstallType => "Install",
             WizardStep.Steam => "Finish",
+            WizardStep.Uninstall => UninstallComplete ? "Close" : "Uninstall",
             _ => "Next",
         };
 
@@ -92,7 +102,14 @@ namespace SH2EESetup.Setup.ViewModels
         public bool IsBusy
         {
             get => _isBusy;
-            set { if (SetProperty(ref _isBusy, value)) RefreshCanGoNext(); }
+            set
+            {
+                if (SetProperty(ref _isBusy, value))
+                {
+                    OnPropertyChanged(nameof(CanGoBack));
+                    RefreshCanGoNext();
+                }
+            }
         }
 
         // ---- Step 1: Locate ----------------------------------------------------------
@@ -106,6 +123,9 @@ namespace SH2EESetup.Setup.ViewModels
                 if (SetProperty(ref _gameDirectory, value))
                 {
                     OnPropertyChanged(nameof(IsGameValid));
+                    OnPropertyChanged(nameof(HasExistingInstall));
+                    OnPropertyChanged(nameof(HasOriginalExeBackup));
+                    OnPropertyChanged(nameof(ShowMissingBackupWarning));
                     UpdateDetectionStatus();
                     RefreshCanGoNext();
                 }
@@ -394,7 +414,8 @@ namespace SH2EESetup.Setup.ViewModels
             set => SetProperty(ref _addToSteam, value);
         }
 
-        public const string SteamAppName = "Silent Hill 2: Enhanced Edition";
+        /// <summary>Defined in Core so uninstall matches on exactly the name install wrote.</summary>
+        public const string SteamAppName = SteamShortcuts.DefaultAppName;
 
         /// <summary>
         /// Performs the Add-to-Steam action if chosen, returning a message to show the user.
@@ -433,6 +454,159 @@ namespace SH2EESetup.Setup.ViewModels
             ConfigLauncher.Launch(GameDirectory);
         }
 
+        // ---- Uninstall ---------------------------------------------------------------
+
+        /// <summary>Whether the located folder has an SH2:EE install worth offering to remove.</summary>
+        public bool HasExistingInstall => UninstallService.IsInstalled(GameDirectory);
+
+        public bool HasOriginalExeBackup => UninstallService.HasOriginalExeBackup(GameDirectory);
+
+        /// <summary>Drives the "your original .exe can't be restored" banner on the uninstall step.</summary>
+        public bool ShowMissingBackupWarning => HasExistingInstall && !HasOriginalExeBackup;
+
+        private bool _uninstallGameFiles = true;
+        public bool UninstallGameFiles
+        {
+            get => _uninstallGameFiles;
+            set { if (SetProperty(ref _uninstallGameFiles, value)) OnUninstallSelectionChanged(); }
+        }
+
+        private bool _uninstallDllOverrides = true;
+        public bool UninstallDllOverrides
+        {
+            get => _uninstallDllOverrides;
+            set { if (SetProperty(ref _uninstallDllOverrides, value)) OnUninstallSelectionChanged(); }
+        }
+
+        private bool _uninstallSteamShortcut = true;
+        public bool UninstallSteamShortcut
+        {
+            get => _uninstallSteamShortcut;
+            set { if (SetProperty(ref _uninstallSteamShortcut, value)) OnUninstallSelectionChanged(); }
+        }
+
+        /// <summary>Unticking every box must disable the Uninstall button, not run a no-op.</summary>
+        private void OnUninstallSelectionChanged()
+        {
+            OnPropertyChanged(nameof(UninstallPlan));
+            RefreshCanGoNext();
+        }
+
+        private string _uninstallStatus = "";
+        public string UninstallStatus
+        {
+            get => _uninstallStatus;
+            set => SetProperty(ref _uninstallStatus, value);
+        }
+
+        private string _uninstallSummary = "";
+        public string UninstallSummary
+        {
+            get => _uninstallSummary;
+            set => SetProperty(ref _uninstallSummary, value);
+        }
+
+        private bool _uninstallHadWarnings;
+        public bool UninstallHadWarnings
+        {
+            get => _uninstallHadWarnings;
+            set => SetProperty(ref _uninstallHadWarnings, value);
+        }
+
+        private bool _uninstallComplete;
+        public bool UninstallComplete
+        {
+            get => _uninstallComplete;
+            set
+            {
+                if (SetProperty(ref _uninstallComplete, value))
+                {
+                    OnPropertyChanged(nameof(NextLabel));
+                    OnPropertyChanged(nameof(CanGoBack));
+                    RefreshCanGoNext();
+                }
+            }
+        }
+
+        /// <summary>A plain-language list of exactly what the Uninstall button will do.</summary>
+        public string UninstallPlan
+        {
+            get
+            {
+                var parts = new List<string>();
+                if (UninstallGameFiles)
+                    parts.Add("Enhanced Edition files in " + GameDirectory);
+                if (UninstallDllOverrides)
+                    parts.Add("Wine DLL overrides for this game's prefix");
+                if (UninstallSteamShortcut)
+                    parts.Add("the \"" + SteamAppName + "\" Steam shortcut");
+                return parts.Count == 0
+                    ? "Nothing is selected, so nothing will be removed."
+                    : "This will remove:\n  •  " + string.Join("\n  •  ", parts);
+            }
+        }
+
+        public void StartUninstall()
+        {
+            UninstallComplete = false;
+            UninstallHadWarnings = false;
+            UninstallSummary = "";
+            UninstallStatus = "";
+            OnPropertyChanged(nameof(HasOriginalExeBackup));
+            OnPropertyChanged(nameof(ShowMissingBackupWarning));
+            SetStep(WizardStep.Uninstall);
+        }
+
+        public async Task RunUninstallAsync()
+        {
+            IsBusy = true;
+            UninstallStatus = "Starting…";
+
+            var options = new UninstallOptions
+            {
+                RemoveGameFiles = UninstallGameFiles,
+                RemoveDllOverrides = UninstallDllOverrides,
+                RemoveSteamShortcut = UninstallSteamShortcut,
+            };
+            var progress = new Progress<string>(s =>
+                Dispatcher.UIThread.Post(() => UninstallStatus = s));
+
+            try
+            {
+                // Snapshot the directory: the field is bindable and must not be read from
+                // the worker thread.
+                string dir = GameDirectory;
+                var report = await Task.Run(() => UninstallService.Run(dir, options, progress));
+
+                var sections = new List<string>();
+                if (report.Done.Count > 0)
+                    sections.Add(string.Join("\n", report.Done.Select(d => "•  " + d)));
+                if (report.Warnings.Count > 0)
+                    sections.Add(string.Join("\n\n", report.Warnings.Select(w => "⚠  " + w)));
+
+                UninstallSummary = sections.Count > 0
+                    ? string.Join("\n\n", sections)
+                    : "There was nothing to remove.";
+                UninstallHadWarnings = report.Warnings.Count > 0;
+                UninstallStatus = report.Succeeded
+                    ? "The Enhanced Edition has been removed."
+                    : "Uninstall finished, but not everything could be removed.";
+            }
+            catch (Exception ex)
+            {
+                UninstallStatus = "✗ Uninstall failed.";
+                UninstallSummary = ex.Message;
+                UninstallHadWarnings = true;
+            }
+            finally
+            {
+                UninstallComplete = true;
+                IsBusy = false;
+                OnPropertyChanged(nameof(HasExistingInstall));
+                OnPropertyChanged(nameof(IsGameValid));
+            }
+        }
+
         // ---- Navigation --------------------------------------------------------------
 
         public void GoBack()
@@ -441,6 +615,7 @@ namespace SH2EESetup.Setup.ViewModels
             {
                 WizardStep.Source => WizardStep.Locate,
                 WizardStep.InstallType => WizardStep.Source,
+                WizardStep.Uninstall => WizardStep.Locate,
                 _ => Step,
             };
         }
@@ -458,6 +633,10 @@ namespace SH2EESetup.Setup.ViewModels
                 WizardStep.InstallType => true,
                 WizardStep.Progress => InstallComplete,
                 WizardStep.Steam => true,
+                // Before running, Next is the Uninstall trigger (a confirmation dialog still
+                // stands between it and any deletion); after, it just closes the window.
+                WizardStep.Uninstall => UninstallComplete || UninstallGameFiles ||
+                                        UninstallDllOverrides || UninstallSteamShortcut,
                 _ => false,
             };
         }
