@@ -45,11 +45,20 @@ namespace SH2EESetup.Platform
             var found = new List<string>();
             var seen = new HashSet<string>(StringComparer.Ordinal);
 
-            foreach (var root in PrefixSearchRoots())
+            try
             {
-                if (!Directory.Exists(root))
-                    continue;
-                ScanForGameExe(root, depth: 0, maxDepth: 6, found, seen);
+                foreach (var root in PrefixSearchRoots())
+                {
+                    if (!Directory.Exists(root))
+                        continue;
+                    ScanForGameExe(root, depth: 0, maxDepth: 6, found, seen);
+                }
+            }
+            catch
+            {
+                // The scan is only a convenience: whatever it turned up before going wrong
+                // is still useful, and manual Browse covers the rest. Never let it take the
+                // wizard down on startup.
             }
 
             return found;
@@ -109,19 +118,57 @@ namespace SH2EESetup.Platform
             }
 
             foreach (var sub in SafeEnumerateDirs(dir))
+            {
+                if (IsDriveMappingDir(sub))
+                    continue;
                 ScanForGameExe(sub, depth + 1, maxDepth, found, seen);
+            }
         }
 
-        private static IEnumerable<string> SafeEnumerateDirs(string dir)
+        /// <summary>
+        /// A Wine prefix's <c>dosdevices</c> folder holds nothing but drive-letter symlinks,
+        /// and <c>z:</c> always points at the host filesystem root. Descending into it walks
+        /// the scan straight out of the prefix and across the whole system — which is how
+        /// looking for sh2pc.exe ended up reading <c>/proc/&lt;pid&gt;/map_files</c>. The real
+        /// files live under drive_c, which we scan directly, so there is nothing to lose here.
+        /// </summary>
+        private static bool IsDriveMappingDir(string dir) =>
+            string.Equals(Path.GetFileName(dir), "dosdevices", StringComparison.OrdinalIgnoreCase);
+
+        /// <summary>
+        /// Options for the scan. <see cref="EnumerationOptions.IgnoreInaccessible"/> keeps a
+        /// single unreadable entry from aborting a listing; <c>AttributesToSkip = 0</c> keeps
+        /// the default <see cref="Directory.EnumerateDirectories(string)"/> behaviour of
+        /// visiting hidden folders (prefixes live in places like <c>~/.wine</c>).
+        /// </summary>
+        private static readonly EnumerationOptions ScanOptions = new()
         {
+            IgnoreInaccessible = true,
+            AttributesToSkip = 0,
+        };
+
+        /// <summary>
+        /// Lists the sub-directories of <paramref name="dir"/>, skipping any we can't read.
+        ///
+        /// The listing has to be materialised *inside* the try. Directory enumeration is
+        /// lazy, so simply returning the enumerable moved the actual I/O — and therefore any
+        /// UnauthorizedAccessException — out to the caller's foreach, where nothing caught
+        /// it. That is not hypothetical: a directory such as /proc/&lt;pid&gt;/map_files opens
+        /// fine and then fails on the first read, so the throw lands in MoveNext().
+        /// </summary>
+        private static List<string> SafeEnumerateDirs(string dir)
+        {
+            var subdirs = new List<string>();
             try
             {
-                return Directory.EnumerateDirectories(dir);
+                foreach (var sub in Directory.EnumerateDirectories(dir, "*", ScanOptions))
+                    subdirs.Add(sub);
             }
             catch
             {
-                return Array.Empty<string>();
+                // Unreadable or vanished directory — keep whatever we managed to list.
             }
+            return subdirs;
         }
 
         /// <summary>
