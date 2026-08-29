@@ -44,12 +44,19 @@ standalone opens on the right game.
 1. **Locate** — auto-detects your SH2 install on launch; if not found, tells you and lets you
    Browse to the folder with `sh2pc.exe`, then confirms whether detection succeeded.
 2. **Source** — download the Enhanced Edition content automatically, or install from a local
-   folder (`local_sh2ee.dat` + pre-downloaded packages).
+   folder (`local_sh2ee.dat` + pre-downloaded packages). When downloading, **Also keep the
+   downloaded files for offline reinstalls** mirrors upstream's backup option: archives go
+   straight to a folder you choose instead of `/tmp`, and a `local_sh2ee.dat` is written
+   beside them in upstream's exact format (CRLF, `notDownloaded,0.0` for components you
+   skipped) — so that folder can drive step 2's offline path later, on this machine or another.
 3. **What to install** — **Quick** (all content) or **Custom** (toggle exactly which
    components). Each per-component download is SHA-256 verified, with interactive
    Retry/Skip/Abort on a mismatch.
 4. **Install** — progress per component, mirroring the upstream installer (stale-file
    cleanup, `sh2pc.exe` backup, `d3d8.ini` setting preservation across module updates).
+   **Cancel installation** stops after the component in flight, deletes the staging folder,
+   and records what genuinely made it into `SH2EEsetup.dat` — a cancelled install reports
+   what it has rather than pretending it did nothing. Re-run to finish, or Uninstall to clear.
 5. **Add to Steam** — optionally registers `sh2pc.exe` as a non-Steam game (editing Steam's
    binary `shortcuts.vdf`) with the launch options **pre-filled**, then reminds you to force
    a Proton version (Proton-GE / Proton Experimental recommended). **Finish** opens the

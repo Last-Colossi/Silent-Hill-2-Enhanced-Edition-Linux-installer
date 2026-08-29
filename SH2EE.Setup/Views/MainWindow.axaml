@@ -166,6 +166,23 @@
                                        Opacity="0.7" FontSize="12" TextWrapping="Wrap" />
                         </StackPanel>
                     </RadioButton>
+                    <!-- Upstream's "back up installation files": the archives are downloaded
+                         straight into this folder instead of temp, and kept. -->
+                    <StackPanel IsVisible="{Binding IsDownloadSource}" Spacing="6" Margin="26,-6,0,0">
+                        <CheckBox IsChecked="{Binding KeepOfflineBackup}"
+                                  Content="Also keep the downloaded files for offline reinstalls" />
+                        <StackPanel IsVisible="{Binding KeepOfflineBackup}" Spacing="6">
+                            <Grid ColumnDefinitions="*,Auto">
+                                <TextBox Grid.Column="0" Text="{Binding OfflineBackupDir}"
+                                         Watermark="Folder to keep the downloaded files in…" />
+                                <Button Grid.Column="1" x:Name="BackupBrowseButton" Content="Browse…"
+                                        Margin="6,0,0,0" />
+                            </Grid>
+                            <TextBlock Text="{Binding OfflineBackupStatus}" Opacity="0.8" FontSize="12"
+                                       TextWrapping="Wrap" />
+                        </StackPanel>
+                    </StackPanel>
+
                     <RadioButton GroupName="src" IsChecked="{Binding IsLocalSource}">
                         <StackPanel>
                             <TextBlock Text="Install from a folder on this PC" FontWeight="SemiBold" />
@@ -184,7 +201,20 @@
                 </StackPanel>
 
                 <!-- Step 3: Install type -->
-                <Grid x:Name="InstallTypePanel" IsVisible="False" RowDefinitions="Auto,Auto,*">
+                <Panel x:Name="InstallTypePanel" IsVisible="False">
+
+                <!-- Fetching the manifest takes a moment, and a silently greyed-out Next
+                     reads as a broken button. Say what's happening instead. -->
+                <StackPanel IsVisible="{Binding IsBusy}" Spacing="14" VerticalAlignment="Center">
+                    <TextBlock Text="Checking for the latest Enhanced Edition files…"
+                               FontSize="15" Foreground="White" HorizontalAlignment="Center" />
+                    <TextBlock Text="This usually takes a couple of seconds."
+                               FontSize="12" Opacity="0.7" Foreground="White"
+                               HorizontalAlignment="Center" />
+                    <ProgressBar IsIndeterminate="True" Height="6" Margin="40,0" />
+                </StackPanel>
+
+                <Grid IsVisible="{Binding !IsBusy}" RowDefinitions="Auto,Auto,*">
                     <RadioButton Grid.Row="0" GroupName="kind" IsChecked="{Binding IsQuick}">
                         <StackPanel>
                             <TextBlock Text="Full install (recommended)" FontWeight="SemiBold" />
@@ -225,6 +255,7 @@
                         </ScrollViewer>
                     </Border>
                 </Grid>
+                </Panel>
 
                 <!-- Step 4: Progress -->
                 <Panel x:Name="ProgressPanel" IsVisible="False">
@@ -234,6 +265,9 @@
                                    HorizontalAlignment="Center" Foreground="White" />
                         <ProgressBar Minimum="0" Maximum="100" Value="{Binding Progress}" Height="10"
                                      IsVisible="{Binding IsBusy}" />
+                        <Button x:Name="CancelInstallButton" Content="Cancel installation"
+                                HorizontalAlignment="Center" MinWidth="160"
+                                IsVisible="{Binding CanCancelInstall}" />
                     </StackPanel>
                     <StackPanel IsVisible="{Binding InstallComplete}" Spacing="8"
                                 VerticalAlignment="Center" HorizontalAlignment="Center">

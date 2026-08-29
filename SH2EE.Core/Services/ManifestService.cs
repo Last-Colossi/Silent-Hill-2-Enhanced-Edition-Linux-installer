@@ -148,6 +148,42 @@ namespace SH2EESetup.Services
         }
 
         /// <summary>
+        /// Writes local_sh2ee.dat next to a set of downloaded component archives, so the
+        /// folder can later drive an offline install. Byte-for-byte the format upstream's
+        /// CreateLocalCSV() produces: CRLF, two header lines, then every component — the ones
+        /// that weren't downloaded recorded as "notDownloaded,0.0" rather than omitted.
+        ///
+        /// The setup_tool row is where we deviate, deliberately. Upstream names SH2EEsetup.exe
+        /// there and copies the Windows installer in beside it; we have no such .exe to
+        /// provide, and upstream treats a named-but-absent file as a corrupt backup and offers
+        /// to delete the lot. "notDownloaded" is both truthful and the value that keeps the
+        /// folder usable by either tool.
+        /// </summary>
+        public static void WriteLocalManifest(
+            string backupDir,
+            IEnumerable<WebComponent> allComponents,
+            ISet<string> downloadedIds)
+        {
+            var sb = new StringBuilder();
+            sb.Append("# SH2EE local csv\r\n");
+            sb.Append("id,name,fileName,version\r\n");
+            sb.Append("setup_tool,SH2:EE Setup Tool,notDownloaded,0.0\r\n");
+
+            foreach (var comp in allComponents)
+            {
+                if (comp.Id == ComponentIds.SetupTool)
+                    continue;
+
+                sb.Append(downloadedIds.Contains(comp.Id)
+                    ? $"{comp.Id},{comp.Name},{comp.FileName},{comp.Version}\r\n"
+                    : $"{comp.Id},{comp.Name},notDownloaded,0.0\r\n");
+            }
+
+            Directory.CreateDirectory(backupDir);
+            File.WriteAllText(Path.Combine(backupDir, LocalManifestFileName), sb.ToString());
+        }
+
+        /// <summary>
         /// Mirrors the upstream isUpdateAvailable(): a component is updatable when it
         /// is installed and the web version differs from the local one.
         /// </summary>

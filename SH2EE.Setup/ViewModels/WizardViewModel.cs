@@ -59,6 +59,7 @@ namespace SH2EESetup.Setup.ViewModels
                     OnPropertyChanged(nameof(NextLabel));
                     OnPropertyChanged(nameof(IsFinishStep));
                     OnPropertyChanged(nameof(ShowNavigation));
+                    OnPropertyChanged(nameof(CanCancelInstall));
                     RefreshCanGoNext();
                 }
             }
@@ -83,9 +84,18 @@ namespace SH2EESetup.Setup.ViewModels
             _ => $"Step {(int)Step + 1} of 5",
         };
 
+        /// <summary>
+        /// Never offer Back while something is running. Leaving during the component fetch
+        /// stranded the load on a step the user had already left, and during an install it
+        /// would abandon the work without cancelling it.
+        /// </summary>
         public bool CanGoBack =>
-            Step is WizardStep.Source or WizardStep.InstallType ||
-            (Step == WizardStep.Uninstall && !IsBusy && !UninstallComplete);
+            !IsBusy &&
+            (Step is WizardStep.Source or WizardStep.InstallType ||
+             // A cancelled or failed install must not be a dead end: both footer buttons were
+             // disabled there, leaving closing the window as the only way out.
+             (Step == WizardStep.Progress && !InstallComplete) ||
+             (Step == WizardStep.Uninstall && !UninstallComplete));
 
         public bool IsFinishStep => Step == WizardStep.Steam;
 
@@ -116,6 +126,7 @@ namespace SH2EESetup.Setup.ViewModels
                 if (SetProperty(ref _isBusy, value))
                 {
                     OnPropertyChanged(nameof(CanGoBack));
+                    OnPropertyChanged(nameof(CanCancelInstall));
                     RefreshCanGoNext();
                 }
             }
@@ -286,6 +297,53 @@ namespace SH2EESetup.Setup.ViewModels
             }
         }
 
+        // ---- Offline backup (the upstream "back up installation files" option) -------
+
+        private bool _keepOfflineBackup;
+        public bool KeepOfflineBackup
+        {
+            get => _keepOfflineBackup;
+            set
+            {
+                if (SetProperty(ref _keepOfflineBackup, value))
+                {
+                    OnPropertyChanged(nameof(OfflineBackupStatus));
+                    RefreshCanGoNext();
+                }
+            }
+        }
+
+        private string _offlineBackupDir = "";
+        public string OfflineBackupDir
+        {
+            get => _offlineBackupDir;
+            set
+            {
+                if (SetProperty(ref _offlineBackupDir, value))
+                {
+                    OnPropertyChanged(nameof(OfflineBackupStatus));
+                    RefreshCanGoNext();
+                }
+            }
+        }
+
+        public string OfflineBackupStatus
+        {
+            get
+            {
+                if (!KeepOfflineBackup)
+                    return "";
+                if (OfflineBackupDir.Length == 0)
+                    return "Choose a folder to keep the downloaded files in.";
+                return $"✓ Files will be kept in {OfflineBackupDir}, with a local_sh2ee.dat " +
+                       "you can point this installer at later.";
+            }
+        }
+
+        /// <summary>The backup folder to hand the installer, or null when not backing up.</summary>
+        private string? EffectiveBackupDir =>
+            KeepOfflineBackup && OfflineBackupDir.Length > 0 ? OfflineBackupDir : null;
+
         // ---- Step 3: Install type ----------------------------------------------------
 
         private InstallKind _kind = InstallKind.Quick;
@@ -395,16 +453,45 @@ namespace SH2EESetup.Setup.ViewModels
         public bool InstallComplete
         {
             get => _installComplete;
-            set { if (SetProperty(ref _installComplete, value)) RefreshCanGoNext(); }
+            set
+            {
+                if (SetProperty(ref _installComplete, value))
+                {
+                    OnPropertyChanged(nameof(CanGoBack));
+                    RefreshCanGoNext();
+                }
+            }
         }
 
         public ChecksumMismatchHandler? ChecksumMismatchPrompt { get; set; }
+
+        private CancellationTokenSource? _installCts;
+
+        private bool _installCancelled;
+        /// <summary>Distinguishes a cancelled install from a failed one on the result screen.</summary>
+        public bool InstallCancelled
+        {
+            get => _installCancelled;
+            private set => SetProperty(ref _installCancelled, value);
+        }
+
+        /// <summary>Shows the Cancel button only while there is something to cancel.</summary>
+        public bool CanCancelInstall => IsBusy && Step == WizardStep.Progress;
+
+        public void CancelInstall()
+        {
+            ProgressStatus = "Cancelling…";
+            _installCts?.Cancel();
+        }
 
         public async Task RunInstallAsync()
         {
             IsBusy = true;
             InstallComplete = false;
+            InstallCancelled = false;
             Progress = 0;
+            _installCts = new CancellationTokenSource();
+
             var progress = new Progress<InstallProgress>(p => Dispatcher.UIThread.Post(() =>
             {
                 ProgressStatus = $"[{p.ComponentIndex}/{p.ComponentCount}] {p.Phase} {p.ComponentName}…";
@@ -417,20 +504,40 @@ namespace SH2EESetup.Setup.ViewModels
                 {
                     var selected = Components.Where(c => c.IsSelected || Kind == InstallKind.Quick)
                         .Select(c => c.Component).ToList();
-                    await _installer.InstallAsync(GameDirectory, selected, progress, ChecksumMismatchPrompt);
+                    var options = new InstallOptions
+                    {
+                        OfflineBackupDir = EffectiveBackupDir,
+                        AllComponents = _webComponents,
+                    };
+                    await _installer.InstallAsync(
+                        GameDirectory, selected, progress, ChecksumMismatchPrompt,
+                        options, _installCts.Token);
                 }
                 else
                 {
                     var ids = Components.Where(c => c.IsSelected || Kind == InstallKind.Quick)
                         .Select(c => c.Component.Id).ToHashSet(StringComparer.OrdinalIgnoreCase);
                     var selected = _localComponents.Where(c => ids.Contains(c.Id)).ToList();
-                    await _installer.InstallLocalAsync(GameDirectory, selected, LocalSourceDir, progress);
+                    await _installer.InstallLocalAsync(
+                        GameDirectory, selected, LocalSourceDir, progress, _installCts.Token);
                 }
 
-                ProgressStatus = "All components installed successfully.";
+                ProgressStatus = EffectiveBackupDir != null
+                    ? "All components installed. The downloaded files were kept for offline use."
+                    : "All components installed successfully.";
                 Progress = 100;
                 InstallComplete = true;
                 AppStateService.RememberGameDirectory(GameDirectory);
+            }
+            catch (OperationCanceledException)
+            {
+                // Components that finished before the cancellation are genuinely installed and
+                // are recorded as such, so say so rather than implying a clean slate.
+                InstallCancelled = true;
+                CleanUpTempDownloads();
+                ProgressStatus = "Installation cancelled. Any components that had already " +
+                                 "finished are still installed — run the installer again to " +
+                                 "finish, or use Uninstall to remove everything.";
             }
             catch (Exception ex)
             {
@@ -438,7 +545,28 @@ namespace SH2EESetup.Setup.ViewModels
             }
             finally
             {
+                _installCts?.Dispose();
+                _installCts = null;
                 IsBusy = false;
+                OnPropertyChanged(nameof(CanCancelInstall));
+            }
+        }
+
+        /// <summary>
+        /// Clears the staging folder after a cancellation. Never touches the user's offline
+        /// backup folder: those files are the point of it, and the download service already
+        /// removes anything it left half-written.
+        /// </summary>
+        private static void CleanUpTempDownloads()
+        {
+            try
+            {
+                if (Directory.Exists(InstallerService.TempDownloadDir))
+                    Directory.Delete(InstallerService.TempDownloadDir, recursive: true);
+            }
+            catch
+            {
+                // Temp files are the OS's problem if we can't clear them.
             }
         }
 
@@ -699,6 +827,7 @@ namespace SH2EESetup.Setup.ViewModels
             {
                 WizardStep.Source => _installFlowOrigin,
                 WizardStep.InstallType => WizardStep.Source,
+                WizardStep.Progress => WizardStep.InstallType,
                 WizardStep.Uninstall => HasExistingInstall ? WizardStep.Home : WizardStep.Locate,
                 _ => Step,
             };
@@ -711,9 +840,11 @@ namespace SH2EESetup.Setup.ViewModels
             CanGoNext = !IsBusy && Step switch
             {
                 WizardStep.Locate => IsGameValid,
-                WizardStep.Source => Source == InstallSource.Download ||
-                                     (LocalSourceDir.Length > 0 &&
-                                      ManifestService.ReadLocalManifest(LocalSourceDir).Count > 0),
+                WizardStep.Source => Source == InstallSource.Download
+                    // Asking to keep a backup without saying where would silently not happen.
+                    ? !KeepOfflineBackup || OfflineBackupDir.Length > 0
+                    : LocalSourceDir.Length > 0 &&
+                      ManifestService.ReadLocalManifest(LocalSourceDir).Count > 0,
                 WizardStep.InstallType => true,
                 WizardStep.Progress => InstallComplete,
                 WizardStep.Steam => true,

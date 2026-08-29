@@ -58,6 +58,14 @@ namespace SH2EESetup.Setup.Views
                 if (path != null) vm.LocalSourceDir = path;
             };
 
+            this.FindControl<Button>("BackupBrowseButton")!.Click += async (_, _) =>
+            {
+                var path = await PickFolder("Select a folder to keep the downloaded files in");
+                if (path != null) vm.OfflineBackupDir = path;
+            };
+
+            this.FindControl<Button>("CancelInstallButton")!.Click += (_, _) => vm.CancelInstall();
+
             this.FindControl<Button>("HomeOptionsButton")!.Click += (_, _) => vm.GoToHome();
 
             this.FindControl<Button>("HomeModifyButton")!.Click += (_, _) => vm.GoToInstallFlow();
@@ -85,7 +93,7 @@ namespace SH2EESetup.Setup.Views
             var vm = Vm;
             this.FindControl<StackPanel>("LocatePanel")!.IsVisible = vm.Step == WizardStep.Locate;
             this.FindControl<StackPanel>("SourcePanel")!.IsVisible = vm.Step == WizardStep.Source;
-            this.FindControl<Grid>("InstallTypePanel")!.IsVisible = vm.Step == WizardStep.InstallType;
+            this.FindControl<Panel>("InstallTypePanel")!.IsVisible = vm.Step == WizardStep.InstallType;
             this.FindControl<Panel>("ProgressPanel")!.IsVisible = vm.Step == WizardStep.Progress;
             this.FindControl<StackPanel>("SteamPanel")!.IsVisible = vm.Step == WizardStep.Steam;
             this.FindControl<Panel>("UninstallPanel")!.IsVisible = vm.Step == WizardStep.Uninstall;

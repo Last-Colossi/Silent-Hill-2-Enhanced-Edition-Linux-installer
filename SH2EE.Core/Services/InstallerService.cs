@@ -15,6 +15,23 @@ namespace SH2EESetup.Services
     /// <summary>User's choice when a downloaded component fails checksum verification.</summary>
     public enum ChecksumAction { Retry, Skip, Abort }
 
+    /// <summary>Optional extras for an install. Defaults reproduce the plain download-and-go path.</summary>
+    public sealed class InstallOptions
+    {
+        /// <summary>
+        /// When set, component archives are downloaded here instead of the temp folder and
+        /// kept afterwards, with a local_sh2ee.dat written alongside — the folder can then
+        /// drive an offline install later. Mirrors upstream's localDataDir() redirection.
+        /// </summary>
+        public string? OfflineBackupDir { get; init; }
+
+        /// <summary>
+        /// Every component offered, not just the selected ones. The backup manifest records
+        /// the unselected ones as "notDownloaded" rather than leaving them out.
+        /// </summary>
+        public IReadOnlyList<WebComponent>? AllComponents { get; init; }
+    }
+
     /// <summary>Asked to resolve a checksum mismatch; returns the action to take.</summary>
     public delegate Task<ChecksumAction> ChecksumMismatchHandler(WebComponent component);
 
@@ -49,68 +66,89 @@ namespace SH2EESetup.Services
             IReadOnlyList<WebComponent> selected,
             IProgress<InstallProgress>? progress,
             ChecksumMismatchHandler? onChecksumMismatch = null,
+            InstallOptions? options = null,
             CancellationToken ct = default)
         {
-            string tempDir = TempDownloadDir;
-            Directory.CreateDirectory(tempDir);
+            // Upstream redirects downloads straight into the user's backup folder rather than
+            // downloading twice; we do the same, and simply don't delete them afterwards.
+            string? backupDir = options?.OfflineBackupDir;
+            string workDir = backupDir ?? TempDownloadDir;
+            Directory.CreateDirectory(workDir);
 
             var savedValues = CaptureIniSettings(gameDir, selected.Select(c => c.Id));
             var installed = ManifestService.ReadInstalled(gameDir)
                 .ToDictionary(c => c.Id, c => c, StringComparer.OrdinalIgnoreCase);
+            var downloaded = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
-            for (int i = 0; i < selected.Count; i++)
+            try
             {
-                ct.ThrowIfCancellationRequested();
-                var comp = selected[i];
-
-                void Report(string phase, double pct) => progress?.Report(new InstallProgress
+                for (int i = 0; i < selected.Count; i++)
                 {
-                    ComponentName = comp.Name,
-                    ComponentIndex = i + 1,
-                    ComponentCount = selected.Count,
-                    Phase = phase,
-                    Percent = pct,
-                });
+                    ct.ThrowIfCancellationRequested();
+                    var comp = selected[i];
 
-                // Download + verify, with retry/skip on checksum failure.
-                string? archive = null;
-                bool skip = false;
-                while (true)
-                {
-                    Report("Downloading", 0);
-                    archive = await _download.DownloadAsync(
-                        comp, tempDir, new Progress<double>(p => Report("Downloading", p)), ct);
-
-                    Report("Verifying", 0);
-                    if (await DownloadService.VerifyChecksumAsync(archive, comp.Sha256, ct))
-                        break;
-
-                    // Mismatch: ask the caller what to do (default: abort).
-                    var action = onChecksumMismatch != null
-                        ? await onChecksumMismatch(comp)
-                        : ChecksumAction.Abort;
-
-                    TryDelete(archive);
-                    if (action == ChecksumAction.Retry)
-                        continue;
-                    if (action == ChecksumAction.Skip)
+                    void Report(string phase, double pct) => progress?.Report(new InstallProgress
                     {
-                        skip = true;
-                        break;
+                        ComponentName = comp.Name,
+                        ComponentIndex = i + 1,
+                        ComponentCount = selected.Count,
+                        Phase = phase,
+                        Percent = pct,
+                    });
+
+                    // Download + verify, with retry/skip on checksum failure.
+                    string? archive = null;
+                    bool skip = false;
+                    while (true)
+                    {
+                        Report("Downloading", 0);
+                        archive = await _download.DownloadAsync(
+                            comp, workDir, new Progress<double>(p => Report("Downloading", p)), ct);
+
+                        Report("Verifying", 0);
+                        if (await DownloadService.VerifyChecksumAsync(archive, comp.Sha256, ct))
+                            break;
+
+                        // Mismatch: ask the caller what to do (default: abort).
+                        var action = onChecksumMismatch != null
+                            ? await onChecksumMismatch(comp)
+                            : ChecksumAction.Abort;
+
+                        TryDelete(archive);
+                        if (action == ChecksumAction.Retry)
+                            continue;
+                        if (action == ChecksumAction.Skip)
+                        {
+                            skip = true;
+                            break;
+                        }
+                        throw new InvalidDataException(
+                            $"Checksum mismatch for {comp.FileName}; installation aborted.");
                     }
-                    throw new InvalidDataException(
-                        $"Checksum mismatch for {comp.FileName}; installation aborted.");
+
+                    if (skip)
+                        continue;
+
+                    downloaded.Add(comp.Id);
+                    await ApplyArchiveAsync(gameDir, archive!, comp, installed, Report, ct);
+
+                    // Keeping the archive is the entire point of a backup folder.
+                    if (backupDir == null)
+                        TryDelete(archive);
                 }
-
-                if (skip)
-                    continue;
-
-                await ApplyArchiveAsync(gameDir, archive!, comp, installed, Report, ct);
-                TryDelete(archive);
             }
+            finally
+            {
+                // Record what actually landed even when we were cancelled or failed part-way.
+                // A half-finished install that still claims nothing is installed is worse than
+                // one that says exactly which components made it.
+                RestoreIniSettings(gameDir, savedValues);
+                if (installed.Count > 0)
+                    ManifestService.WriteInstalled(gameDir, _setupToolVersion, installed.Values);
 
-            RestoreIniSettings(gameDir, savedValues);
-            ManifestService.WriteInstalled(gameDir, _setupToolVersion, installed.Values);
+                if (backupDir != null && options?.AllComponents != null)
+                    ManifestService.WriteLocalManifest(backupDir, options.AllComponents, downloaded);
+            }
         }
 
         /// <summary>

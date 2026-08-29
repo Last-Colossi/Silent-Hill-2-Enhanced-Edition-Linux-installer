@@ -29,25 +29,36 @@ namespace SH2EESetup.Services
             Directory.CreateDirectory(destDir);
             string destPath = Path.Combine(destDir, component.FileName);
 
-            using var response = await _http.GetAsync(
-                component.Url, HttpCompletionOption.ResponseHeadersRead, ct);
-            response.EnsureSuccessStatusCode();
-
-            long? total = response.Content.Headers.ContentLength;
-            await using var source = await response.Content.ReadAsStreamAsync(ct);
-            await using (var dest = new FileStream(
-                destPath, FileMode.Create, FileAccess.Write, FileShare.None, 1 << 16, true))
+            try
             {
-                var buffer = new byte[1 << 16];
-                long readTotal = 0;
-                int read;
-                while ((read = await source.ReadAsync(buffer, ct)) > 0)
+                using var response = await _http.GetAsync(
+                    component.Url, HttpCompletionOption.ResponseHeadersRead, ct);
+                response.EnsureSuccessStatusCode();
+
+                long? total = response.Content.Headers.ContentLength;
+                await using var source = await response.Content.ReadAsStreamAsync(ct);
+                await using (var dest = new FileStream(
+                    destPath, FileMode.Create, FileAccess.Write, FileShare.None, 1 << 16, true))
                 {
-                    await dest.WriteAsync(buffer.AsMemory(0, read), ct);
-                    readTotal += read;
-                    if (total is > 0)
-                        progress?.Report(readTotal * 100.0 / total.Value);
+                    var buffer = new byte[1 << 16];
+                    long readTotal = 0;
+                    int read;
+                    while ((read = await source.ReadAsync(buffer, ct)) > 0)
+                    {
+                        await dest.WriteAsync(buffer.AsMemory(0, read), ct);
+                        readTotal += read;
+                        if (total is > 0)
+                            progress?.Report(readTotal * 100.0 / total.Value);
+                    }
                 }
+            }
+            catch
+            {
+                // Never leave a truncated archive behind. It matters most when destDir is the
+                // user's offline-backup folder, where a half-file would masquerade as a good
+                // one and fail its checksum on some later, offline install.
+                try { if (File.Exists(destPath)) File.Delete(destPath); } catch { }
+                throw;
             }
 
             progress?.Report(100);
