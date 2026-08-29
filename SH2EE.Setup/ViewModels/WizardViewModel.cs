@@ -13,7 +13,7 @@ namespace SH2EESetup.Setup.ViewModels
     /// a returning user whose installation we already know about; Uninstall is reached from
     /// there (or from Locate) and returns or closes.
     /// </summary>
-    public enum WizardStep { Locate, Source, InstallType, Progress, Steam, Uninstall, Home }
+    public enum WizardStep { Locate, Source, InstallType, Progress, Steam, Uninstall, Home, Backup }
     public enum InstallSource { Download, Local }
     public enum InstallKind { Quick, Custom }
 
@@ -59,7 +59,7 @@ namespace SH2EESetup.Setup.ViewModels
                     OnPropertyChanged(nameof(NextLabel));
                     OnPropertyChanged(nameof(IsFinishStep));
                     OnPropertyChanged(nameof(ShowNavigation));
-                    OnPropertyChanged(nameof(CanCancelInstall));
+                    OnPropertyChanged(nameof(CanCancelOperation));
                     RefreshCanGoNext();
                 }
             }
@@ -74,6 +74,7 @@ namespace SH2EESetup.Setup.ViewModels
             WizardStep.Steam => "Almost done",
             WizardStep.Uninstall => "Remove the Enhanced Edition",
             WizardStep.Home => "What would you like to do?",
+            WizardStep.Backup => "Create offline installation files",
             _ => "",
         };
 
@@ -81,6 +82,7 @@ namespace SH2EESetup.Setup.ViewModels
         {
             WizardStep.Uninstall => "Uninstall",
             WizardStep.Home => "Silent Hill 2: Enhanced Edition",
+            WizardStep.Backup => "Offline files",
             _ => $"Step {(int)Step + 1} of 5",
         };
 
@@ -95,7 +97,8 @@ namespace SH2EESetup.Setup.ViewModels
              // A cancelled or failed install must not be a dead end: both footer buttons were
              // disabled there, leaving closing the window as the only way out.
              (Step == WizardStep.Progress && !InstallComplete) ||
-             (Step == WizardStep.Uninstall && !UninstallComplete));
+             (Step == WizardStep.Uninstall && !UninstallComplete) ||
+             (Step == WizardStep.Backup && !BackupComplete));
 
         public bool IsFinishStep => Step == WizardStep.Steam;
 
@@ -107,6 +110,7 @@ namespace SH2EESetup.Setup.ViewModels
             WizardStep.InstallType => "Install",
             WizardStep.Steam => "Finish",
             WizardStep.Uninstall => UninstallComplete ? "Close" : "Uninstall",
+            WizardStep.Backup => BackupComplete ? "Done" : "Download",
             _ => "Next",
         };
 
@@ -126,7 +130,7 @@ namespace SH2EESetup.Setup.ViewModels
                 if (SetProperty(ref _isBusy, value))
                 {
                     OnPropertyChanged(nameof(CanGoBack));
-                    OnPropertyChanged(nameof(CanCancelInstall));
+                    OnPropertyChanged(nameof(CanCancelOperation));
                     RefreshCanGoNext();
                 }
             }
@@ -475,10 +479,14 @@ namespace SH2EESetup.Setup.ViewModels
             private set => SetProperty(ref _installCancelled, value);
         }
 
-        /// <summary>Shows the Cancel button only while there is something to cancel.</summary>
-        public bool CanCancelInstall => IsBusy && Step == WizardStep.Progress;
+        /// <summary>
+        /// Shows the Cancel button only while there is something to cancel. Covers both
+        /// long-running downloads: installing, and building a set of offline files.
+        /// </summary>
+        public bool CanCancelOperation =>
+            IsBusy && Step is WizardStep.Progress or WizardStep.Backup;
 
-        public void CancelInstall()
+        public void CancelOperation()
         {
             ProgressStatus = "Cancelling…";
             _installCts?.Cancel();
@@ -548,7 +556,7 @@ namespace SH2EESetup.Setup.ViewModels
                 _installCts?.Dispose();
                 _installCts = null;
                 IsBusy = false;
-                OnPropertyChanged(nameof(CanCancelInstall));
+                OnPropertyChanged(nameof(CanCancelOperation));
             }
         }
 
@@ -661,6 +669,101 @@ namespace SH2EESetup.Setup.ViewModels
 
         /// <summary>Opens the menu for the currently selected installation.</summary>
         public void GoToHome() => SetStep(WizardStep.Home);
+
+        // ---- Standalone offline backup -----------------------------------------------
+
+        private string _backupTargetDir = "";
+        public string BackupTargetDir
+        {
+            get => _backupTargetDir;
+            set { if (SetProperty(ref _backupTargetDir, value)) RefreshCanGoNext(); }
+        }
+
+        private bool _backupComplete;
+        public bool BackupComplete
+        {
+            get => _backupComplete;
+            private set
+            {
+                if (SetProperty(ref _backupComplete, value))
+                {
+                    OnPropertyChanged(nameof(NextLabel));
+                    OnPropertyChanged(nameof(CanGoBack));
+                    RefreshCanGoNext();
+                }
+            }
+        }
+
+        private string _backupSummary = "";
+        public string BackupSummary
+        {
+            get => _backupSummary;
+            set => SetProperty(ref _backupSummary, value);
+        }
+
+        /// <summary>
+        /// Enters the standalone backup step. Downloading a set of installation files has
+        /// nothing to do with the installed game, so this deliberately doesn't touch
+        /// GameDirectory or require a valid install beyond having got here.
+        /// </summary>
+        public void StartBackup()
+        {
+            BackupComplete = false;
+            BackupSummary = "";
+            Progress = 0;
+            ProgressStatus = "";
+            Source = InstallSource.Download;   // the component list must come from the web
+            SetStep(WizardStep.Backup);
+        }
+
+        public async Task RunBackupAsync()
+        {
+            IsBusy = true;
+            BackupComplete = false;
+            Progress = 0;
+            _installCts = new CancellationTokenSource();
+
+            var progress = new Progress<InstallProgress>(p => Dispatcher.UIThread.Post(() =>
+            {
+                ProgressStatus = $"[{p.ComponentIndex}/{p.ComponentCount}] {p.Phase} {p.ComponentName}…";
+                Progress = p.Percent;
+            }));
+
+            var selected = Components.Where(c => c.IsSelected).Select(c => c.Component).ToList();
+
+            try
+            {
+                await _installer.CreateOfflineBackupAsync(
+                    BackupTargetDir, selected, _webComponents, progress,
+                    ChecksumMismatchPrompt, _installCts.Token);
+
+                ProgressStatus = "";
+                BackupSummary =
+                    $"{selected.Count} component(s) saved to:\n{BackupTargetDir}\n\n" +
+                    "To install from these later, choose \"Install from a folder on this PC\" " +
+                    "on the source step and point it at this folder. It works on any machine — " +
+                    "no internet needed.";
+            }
+            catch (OperationCanceledException)
+            {
+                BackupSummary =
+                    "Download cancelled. The files that finished are still in\n" +
+                    $"{BackupTargetDir}\n\nand can be used for an offline install — the set is " +
+                    "just incomplete. Run this again to fetch the rest.";
+            }
+            catch (Exception ex)
+            {
+                BackupSummary = $"✗ Couldn't create the offline files: {ex.Message}";
+            }
+            finally
+            {
+                _installCts?.Dispose();
+                _installCts = null;
+                IsBusy = false;
+                BackupComplete = true;
+                OnPropertyChanged(nameof(CanCancelOperation));
+            }
+        }
 
         // ---- Uninstall ---------------------------------------------------------------
 
@@ -829,6 +932,7 @@ namespace SH2EESetup.Setup.ViewModels
                 WizardStep.InstallType => WizardStep.Source,
                 WizardStep.Progress => WizardStep.InstallType,
                 WizardStep.Uninstall => HasExistingInstall ? WizardStep.Home : WizardStep.Locate,
+                WizardStep.Backup => WizardStep.Home,
                 _ => Step,
             };
         }
@@ -852,6 +956,7 @@ namespace SH2EESetup.Setup.ViewModels
                 // stands between it and any deletion); after, it just closes the window.
                 WizardStep.Uninstall => UninstallComplete || UninstallGameFiles ||
                                         UninstallDllOverrides || UninstallSteamShortcut,
+                WizardStep.Backup => BackupComplete || BackupTargetDir.Length > 0,
                 _ => false,
             };
         }

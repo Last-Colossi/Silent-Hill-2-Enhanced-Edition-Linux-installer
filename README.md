@@ -27,6 +27,11 @@ installed there it opens on a launch menu instead of step 1:
 - **Launch the Configuration tool** — opens `SH2EEConfig` for that install. This is the
   reliable way to reach the config app from the AppImage, which ships only one desktop entry.
 - **Uninstall the Enhanced Edition** — see below.
+- **Create offline installation files** — downloads the components you tick into a folder of
+  your choice and writes `local_sh2ee.dat` beside them, without touching your installation.
+  Upstream only offers this as a side-effect of installing; here you don't have to reinstall
+  to get a copy of the files. Cancellable, and a cancelled run still leaves a valid — just
+  smaller — folder.
 - **Use a different folder…** — drops back to step 1 for a second install.
 
 You reach the same menu when you pick an installed folder by hand — Browse or the detected

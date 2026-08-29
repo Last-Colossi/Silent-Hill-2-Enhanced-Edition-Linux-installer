@@ -64,9 +64,27 @@ namespace SH2EESetup.Setup.Views
                 if (path != null) vm.OfflineBackupDir = path;
             };
 
-            this.FindControl<Button>("CancelInstallButton")!.Click += (_, _) => vm.CancelInstall();
+            this.FindControl<Button>("BackupTargetBrowseButton")!.Click += async (_, _) =>
+            {
+                var path = await PickFolder("Select a folder to save the offline files in");
+                if (path != null) vm.BackupTargetDir = path;
+            };
+
+            this.FindControl<Button>("CancelInstallButton")!.Click += (_, _) => vm.CancelOperation();
+            this.FindControl<Button>("CancelBackupButton")!.Click += (_, _) => vm.CancelOperation();
 
             this.FindControl<Button>("HomeOptionsButton")!.Click += (_, _) => vm.GoToHome();
+
+            this.FindControl<Button>("HomeBackupButton")!.Click += async (_, _) =>
+            {
+                // Leaving Home hides its buttons, so this can't be re-entered mid-fetch.
+                vm.StartBackup();
+                vm.IsBusy = true;
+                string? err = await vm.LoadComponentsAsync();
+                vm.IsBusy = false;
+                if (err != null)
+                    await ShowMessage("Couldn't load the component list", err);
+            };
 
             this.FindControl<Button>("HomeModifyButton")!.Click += (_, _) => vm.GoToInstallFlow();
             this.FindControl<Button>("HomeUninstallButton")!.Click += (_, _) => vm.StartUninstall();
@@ -98,6 +116,7 @@ namespace SH2EESetup.Setup.Views
             this.FindControl<StackPanel>("SteamPanel")!.IsVisible = vm.Step == WizardStep.Steam;
             this.FindControl<Panel>("UninstallPanel")!.IsVisible = vm.Step == WizardStep.Uninstall;
             this.FindControl<StackPanel>("HomePanel")!.IsVisible = vm.Step == WizardStep.Home;
+            this.FindControl<Panel>("BackupPanel")!.IsVisible = vm.Step == WizardStep.Backup;
         }
 
         private bool _navigating;
@@ -140,6 +159,13 @@ namespace SH2EESetup.Setup.Views
 
                     case WizardStep.Steam:
                         await Finish();
+                        break;
+
+                    case WizardStep.Backup:
+                        if (vm.BackupComplete)
+                            vm.GoToHome();
+                        else
+                            await vm.RunBackupAsync();
                         break;
 
                     case WizardStep.Uninstall:

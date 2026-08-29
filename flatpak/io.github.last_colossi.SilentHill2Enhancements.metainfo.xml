@@ -58,8 +58,9 @@
         <p>The tool now remembers your installation and opens on a menu when it is already
            set up, so you can update it, launch the Configuration tool, or uninstall without
            locating the game again.</p>
-        <p>Installations can be cancelled part-way, and the downloaded files can be kept in a
-           folder of your choice for offline reinstalls later.</p>
+        <p>Installations can be cancelled part-way, and the downloaded files can be kept for
+           offline reinstalls — either while installing, or at any time from the menu, without
+           having to reinstall to get a copy of them.</p>
         <p>Also fixes a crash on startup while scanning for the game. A Wine prefix's
            dosdevices folder maps the whole filesystem into the prefix, and unreadable
            directories under it took the wizard down before it could open.</p>

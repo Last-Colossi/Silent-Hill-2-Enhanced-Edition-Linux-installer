@@ -116,6 +116,15 @@
                         </StackPanel>
                     </Button>
 
+                    <Button x:Name="HomeBackupButton" HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Left" Padding="14,12">
+                        <StackPanel>
+                            <TextBlock Text="Create offline installation files" FontWeight="SemiBold" />
+                            <TextBlock Text="Download the Enhanced Edition files to a folder so you can reinstall later without internet, here or on another PC."
+                                       Opacity="0.7" FontSize="12" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </Button>
+
                     <Button x:Name="HomeDifferentFolderButton" Content="Use a different folder…"
                             HorizontalAlignment="Left" Margin="0,6,0,0" />
                 </StackPanel>
@@ -267,7 +276,7 @@
                                      IsVisible="{Binding IsBusy}" />
                         <Button x:Name="CancelInstallButton" Content="Cancel installation"
                                 HorizontalAlignment="Center" MinWidth="160"
-                                IsVisible="{Binding CanCancelInstall}" />
+                                IsVisible="{Binding CanCancelOperation}" />
                     </StackPanel>
                     <StackPanel IsVisible="{Binding InstallComplete}" Spacing="8"
                                 VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -295,6 +304,69 @@
                     <TextBlock TextWrapping="Wrap" Opacity="0.7" FontSize="12" Foreground="White"
                                Text="Clicking Finish opens the Configuration app, where you can fine-tune the experience." />
                 </StackPanel>
+
+                <!-- Standalone offline backup (reached from the Home menu) -->
+                <Panel x:Name="BackupPanel" IsVisible="False">
+
+                    <!-- Choices -->
+                    <Grid IsVisible="{Binding !BackupComplete}" RowDefinitions="Auto,Auto,Auto,*,Auto">
+                        <TextBlock Grid.Row="0" TextWrapping="Wrap" FontSize="14" Foreground="White"
+                                   Text="Download the Enhanced Edition files to keep. You can install from that folder later with no internet connection — on this PC or any other." />
+
+                        <Grid Grid.Row="1" ColumnDefinitions="*,Auto" Margin="0,14,0,0">
+                            <TextBox Grid.Column="0" Text="{Binding BackupTargetDir}"
+                                     Watermark="Folder to save the files in…" />
+                            <Button Grid.Column="1" x:Name="BackupTargetBrowseButton" Content="Browse…"
+                                    Margin="6,0,0,0" />
+                        </Grid>
+
+                        <TextBlock Grid.Row="2" Text="Files to download" FontWeight="SemiBold"
+                                   Foreground="White" Margin="0,14,0,6" />
+
+                        <Border Grid.Row="3" BorderBrush="#33FFFFFF" BorderThickness="1" CornerRadius="6">
+                            <ScrollViewer>
+                                <ItemsControl ItemsSource="{Binding Components}" Margin="8">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border Padding="8" Margin="0,0,0,6" CornerRadius="4"
+                                                    Background="#30000000">
+                                                <CheckBox IsChecked="{Binding IsSelected}">
+                                                    <StackPanel>
+                                                        <TextBlock Text="{Binding Name}" FontWeight="Bold" />
+                                                        <TextBlock Text="{Binding Description}" TextWrapping="Wrap"
+                                                                   Opacity="0.65" FontSize="12" MaxWidth="600"
+                                                                   HorizontalAlignment="Left" />
+                                                    </StackPanel>
+                                                </CheckBox>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </ScrollViewer>
+                        </Border>
+
+                        <StackPanel Grid.Row="4" IsVisible="{Binding IsBusy}" Spacing="8" Margin="0,12,0,0">
+                            <TextBlock Text="{Binding ProgressStatus}" Foreground="White" FontSize="13"
+                                       TextWrapping="Wrap" />
+                            <ProgressBar Minimum="0" Maximum="100" Value="{Binding Progress}" Height="8" />
+                            <Button x:Name="CancelBackupButton" Content="Cancel download"
+                                    HorizontalAlignment="Center" MinWidth="150"
+                                    IsVisible="{Binding CanCancelOperation}" />
+                        </StackPanel>
+                    </Grid>
+
+                    <!-- Result -->
+                    <ScrollViewer IsVisible="{Binding BackupComplete}">
+                        <StackPanel Spacing="12" VerticalAlignment="Center">
+                            <TextBlock Text="Offline files ready" FontSize="20" FontWeight="Bold"
+                                       Foreground="MediumSeaGreen" HorizontalAlignment="Center" />
+                            <Border Background="#33000000" CornerRadius="6" Padding="14">
+                                <TextBlock Text="{Binding BackupSummary}" TextWrapping="Wrap"
+                                           FontSize="13" Foreground="White" LineHeight="19" />
+                            </Border>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Panel>
 
                 <!-- Uninstall (reached from step 1, outside the numbered flow) -->
                 <Panel x:Name="UninstallPanel" IsVisible="False">
