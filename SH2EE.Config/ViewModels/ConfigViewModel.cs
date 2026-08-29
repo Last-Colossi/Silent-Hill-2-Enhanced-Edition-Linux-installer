@@ -27,12 +27,20 @@ namespace SH2EESetup.Config.ViewModels
             GameDirectory = ResolveGameDir(gameDirectory);
         }
 
+        /// <summary>
+        /// Most specific source wins: the directory the wizard handed us, then the one the
+        /// user last worked with, and only then a scan. The middle case is what makes a
+        /// standalone launch open on the right game immediately — and it covers installs
+        /// nested too deeply for the depth-limited scan to reach.
+        /// </summary>
         private static string ResolveGameDir(string? supplied)
         {
             if (!string.IsNullOrWhiteSpace(supplied) && GameEnvironment.IsValidGameDir(supplied))
                 return supplied!;
-            // Fall back to auto-detection when launched standalone.
-            return GameEnvironment.CandidateGameDirectories().FirstOrDefault() ?? "";
+
+            return AppStateService.GetRememberedGameDirectory()
+                ?? GameEnvironment.CandidateGameDirectories().FirstOrDefault()
+                ?? "";
         }
 
         private string _gameDirectory = "";
@@ -45,6 +53,9 @@ namespace SH2EESetup.Config.ViewModels
                 {
                     OnPropertyChanged(nameof(IsGameValid));
                     OnPropertyChanged(nameof(HasGame));
+                    // Browsing to a different install here should carry over to the wizard.
+                    // The state service ignores anything that isn't a real game folder.
+                    AppStateService.RememberGameDirectory(value);
                     UpdateHeader();
                 }
             }

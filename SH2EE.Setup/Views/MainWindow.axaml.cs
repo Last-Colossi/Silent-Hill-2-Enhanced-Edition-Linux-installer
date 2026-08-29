@@ -60,6 +60,22 @@ namespace SH2EESetup.Setup.Views
 
             this.FindControl<Button>("UninstallButton")!.Click += (_, _) => vm.StartUninstall();
 
+            this.FindControl<Button>("HomeModifyButton")!.Click += (_, _) => vm.GoToInstallFlow();
+            this.FindControl<Button>("HomeUninstallButton")!.Click += (_, _) => vm.StartUninstall();
+            this.FindControl<Button>("HomeDifferentFolderButton")!.Click +=
+                (_, _) => vm.ChooseDifferentFolder();
+            this.FindControl<Button>("HomeConfigButton")!.Click += async (_, _) =>
+            {
+                // The config app replaces this one: keeping both open invites two writers on
+                // the same d3d8.ini. Only close once it has actually started.
+                if (vm.LaunchConfigApp())
+                    CloseApp();
+                else
+                    await ShowMessage("Configuration tool",
+                        "We couldn't find the configuration app next to this one. It ships " +
+                        "alongside the setup tool in the AppImage and the portable download.");
+            };
+
             this.FindControl<Button>("BackButton")!.Click += (_, _) => vm.GoBack();
             this.FindControl<Button>("NextButton")!.Click += OnNext;
         }
@@ -73,6 +89,7 @@ namespace SH2EESetup.Setup.Views
             this.FindControl<Panel>("ProgressPanel")!.IsVisible = vm.Step == WizardStep.Progress;
             this.FindControl<StackPanel>("SteamPanel")!.IsVisible = vm.Step == WizardStep.Steam;
             this.FindControl<Panel>("UninstallPanel")!.IsVisible = vm.Step == WizardStep.Uninstall;
+            this.FindControl<StackPanel>("HomePanel")!.IsVisible = vm.Step == WizardStep.Home;
         }
 
         private bool _navigating;
@@ -90,7 +107,7 @@ namespace SH2EESetup.Setup.Views
                 switch (vm.Step)
                 {
                     case WizardStep.Locate:
-                        vm.SetStep(WizardStep.Source);
+                        vm.GoToInstallFlow();
                         break;
 
                     case WizardStep.Source:

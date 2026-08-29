@@ -19,6 +19,22 @@ so it stays current with the project automatically and produces byte-compatible
 
 ## The Setup wizard (`SH2EESetup`)
 
+**Returning users get a menu, not the wizard.** The tool remembers the installation you last
+worked with (`~/.config/sh2ee-setup/state.ini`), and when the Enhanced Edition is already
+installed there it opens on a launch menu instead of step 1:
+
+- **Modify or update the installation** — jumps into the flow below at step 2.
+- **Launch the Configuration tool** — opens `SH2EEConfig` for that install. This is the
+  reliable way to reach the config app from the AppImage, which ships only one desktop entry.
+- **Uninstall the Enhanced Edition** — see below.
+- **Use a different folder…** — drops back to step 1 for a second install.
+
+The remembered path is validated on every read, so a deleted folder or unmounted drive falls
+back to detection rather than pointing at nothing. It also sidesteps the auto-detect depth
+limit: once you've told the tool where the game is, an install nested deeper than the scan
+reaches is still found instantly. `SH2EEConfig` reads the same memory, so launching it
+standalone opens on the right game.
+
 1. **Locate** — auto-detects your SH2 install on launch; if not found, tells you and lets you
    Browse to the folder with `sh2pc.exe`, then confirms whether detection succeeded.
 2. **Source** — download the Enhanced Edition content automatically, or install from a local

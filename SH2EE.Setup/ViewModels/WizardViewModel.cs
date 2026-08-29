@@ -9,10 +9,11 @@ using SH2EESetup.ViewModels;
 namespace SH2EESetup.Setup.ViewModels
 {
     /// <summary>
-    /// Uninstall sits outside the numbered install flow: it is reached from Locate when an
-    /// existing installation is found there, and returns to Locate or closes.
+    /// Home and Uninstall sit outside the numbered install flow. Home is the landing step for
+    /// a returning user whose installation we already know about; Uninstall is reached from
+    /// there (or from Locate) and returns or closes.
     /// </summary>
-    public enum WizardStep { Locate, Source, InstallType, Progress, Steam, Uninstall }
+    public enum WizardStep { Locate, Source, InstallType, Progress, Steam, Uninstall, Home }
     public enum InstallSource { Download, Local }
     public enum InstallKind { Quick, Custom }
 
@@ -57,6 +58,7 @@ namespace SH2EESetup.Setup.ViewModels
                     OnPropertyChanged(nameof(CanGoBack));
                     OnPropertyChanged(nameof(NextLabel));
                     OnPropertyChanged(nameof(IsFinishStep));
+                    OnPropertyChanged(nameof(ShowNavigation));
                     RefreshCanGoNext();
                 }
             }
@@ -70,18 +72,25 @@ namespace SH2EESetup.Setup.ViewModels
             WizardStep.Progress => "Installing the Enhanced Edition",
             WizardStep.Steam => "Almost done",
             WizardStep.Uninstall => "Remove the Enhanced Edition",
+            WizardStep.Home => "What would you like to do?",
             _ => "",
         };
 
-        public string StepNumberText => Step == WizardStep.Uninstall
-            ? "Uninstall"
-            : $"Step {(int)Step + 1} of 5";
+        public string StepNumberText => Step switch
+        {
+            WizardStep.Uninstall => "Uninstall",
+            WizardStep.Home => "Silent Hill 2: Enhanced Edition",
+            _ => $"Step {(int)Step + 1} of 5",
+        };
 
         public bool CanGoBack =>
             Step is WizardStep.Source or WizardStep.InstallType ||
             (Step == WizardStep.Uninstall && !IsBusy && !UninstallComplete);
 
         public bool IsFinishStep => Step == WizardStep.Steam;
+
+        /// <summary>Home drives itself from its own buttons; the footer would only confuse.</summary>
+        public bool ShowNavigation => Step != WizardStep.Home;
 
         public string NextLabel => Step switch
         {
@@ -152,7 +161,12 @@ namespace SH2EESetup.Setup.ViewModels
 
         public bool HasDetected => DetectedDirectories.Count > 0;
 
-        /// <summary>Runs at startup: auto-detect, or tell the user to pick manually.</summary>
+        /// <summary>
+        /// Runs at startup. Prefers the installation the user last worked with, falls back to
+        /// scanning, and lands on Home rather than step 1 when the Enhanced Edition is already
+        /// installed — a returning user wants to choose an action, not re-answer "where is your
+        /// game".
+        /// </summary>
         public void AutoDetect()
         {
             DetectedDirectories.Clear();
@@ -161,7 +175,18 @@ namespace SH2EESetup.Setup.ViewModels
                 DetectedDirectories.Add(c);
             OnPropertyChanged(nameof(HasDetected));
 
-            if (candidates.Count > 0)
+            // The remembered directory wins: the user told us where the game is, which beats
+            // anything the depth-limited scan can infer. Already validated by the state
+            // service, so a stale entry never lands here.
+            string? remembered = AppStateService.GetRememberedGameDirectory();
+            if (remembered != null)
+            {
+                if (!DetectedDirectories.Contains(remembered))
+                    DetectedDirectories.Insert(0, remembered);
+                OnPropertyChanged(nameof(HasDetected));
+                GameDirectory = remembered;
+            }
+            else if (candidates.Count > 0)
             {
                 GameDirectory = candidates[0];
             }
@@ -172,6 +197,12 @@ namespace SH2EESetup.Setup.ViewModels
                                "(this is where the game is installed).";
                 DetectBrush = Brushes.Goldenrod;
             }
+
+            // Only a real installation earns the menu. Remembering a path is not enough —
+            // after an uninstall the folder is still valid Silent Hill 2, but there is nothing
+            // there to modify or remove, so the normal install flow is the right landing spot.
+            if (HasExistingInstall)
+                Step = WizardStep.Home;
         }
 
         private void UpdateDetectionStatus()
@@ -394,6 +425,7 @@ namespace SH2EESetup.Setup.ViewModels
                 ProgressStatus = "All components installed successfully.";
                 Progress = 100;
                 InstallComplete = true;
+                AppStateService.RememberGameDirectory(GameDirectory);
             }
             catch (Exception ex)
             {
@@ -448,10 +480,33 @@ namespace SH2EESetup.Setup.ViewModels
                    "Proton Experimental work best.";
         }
 
-        /// <summary>Launches the bundled configuration app for the installed game.</summary>
-        public void LaunchConfigApp()
+        /// <summary>
+        /// Launches the bundled configuration app for the installed game. Returns false when
+        /// the sibling binary can't be found — the AppImage and tarball both ship it, but a
+        /// hand-assembled install might not.
+        /// </summary>
+        public bool LaunchConfigApp() => ConfigLauncher.Launch(GameDirectory);
+
+        // ---- Home (returning user) ---------------------------------------------------
+
+        /// <summary>
+        /// Where Back from the install flow returns to. A user who started at Home should get
+        /// back to Home, not be dumped on step 1 as though they were installing fresh.
+        /// </summary>
+        private WizardStep _installFlowOrigin = WizardStep.Locate;
+
+        /// <summary>Enters the install/update flow, remembering where it was entered from.</summary>
+        public void GoToInstallFlow()
         {
-            ConfigLauncher.Launch(GameDirectory);
+            _installFlowOrigin = Step == WizardStep.Home ? WizardStep.Home : WizardStep.Locate;
+            SetStep(WizardStep.Source);
+        }
+
+        /// <summary>The escape hatch from Home for anyone with more than one installation.</summary>
+        public void ChooseDifferentFolder()
+        {
+            _installFlowOrigin = WizardStep.Locate;
+            SetStep(WizardStep.Locate);
         }
 
         // ---- Uninstall ---------------------------------------------------------------
@@ -602,6 +657,10 @@ namespace SH2EESetup.Setup.ViewModels
             {
                 UninstallComplete = true;
                 IsBusy = false;
+                // Still a valid Silent Hill 2 folder, so keep pointing at it — a reinstall
+                // shouldn't have to find the game all over again. Home won't be offered,
+                // because HasExistingInstall is now false.
+                AppStateService.RememberGameDirectory(GameDirectory);
                 OnPropertyChanged(nameof(HasExistingInstall));
                 OnPropertyChanged(nameof(IsGameValid));
             }
@@ -613,9 +672,9 @@ namespace SH2EESetup.Setup.ViewModels
         {
             Step = Step switch
             {
-                WizardStep.Source => WizardStep.Locate,
+                WizardStep.Source => _installFlowOrigin,
                 WizardStep.InstallType => WizardStep.Source,
-                WizardStep.Uninstall => WizardStep.Locate,
+                WizardStep.Uninstall => HasExistingInstall ? WizardStep.Home : WizardStep.Locate,
                 _ => Step,
             };
         }

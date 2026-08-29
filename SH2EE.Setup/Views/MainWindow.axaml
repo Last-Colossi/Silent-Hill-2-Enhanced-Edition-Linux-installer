@@ -82,6 +82,44 @@
             <!-- Step content area -->
             <Panel Grid.Row="1" Margin="22,20">
 
+                <!-- Home: shown instead of step 1 when the mod is already installed -->
+                <StackPanel x:Name="HomePanel" IsVisible="False" Spacing="10">
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Foreground="White"
+                               Text="The Enhanced Edition is installed for:" />
+                    <TextBlock Text="{Binding GameDirectory}" TextWrapping="Wrap" FontSize="12"
+                               Opacity="0.7" Foreground="White" Margin="0,-4,0,6" />
+
+                    <Button x:Name="HomeModifyButton" HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Left" Padding="14,12">
+                        <StackPanel>
+                            <TextBlock Text="Modify or update the installation" FontWeight="SemiBold" />
+                            <TextBlock Text="Add or remove components, or reinstall to pick up the latest versions."
+                                       Opacity="0.7" FontSize="12" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="HomeConfigButton" HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Left" Padding="14,12">
+                        <StackPanel>
+                            <TextBlock Text="Launch the Configuration tool" FontWeight="SemiBold" />
+                            <TextBlock Text="Fine-tune the Enhanced Edition's settings — all 141 options across 9 tabs."
+                                       Opacity="0.7" FontSize="12" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="HomeUninstallButton" HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Left" Padding="14,12">
+                        <StackPanel>
+                            <TextBlock Text="Uninstall the Enhanced Edition" FontWeight="SemiBold" />
+                            <TextBlock Text="Put Silent Hill 2 back the way it was. Your saves are kept."
+                                       Opacity="0.7" FontSize="12" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </Button>
+
+                    <Button x:Name="HomeDifferentFolderButton" Content="Use a different folder…"
+                            HorizontalAlignment="Left" Margin="0,6,0,0" />
+                </StackPanel>
+
                 <!-- Step 1: Locate -->
                 <StackPanel x:Name="LocatePanel" Spacing="12">
                     <TextBlock Text="{Binding DetectStatus}" Foreground="{Binding DetectBrush}"
@@ -296,9 +334,11 @@
             <Border Grid.Row="2" Background="#40000000" Padding="22,14">
                 <Grid ColumnDefinitions="*,Auto,Auto">
                     <Button Grid.Column="1" x:Name="BackButton" Content="Back" MinWidth="90"
-                            IsEnabled="{Binding CanGoBack}" Margin="0,0,8,0" />
+                            IsEnabled="{Binding CanGoBack}" IsVisible="{Binding ShowNavigation}"
+                            Margin="0,0,8,0" />
                     <Button Grid.Column="2" x:Name="NextButton" Content="{Binding NextLabel}" MinWidth="120"
-                            IsEnabled="{Binding CanGoNext}" Classes="accent" />
+                            IsEnabled="{Binding CanGoNext}" IsVisible="{Binding ShowNavigation}"
+                            Classes="accent" />
                 </Grid>
             </Border>
         </Grid>
