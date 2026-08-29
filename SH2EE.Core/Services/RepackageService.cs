@@ -74,8 +74,8 @@ namespace SH2EESetup.Services
             if (mapped.Count == 0)
             {
                 report.Warnings.Add(
-                    "No installed components could be matched to the built-in file map, so " +
-                    "there is nothing to repackage. Downloading the files is the only option.");
+                    "None of the installed components could be matched to a known package, so " +
+                    "there is nothing to rebuild. Use the download option instead.");
                 return report;
             }
 
@@ -103,10 +103,10 @@ namespace SH2EESetup.Services
                     if (ComponentFileMap.IsVersionStale(gameDir, component))
                     {
                         report.Warnings.Add(
-                            $"{component.Name} is installed at a different version than the " +
-                            $"built-in file map ({component.Version}). The archive was still " +
-                            "built, but may not match what that version ships. Refreshing the " +
-                            "map, or downloading instead, will give an exact copy.");
+                            $"{component.Name} is installed at a different version than this " +
+                            $"tool knows about ({component.Version}), so its file list may be " +
+                            "out of date. The package was still built. Downloading this one " +
+                            "instead would give a guaranteed-complete copy.");
                     }
 
                     if (await PackageComponentAsync(gameDir, outputDir, component, report, progress, i, mapped.Count, ct))
@@ -212,9 +212,10 @@ namespace SH2EESetup.Services
             if (modified.Count > 0)
             {
                 report.Warnings.Add(
-                    $"{component.Name}: {modified.Count} file(s) differ from what upstream " +
-                    $"shipped (e.g. {modified[0]}). They were packaged as they are on disk — " +
-                    "intended if you've modded them, worth a re-download if not.");
+                    $"{component.Name}: {modified.Count} file(s) don't match the checksums the " +
+                    $"Enhanced Edition project published (e.g. {modified[0]}). They were " +
+                    "packaged exactly as they are on this PC, which is expected if you've " +
+                    "modified them yourself.");
             }
 
             return true;
@@ -233,8 +234,9 @@ namespace SH2EESetup.Services
             if (unmapped.Count > 0)
             {
                 report.Warnings.Add(
-                    $"These installed components aren't in the built-in file map and were " +
-                    $"skipped: {string.Join(", ", unmapped)}. They'll need downloading.");
+                    "These installed components aren't recognised by this tool and were " +
+                    $"skipped: {string.Join(", ", unmapped)}. Download them separately if you " +
+                    "need a complete set.");
             }
         }
 

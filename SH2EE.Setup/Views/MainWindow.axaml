@@ -120,7 +120,7 @@
                             HorizontalContentAlignment="Left" Padding="14,12">
                         <StackPanel>
                             <TextBlock Text="Create offline installation files" FontWeight="SemiBold" />
-                            <TextBlock Text="Download the Enhanced Edition files to a folder so you can reinstall later without internet, here or on another PC."
+                            <TextBlock Text="Save the Enhanced Edition packages to a folder so you can reinstall later without an internet connection — rebuilt from this installation, or downloaded fresh."
                                        Opacity="0.7" FontSize="12" TextWrapping="Wrap" />
                         </StackPanel>
                     </Button>
@@ -309,13 +309,13 @@
                 <Panel x:Name="BackupPanel" IsVisible="False">
 
                     <!-- Choices -->
-                    <Grid IsVisible="{Binding !BackupComplete}" RowDefinitions="Auto,Auto,Auto,*,Auto">
+                    <Grid IsVisible="{Binding !BackupComplete}" RowDefinitions="Auto,Auto,Auto,Auto,*,Auto">
                         <TextBlock Grid.Row="0" TextWrapping="Wrap" FontSize="14" Foreground="White"
-                                   Text="Download the Enhanced Edition files to keep. You can install from that folder later with no internet connection — on this PC or any other." />
+                                   Text="{Binding BackupIntro}" />
 
                         <Grid Grid.Row="1" ColumnDefinitions="*,Auto" Margin="0,14,0,0">
                             <TextBox Grid.Column="0" Text="{Binding BackupTargetDir}"
-                                     Watermark="Folder to save the files in…" />
+                                     Watermark="Folder to save the packages in…" />
                             <Button Grid.Column="1" x:Name="BackupTargetBrowseButton" Content="Browse…"
                                     Margin="6,0,0,0" />
                         </Grid>
@@ -328,7 +328,7 @@
                                 <StackPanel>
                                     <TextBlock Text="Rebuild from this installation (no download)"
                                                FontWeight="SemiBold" />
-                                    <TextBlock Text="Packages the files already on this PC. Fast, works offline, and every file is checked against the checksum upstream published for it."
+                                    <TextBlock Text="Packages the files already on this PC. Fast, works offline, and every file is checked against the checksum the Enhanced Edition project published for it."
                                                Opacity="0.7" FontSize="12" TextWrapping="Wrap" MaxWidth="620"
                                                HorizontalAlignment="Left" />
                                 </StackPanel>
@@ -336,18 +336,18 @@
                             <RadioButton GroupName="backupsrc" IsChecked="{Binding ShowBackupComponentList}">
                                 <StackPanel>
                                     <TextBlock Text="Download fresh copies" FontWeight="SemiBold" />
-                                    <TextBlock Text="Fetches the packages from the Enhanced Edition servers. Slower, but gives a pristine set."
+                                    <TextBlock Text="Fetches the packages from the Enhanced Edition servers. Slower, but independent of what's installed here."
                                                Opacity="0.7" FontSize="12" TextWrapping="Wrap" MaxWidth="620"
                                                HorizontalAlignment="Left" />
                                 </StackPanel>
                             </RadioButton>
                         </StackPanel>
 
-                        <TextBlock Grid.Row="2" Text="Files to download" FontWeight="SemiBold"
+                        <TextBlock Grid.Row="3" Text="Files to download" FontWeight="SemiBold"
                                    Foreground="White" Margin="0,14,0,6"
-                                   IsVisible="{Binding !CanRepackage}" />
+                                   IsVisible="{Binding ShowBackupComponentList}" />
 
-                        <Border Grid.Row="3" BorderBrush="#33FFFFFF" BorderThickness="1" CornerRadius="6"
+                        <Border Grid.Row="4" BorderBrush="#33FFFFFF" BorderThickness="1" CornerRadius="6"
                                 IsVisible="{Binding ShowBackupComponentList}">
                             <ScrollViewer>
                                 <ItemsControl ItemsSource="{Binding Components}" Margin="8">
@@ -370,11 +370,11 @@
                             </ScrollViewer>
                         </Border>
 
-                        <StackPanel Grid.Row="4" IsVisible="{Binding IsBusy}" Spacing="8" Margin="0,12,0,0">
+                        <StackPanel Grid.Row="5" IsVisible="{Binding IsBusy}" Spacing="8" Margin="0,12,0,0">
                             <TextBlock Text="{Binding ProgressStatus}" Foreground="White" FontSize="13"
                                        TextWrapping="Wrap" />
                             <ProgressBar Minimum="0" Maximum="100" Value="{Binding Progress}" Height="8" />
-                            <Button x:Name="CancelBackupButton" Content="Cancel download"
+                            <Button x:Name="CancelBackupButton" Content="{Binding BackupCancelLabel}"
                                     HorizontalAlignment="Center" MinWidth="150"
                                     IsVisible="{Binding CanCancelOperation}" />
                         </StackPanel>

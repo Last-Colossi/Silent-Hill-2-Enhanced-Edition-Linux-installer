@@ -110,7 +110,8 @@ namespace SH2EESetup.Setup.ViewModels
             WizardStep.InstallType => "Install",
             WizardStep.Steam => "Finish",
             WizardStep.Uninstall => UninstallComplete ? "Close" : "Uninstall",
-            WizardStep.Backup => BackupComplete ? "Done" : "Download",
+            WizardStep.Backup => BackupComplete ? "Done"
+                                 : RepackageFromInstall ? "Rebuild" : "Download",
             _ => "Next",
         };
 
@@ -716,12 +717,33 @@ namespace SH2EESetup.Setup.ViewModels
             set
             {
                 if (SetProperty(ref _repackageFromInstall, value))
+                {
+                    // Every label on this step describes an action that just changed.
                     OnPropertyChanged(nameof(ShowBackupComponentList));
+                    OnPropertyChanged(nameof(BackupIntro));
+                    OnPropertyChanged(nameof(BackupCancelLabel));
+                    OnPropertyChanged(nameof(NextLabel));
+                }
             }
         }
 
         /// <summary>Repackaging takes whatever is installed; there is nothing to choose.</summary>
         public bool ShowBackupComponentList => !RepackageFromInstall;
+
+        public string BackupIntro => RepackageFromInstall
+            ? "Rebuild the Enhanced Edition packages from the files already installed on this " +
+              "PC. Nothing is downloaded, and every file is checked against the checksums " +
+              "published by the Enhanced Edition project. You can install from the folder " +
+              "afterwards on this PC or any other, with no internet connection."
+            : "Download the Enhanced Edition packages and keep them. You can install from the " +
+              "folder afterwards on this PC or any other, with no internet connection.";
+
+        public string BackupCancelLabel => RepackageFromInstall ? "Cancel" : "Cancel download";
+
+        /// <summary>Both paths produce the same kind of folder, so both explain it the same way.</summary>
+        private const string OfflineFolderUsageHint =
+            "To install from these later, choose \"Install from a folder on this PC\" on the " +
+            "source step and point it at this folder. No internet connection is needed.";
 
         /// <summary>
         /// Enters the standalone backup step. Downloading a set of installation files has
@@ -763,21 +785,26 @@ namespace SH2EESetup.Setup.ViewModels
                 var parts = new List<string>();
                 if (report.Archives.Count > 0)
                 {
-                    parts.Add($"{report.Archives.Count} archive(s) built from your installation " +
-                              $"in\n{target}\n\n" +
+                    parts.Add($"{report.Archives.Count} package(s) rebuilt in\n{target}\n\n" +
                               string.Join("\n", report.Archives.Select(a => "•  " + a)));
+
+                    // Let the verification result set the tone. A clean run has earned a
+                    // confident statement; anything else should say plainly what to do next.
                     parts.Add(report.ExactMatch
-                        ? $"All {report.FilesPackaged} files matched the checksums upstream " +
-                          "published for them."
-                        : $"{report.FilesPackaged} file(s) packaged.");
+                        ? $"All {report.FilesPackaged} files were verified against the checksums " +
+                          "published by the Enhanced Edition project and matched their originals " +
+                          "exactly. This backup is a faithful copy of the official packages."
+                        : $"{report.FilesPackaged} file(s) packaged, but not everything matched " +
+                          "the checksums published by the Enhanced Edition project — see the " +
+                          "notes below. The backup is still usable; if you run into trouble " +
+                          "installing from it, create one with the download option instead.");
                 }
                 if (report.Warnings.Count > 0)
                     parts.Add(string.Join("\n\n", report.Warnings.Select(w => "⚠  " + w)));
                 if (parts.Count == 0)
-                    parts.Add("Nothing could be repackaged.");
-
-                parts.Add("These were rebuilt from the files on this PC, not re-downloaded, so " +
-                          "they are only as good as this installation.");
+                    parts.Add("There was nothing here that could be rebuilt.");
+                else
+                    parts.Add(OfflineFolderUsageHint);
 
                 ProgressStatus = "";
                 BackupSummary = string.Join("\n\n", parts);
@@ -825,10 +852,8 @@ namespace SH2EESetup.Setup.ViewModels
 
                 ProgressStatus = "";
                 BackupSummary =
-                    $"{selected.Count} component(s) saved to:\n{BackupTargetDir}\n\n" +
-                    "To install from these later, choose \"Install from a folder on this PC\" " +
-                    "on the source step and point it at this folder. It works on any machine — " +
-                    "no internet needed.";
+                    $"{selected.Count} package(s) downloaded to\n{BackupTargetDir}\n\n" +
+                    OfflineFolderUsageHint;
             }
             catch (OperationCanceledException)
             {
