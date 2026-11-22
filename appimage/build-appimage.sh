@@ -3,7 +3,7 @@
 # standalone config app (reached via the AppImage's --config mode). Output goes to
 # ./dist by default, or the directory given as the first argument.
 #
-# Requires: .NET 8 SDK (dotnet on PATH) and curl.
+# Requires: .NET 10 SDK (dotnet on PATH) and curl.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
