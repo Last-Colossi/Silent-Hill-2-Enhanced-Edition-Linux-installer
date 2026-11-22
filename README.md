@@ -146,6 +146,8 @@ manual selection is always available (Browse…). Auto-detect scans common Wine/
 locations (Steam `compatdata`, Lutris, Heroic, Bottles, `~/.wine`) for `sh2pc.exe`.
 
 ## Build & run
+The native tools require the .NET 10 SDK to build. The self-contained Linux
+release downloads do not require a system-wide .NET installation.
 
 ```sh
 dotnet build SH2EE.sln
